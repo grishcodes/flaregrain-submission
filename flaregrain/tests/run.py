@@ -84,11 +84,36 @@ with tempfile.TemporaryDirectory() as tmp:
     else:
         expect("static files cannot replace the generated page", False)
 
-# The real page, once its source is in this tree: the checks and journeys depend on these hooks.
+# Verify the published Compare data survives the real application build.
 if (ROOT / "app" / "shell.html").is_file():
     real = build.render(ROOT)
-    for hook in ("data-view", 'id="rehearsal-data"', 'id="psi-catalog-data"'):
-        expect(f"real page keeps {hook}", hook in real)
+    embedded = re.search(r'<script id="compare-data" type="application/json">(.*?)</script>', real, re.S)
+    expect("Compare mounts with its data", 'data-view="compare"' in real and embedded is not None)
+    if embedded:
+        data = json.loads(embedded.group(1))
+        forward = data["pairs"]["B1,S1"]
+        reverse = data["pairs"]["S1,B1"]
+        expect("both pair orders preserve the selected records",
+               [r["id"] for r in forward["records"]] == ["B1", "S1"]
+               and [r["id"] for r in reverse["records"]] == ["S1", "B1"])
+        expect("NASA sources point to their exact report pages",
+               [s["url"].split("#")[-1] for s in forward["supportingSources"]] == ["page=111", "page=16", "page=29"])
+        thickness = next(c for c in forward["conditions"][1] if c["label"] == "Sample thickness")
+        expect("Saffire thickness preserves two separately sourced readings",
+               thickness["tier"] == "dispute" and [r["value"] for r in thickness["readings"]]
+               == ["0.37 mm", "0.37 under Sample Thickness (cm)"]
+               and len({r["url"] for r in thickness["readings"]}) == 2)
+        for pair in (forward, reverse):
+            position = pair["ids"].index("S1")
+            dimensions = next(c for c in pair["conditions"][position] if c["label"] == "Sample width and length")
+            row_index = next(i for i, row in enumerate(pair["rows"]) if row[0] == "Specimen and conditions")
+            expect("Saffire dimensions are disputed in the comparison and retain both sources",
+                   dimensions["tier"] == "dispute"
+                   and [r["value"] for r in dimensions["readings"]]
+                   == ["40.6 cm wide × 94 cm long", "94 cm wide × 40.6 cm long"]
+                   and len({r["url"] for r in dimensions["readings"]}) == 2
+                   and pair["rowFlags"][row_index][position] == "dispute"
+                   and "Dimensions disputed" in pair["rows"][row_index][position + 1])
 
 status = subprocess.run([sys.executable, "-I", str(ROOT / "build.py"), "--check"], capture_output=True, text=True)
 expect("build.py --check runs from the command line", status.returncode == 0)

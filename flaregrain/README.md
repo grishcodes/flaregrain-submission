@@ -1,30 +1,23 @@
 # Flaregrain
 
-Flaregrain is an evidence dashboard for the NASA Space Apps 2026 challenge "Flame in Freefall". When the dashboard source arrives, a researcher can ask a combustion question or browse NASA microgravity fire studies, compare two runs, and open the exact NASA report page behind each value.
+Flaregrain is an evidence dashboard for the NASA Space Apps 2026 challenge "Flame in Freefall". The first app build compares two checked microgravity fire experiments and links each observation to its NASA source.
 
 ## Browse the evidence
 
 [Open the evidence browser source](evidence/browser/index.html). To use the page, clone or download this repository and open `flaregrain/evidence/browser/index.html` in your browser. Filter the three published examples by reported measurement, missing value, or disputed value. Each entry links to the original NASA sources.
 
-## Build tool and fixture checks
+## Run Compare
 
-The build tool and tests use a small synthetic fixture in `tests/fixture/`. Until the dashboard package adds `app/shell.html`, use `build.py --check` to build the fixture and verify the tool.
+From the repository root, run `python3 -I flaregrain/build.py` and open `flaregrain/dist/index.html`. Choose **Airflow cutoff** to compare BASS-II B1 with Saffire I-1. The two source records and their citations are included in the build. The page opens without an account or backend service.
+
+The [airflow shutoff evidence](evidence/airflow-shutoff-source-trace.md) and [Saffire thickness note](evidence/saffire-disputed-thickness.md) explain the scientific limits and link to the original NASA sources. Nora Forghani authored the Compare page and record drawer. This package adapts them for a static build from the two checked records.
 
 ## Checks
 
-Python 3.9 or later, standard library only, with nothing to install. Run from the repository root:
+Python 3.9 or later, standard library only. Run from the repository root:
 
-    python3 -I flaregrain/tests/run.py          # seventeen build checks on the fixture
-    python3 -I flaregrain/build.py --check      # builds into a temporary folder; no tracked file changes
-
-## What the real dashboard build will need
-
-Later batches add these under `flaregrain/`, and `build.py` then builds them instead of the fixture:
-
-- `app/shell.html`: the page markup, with `{{STYLES}}`, `{{APP}}` and `{{DATA:<id>}}` placeholders. The real page must keep the `data-view`, `rehearsal-data` and `psi-catalog-data` hooks that `tests/run.py` checks.
-- `app/styles.css` and `app/js/NN-*.js`: the styles and the application script. The script files are joined in file-name order into one scope.
-- `data/<id>.json`: one JSON file per data block. It holds the team's checked NASA records and the tables generated from NASA's Physical Sciences Informatics combustion investigations, each value with its source.
-- `static/`: files copied as they are next to the page. This includes the third-party browser libraries and fonts in `static/Vendor/`, each with its own licence file.
+    python3 -I flaregrain/tests/run.py
+    python3 -I flaregrain/build.py --check
 
 `dist/` holds the generated output. It is not committed, and publishing it is a separate deploy step.
 
