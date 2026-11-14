@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-type="software">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flaregrain · Browse the library</title>
+<meta name="description" content="Browse NASA combustion records: checked records and PSI table rows, or the Atlas map.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-sub" data-page="browse">
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="out" viewBox="0 0 10 10"><path d="M2 8 8 2M3.5 2H8v4.5" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+</svg>
+<div class="chrome">
+  <a class="brand" href="index.html"><b>(FLAREGRAIN)</b><span class="mono">Sparkline Foundry</span></a>
+  <nav aria-label="Destinations"><ul class="nav">
+    <li><a href="index.html" aria-current="page">Ask &amp; browse <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+    <li><a href="compare.html">Compare <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+    <li><a href="evidence.html">Evidence <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+    <li><a href="habitat.html">Habitat <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+    <li><a href="system.html">System design <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+  </ul></nav>
+</div>
+<main class="sub" id="main" tabindex="-1">
+  <header class="sub-head">
+    <h1><span class="mono">(Browse)</span>Browse the library</h1>
+    <p>Every checked NASA record and PSI table row the dashboard holds. Search, filter by investigation, open a full record or start a comparison.</p>
+  </header>
+  <div class="tabs-bar" role="tablist" aria-label="Browse views">
+    <button role="tab" id="tab-catalog" aria-controls="panel-catalog" aria-selected="true">Catalog</button>
+    <button role="tab" id="tab-atlas" aria-controls="panel-atlas" aria-selected="false" tabindex="-1">Atlas map</button>
+  </div>
+  <section id="panel-catalog" role="tabpanel" aria-labelledby="tab-catalog">
+    <form class="filters" id="cat-form" role="search">
+      <label class="pick"><span class="mono">Search</span><input id="cat-q" type="search" placeholder="Material, investigation, condition…" autocomplete="off"></label>
+      <label class="pick"><span class="mono">Investigation</span><select id="cat-study"><option value="">All investigations</option></select></label>
+    </form>
+    <p class="cmp-status mono" id="cat-status" role="status" aria-live="polite"></p>
+    <ol class="cat-list" id="cat-list"></ol>
+    <div class="pager" id="cat-pager"></div>
+  </section>
+  <section id="panel-atlas" role="tabpanel" aria-labelledby="tab-atlas" hidden>
+    <p class="embed-note mono">The Atlas is the dashboard’s own map, shown as it is today. Its redesign is Grish’s.</p>
+    <div class="embed" id="atlas-embed" data-embed-view="map"></div>
+  </section>
+</main>
+<script src="drawer.js"></script>
+<script src="pages.js"></script>
+</body>
+</html>
