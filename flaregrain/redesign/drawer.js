@@ -50,4 +50,12 @@
   }
 
   window.FlaregrainDrawer = {open, mk, esc, TIER};
+
+  /* Shared on every page: once content scrolls under the fixed nav, a solid bar sits behind it and the nav becomes one row.
+     On the home page that happens after the flame stage, so the hero keeps its stacked nav. */
+  const hero = document.querySelector('.hero');
+  const edge = () => document.documentElement.classList.toggle('scrolled', hero ? hero.getBoundingClientRect().bottom < document.querySelector('.nav').getBoundingClientRect().bottom + 24 : scrollY > 24);
+  addEventListener('scroll', edge, {passive: true});
+  addEventListener('resize', edge);
+  edge();
 })();
