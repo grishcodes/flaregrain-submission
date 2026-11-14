@@ -1,0 +1,946 @@
+{
+  "records": [
+    {
+      "id": "B1",
+      "name": "BASS-II B1",
+      "study": "BASS-II"
+    },
+    {
+      "id": "S1",
+      "name": "Saffire I-1",
+      "study": "Saffire I"
+    }
+  ],
+  "starters": [
+    {
+      "ids": [
+        "B1",
+        "S1"
+      ],
+      "names": [
+        "BASS-II B1",
+        "Saffire I-1"
+      ],
+      "label": "Airflow cutoff",
+      "note": "Two tests where the airflow was switched off during a burn."
+    }
+  ],
+  "pairs": {
+    "B1,S1": {
+      "ids": [
+        "B1",
+        "S1"
+      ],
+      "key": "B1:S1",
+      "prepared": false,
+      "label": "BASS-II B1 and Saffire I-1",
+      "summary": {
+        "shared": "Both report flame extinction after full airflow cutoff.",
+        "differences": "B1 stopped airflow halfway through spread. Saffire I-1 stopped it at the scheduled end. The specimens are PMMA and SIBAL. The airflow directions are opposed and concurrent.",
+        "gap": "The cited passages support the sequence of events. Neither gives a numerical delay from cutoff to extinction."
+      },
+      "rows": [
+        [
+          "Investigation",
+          "BASS-II",
+          "Saffire I"
+        ],
+        [
+          "Specimen and conditions",
+          "2 cm wide · 100 µm thick · PMMA film",
+          "SIBAL cotton-fiberglass fabric · Dimensions disputed"
+        ],
+        [
+          "Airflow",
+          "Opposed · no numeric speed used here",
+          "Concurrent · 20 cm/s reported"
+        ],
+        [
+          "Recorded observation",
+          "Flame extinguishes rapidly.",
+          "NASA reports immediate flame extinction."
+        ],
+        [
+          "Flame spread rate",
+          "No matching rate in this record",
+          "1.8 mm/s at 20 cm/s concurrent flow"
+        ]
+      ],
+      "rowFlags": [
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "dispute"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "missing",
+          ""
+        ]
+      ],
+      "conditions": [
+        [
+          {
+            "label": "Specimen",
+            "value": "2 cm wide · 100 µm thick · PMMA film (0.1 mm thick)",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111"
+          },
+          {
+            "label": "Airflow direction",
+            "value": "Opposed",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111"
+          },
+          {
+            "label": "Airflow speed",
+            "value": "No numeric speed in this record",
+            "tier": "missing",
+            "status": "Not in this record",
+            "source": ""
+          },
+          {
+            "label": "Oxygen",
+            "value": "Calibrated O₂ 22.2 → 22.2 vol%",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111"
+          },
+          {
+            "label": "Pressure",
+            "value": "Not in source",
+            "tier": "missing",
+            "status": "Missing · No pressure for this run",
+            "source": "NASA BASS-II report · section 2.2.4 · PDF p. 30"
+          },
+          {
+            "label": "Gravity",
+            "value": "Microgravity · from the investigation, not this record",
+            "tier": "context",
+            "status": "Investigation context",
+            "source": ""
+          }
+        ],
+        [
+          {
+            "label": "Specimen",
+            "value": "SIBAL cotton-fiberglass fabric",
+            "tier": "unrated",
+            "status": "",
+            "source": "NASA SIBAL results · PDF p. 16"
+          },
+          {
+            "label": "Sample thickness",
+            "tier": "dispute",
+            "readings": [
+              {
+                "value": "0.37 mm",
+                "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+                "label": "Investigator table"
+              },
+              {
+                "value": "0.37 under Sample Thickness (cm)",
+                "url": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true",
+                "label": "NASA archive, row S1"
+              }
+            ]
+          },
+          {
+            "label": "Sample width and length",
+            "tier": "dispute",
+            "readings": [
+              {
+                "value": "40.6 cm wide × 94 cm long",
+                "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+                "label": "Investigator table"
+              },
+              {
+                "value": "94 cm wide × 40.6 cm long",
+                "url": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true",
+                "label": "NASA archive headings, row S1"
+              }
+            ]
+          },
+          {
+            "label": "Airflow direction",
+            "value": "Concurrent",
+            "tier": "unrated",
+            "status": "",
+            "source": "NASA SIBAL results · PDF p. 16"
+          },
+          {
+            "label": "Airflow speed",
+            "value": "20 cm/s reported",
+            "tier": "unrated",
+            "status": "",
+            "source": "NASA SIBAL results · PDF p. 16"
+          },
+          {
+            "label": "Oxygen",
+            "value": "21.7% · ISS reading",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Saffire-I description · PDF p. 14"
+          },
+          {
+            "label": "Pressure",
+            "value": "100 kPa",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table 2 · I-1 · PDF p. 8"
+          },
+          {
+            "label": "Gravity",
+            "value": "Microgravity · from the investigation, not this record",
+            "tier": "context",
+            "status": "Investigation context",
+            "source": ""
+          }
+        ]
+      ],
+      "supportingSources": [
+        {
+          "label": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+          "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+          "records": [
+            "B1"
+          ]
+        },
+        {
+          "label": "NASA SIBAL results · PDF p. 16",
+          "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+          "records": [
+            "S1"
+          ]
+        },
+        {
+          "label": "NASA Table I · test 1-1 · PDF p. 29",
+          "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+          "records": [
+            "S1"
+          ]
+        }
+      ],
+      "limitations": [
+        "The cited passages support the sequence of events. Neither gives a numerical delay from cutoff to extinction."
+      ],
+      "issues": {
+        "disputed": 2,
+        "missing": 3
+      },
+      "records": [
+        {
+          "id": "B1",
+          "name": "BASS-II B1",
+          "study": "BASS-II",
+          "sample": "Sample 147",
+          "investigation": "BASS-II",
+          "source": {
+            "label": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+            "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111"
+          },
+          "events": [
+            "Flame spreads halfway across the acrylic film.",
+            "Airflow is switched off.",
+            "Flame extinguishes rapidly."
+          ],
+          "observation": null,
+          "fields": [
+            {
+              "field": "Sample or identifier",
+              "value": "Sample 147",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Reported events",
+              "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly.",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Specimen",
+              "value": "2 cm wide · 100 µm thick · PMMA film",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Flow direction",
+              "value": "Opposed to flame spread",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Delay after shutoff",
+              "value": "No exact value. The run note says “flame extinguished very quickly.”",
+              "status": "Missing · Qualitative observation",
+              "tier": "missing",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Oxygen",
+              "value": "Calibrated O₂ 22.2 → 22.2 vol%",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Fan and air displays",
+              "value": "Fan display 62 · Air display 5",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Pressure",
+              "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run.",
+              "status": "Missing · No pressure for this run",
+              "tier": "missing",
+              "source": "NASA BASS-II report · section 2.2.4 · PDF p. 30",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=30",
+              "archive": "",
+              "archiveUrl": ""
+            }
+          ]
+        },
+        {
+          "id": "S1",
+          "name": "Saffire I-1",
+          "study": "Saffire I",
+          "sample": "PSI-98 S1",
+          "investigation": "Saffire-I",
+          "source": {
+            "label": "NASA SIBAL results · PDF p. 16",
+            "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16"
+          },
+          "events": [
+            "The SIBAL fabric burns under 20 cm/s concurrent flow.",
+            "Airflow is switched off at the scheduled end of the test.",
+            "NASA reports immediate flame extinction."
+          ],
+          "observation": null,
+          "fields": [
+            {
+              "field": "Sample or identifier",
+              "value": "PSI-98 S1",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Conditions",
+              "value": "SIBAL cotton-fiberglass fabric",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Reported events",
+              "value": "The SIBAL fabric burns under 20 cm/s concurrent flow. Airflow is switched off at the scheduled end of the test. NASA reports immediate flame extinction.",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Flame spread rate",
+              "value": "1.8 mm/s at 20 cm/s concurrent flow",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Microgravity spread rate",
+              "value": "1.8 mm/s",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Starting oxygen",
+              "value": "21.7% · ISS reading",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Saffire-I description · PDF p. 14",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=14",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Sample thickness",
+              "value": "Investigator table: 0.37 mm. Archive CSV: 0.37 under Sample Thickness (cm), equivalent to 3.7 mm if that header is correct.",
+              "status": "Disputed · Preferred thickness unset",
+              "tier": "dispute",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "NASA PSI-98 · v4 CSV · S1",
+              "archiveUrl": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true"
+            },
+            {
+              "field": "Sample width and length",
+              "value": "Investigator table: 40.6 cm wide, 94 cm long. Archive CSV: 94 under Sample Width (cm), 40.6 under Sample Length (cm).",
+              "status": "Disputed · Preferred dimensions unset",
+              "tier": "dispute",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "NASA PSI-98 · v4 CSV · S1",
+              "archiveUrl": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true"
+            },
+            {
+              "field": "Time to extinction after shutoff",
+              "value": "No numeric delay in the cited passage",
+              "status": "Missing · Observation says immediate",
+              "tier": "missing",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Oxygen during the test",
+              "value": "21.7 to 21.5% in NASA’s 2017 table · 21% in the 2021 summary table",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table 1 · I-1 · PDF p. 30",
+              "url": "https://ntrs.nasa.gov/api/citations/20180005168/downloads/20180005168.pdf#page=30",
+              "archive": "NASA Table 2 · I-1 · PDF p. 8",
+              "archiveUrl": "https://ntrs.nasa.gov/api/citations/20210011521/downloads/ICES%202021-266%200503-2021%20final.pdf#page=8"
+            },
+            {
+              "field": "Burn",
+              "value": "420 s burn duration · about 84 cm burn length",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table 1 continued · 1-1 · PDF p. 31",
+              "url": "https://ntrs.nasa.gov/api/citations/20180005168/downloads/20180005168.pdf#page=31",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Pressure and flame size",
+              "value": "100 kPa · 4 cm at steady state · 6.2 cm at maximum · 46 cm duct height",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table 2 · I-1 · PDF p. 8",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011521/downloads/ICES%202021-266%200503-2021%20final.pdf#page=8",
+              "archive": "",
+              "archiveUrl": ""
+            }
+          ]
+        }
+      ],
+      "candidates": [],
+      "explanation": null,
+      "live": false
+    },
+    "S1,B1": {
+      "ids": [
+        "S1",
+        "B1"
+      ],
+      "key": "S1:B1",
+      "prepared": false,
+      "label": "Saffire I-1 and BASS-II B1",
+      "summary": {
+        "shared": "Both report flame extinction after full airflow cutoff.",
+        "differences": "B1 stopped airflow halfway through spread. Saffire I-1 stopped it at the scheduled end. The specimens are SIBAL and PMMA. The airflow directions are concurrent and opposed.",
+        "gap": "The cited passages support the sequence of events. Neither gives a numerical delay from cutoff to extinction."
+      },
+      "rows": [
+        [
+          "Investigation",
+          "Saffire I",
+          "BASS-II"
+        ],
+        [
+          "Specimen and conditions",
+          "SIBAL cotton-fiberglass fabric · Dimensions disputed",
+          "2 cm wide · 100 µm thick · PMMA film"
+        ],
+        [
+          "Airflow",
+          "Concurrent · 20 cm/s reported",
+          "Opposed · no numeric speed used here"
+        ],
+        [
+          "Recorded observation",
+          "NASA reports immediate flame extinction.",
+          "Flame extinguishes rapidly."
+        ],
+        [
+          "Flame spread rate",
+          "1.8 mm/s at 20 cm/s concurrent flow",
+          "No matching rate in this record"
+        ]
+      ],
+      "rowFlags": [
+        [
+          "",
+          ""
+        ],
+        [
+          "dispute",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          "missing"
+        ]
+      ],
+      "conditions": [
+        [
+          {
+            "label": "Specimen",
+            "value": "SIBAL cotton-fiberglass fabric",
+            "tier": "unrated",
+            "status": "",
+            "source": "NASA SIBAL results · PDF p. 16"
+          },
+          {
+            "label": "Sample thickness",
+            "tier": "dispute",
+            "readings": [
+              {
+                "value": "0.37 mm",
+                "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+                "label": "Investigator table"
+              },
+              {
+                "value": "0.37 under Sample Thickness (cm)",
+                "url": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true",
+                "label": "NASA archive, row S1"
+              }
+            ]
+          },
+          {
+            "label": "Sample width and length",
+            "tier": "dispute",
+            "readings": [
+              {
+                "value": "40.6 cm wide × 94 cm long",
+                "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+                "label": "Investigator table"
+              },
+              {
+                "value": "94 cm wide × 40.6 cm long",
+                "url": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true",
+                "label": "NASA archive headings, row S1"
+              }
+            ]
+          },
+          {
+            "label": "Airflow direction",
+            "value": "Concurrent",
+            "tier": "unrated",
+            "status": "",
+            "source": "NASA SIBAL results · PDF p. 16"
+          },
+          {
+            "label": "Airflow speed",
+            "value": "20 cm/s reported",
+            "tier": "unrated",
+            "status": "",
+            "source": "NASA SIBAL results · PDF p. 16"
+          },
+          {
+            "label": "Oxygen",
+            "value": "21.7% · ISS reading",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Saffire-I description · PDF p. 14"
+          },
+          {
+            "label": "Pressure",
+            "value": "100 kPa",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table 2 · I-1 · PDF p. 8"
+          },
+          {
+            "label": "Gravity",
+            "value": "Microgravity · from the investigation, not this record",
+            "tier": "context",
+            "status": "Investigation context",
+            "source": ""
+          }
+        ],
+        [
+          {
+            "label": "Specimen",
+            "value": "2 cm wide · 100 µm thick · PMMA film (0.1 mm thick)",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111"
+          },
+          {
+            "label": "Airflow direction",
+            "value": "Opposed",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111"
+          },
+          {
+            "label": "Airflow speed",
+            "value": "No numeric speed in this record",
+            "tier": "missing",
+            "status": "Not in this record",
+            "source": ""
+          },
+          {
+            "label": "Oxygen",
+            "value": "Calibrated O₂ 22.2 → 22.2 vol%",
+            "tier": "checked",
+            "status": "Source checked for this review",
+            "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111"
+          },
+          {
+            "label": "Pressure",
+            "value": "Not in source",
+            "tier": "missing",
+            "status": "Missing · No pressure for this run",
+            "source": "NASA BASS-II report · section 2.2.4 · PDF p. 30"
+          },
+          {
+            "label": "Gravity",
+            "value": "Microgravity · from the investigation, not this record",
+            "tier": "context",
+            "status": "Investigation context",
+            "source": ""
+          }
+        ]
+      ],
+      "supportingSources": [
+        {
+          "label": "NASA SIBAL results · PDF p. 16",
+          "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+          "records": [
+            "S1"
+          ]
+        },
+        {
+          "label": "NASA Table I · test 1-1 · PDF p. 29",
+          "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+          "records": [
+            "S1"
+          ]
+        },
+        {
+          "label": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+          "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+          "records": [
+            "B1"
+          ]
+        }
+      ],
+      "limitations": [
+        "The cited passages support the sequence of events. Neither gives a numerical delay from cutoff to extinction."
+      ],
+      "issues": {
+        "disputed": 2,
+        "missing": 3
+      },
+      "records": [
+        {
+          "id": "S1",
+          "name": "Saffire I-1",
+          "study": "Saffire I",
+          "sample": "PSI-98 S1",
+          "investigation": "Saffire-I",
+          "source": {
+            "label": "NASA SIBAL results · PDF p. 16",
+            "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16"
+          },
+          "events": [
+            "The SIBAL fabric burns under 20 cm/s concurrent flow.",
+            "Airflow is switched off at the scheduled end of the test.",
+            "NASA reports immediate flame extinction."
+          ],
+          "observation": null,
+          "fields": [
+            {
+              "field": "Sample or identifier",
+              "value": "PSI-98 S1",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Conditions",
+              "value": "SIBAL cotton-fiberglass fabric",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Reported events",
+              "value": "The SIBAL fabric burns under 20 cm/s concurrent flow. Airflow is switched off at the scheduled end of the test. NASA reports immediate flame extinction.",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Flame spread rate",
+              "value": "1.8 mm/s at 20 cm/s concurrent flow",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Microgravity spread rate",
+              "value": "1.8 mm/s",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Starting oxygen",
+              "value": "21.7% · ISS reading",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Saffire-I description · PDF p. 14",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=14",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Sample thickness",
+              "value": "Investigator table: 0.37 mm. Archive CSV: 0.37 under Sample Thickness (cm), equivalent to 3.7 mm if that header is correct.",
+              "status": "Disputed · Preferred thickness unset",
+              "tier": "dispute",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "NASA PSI-98 · v4 CSV · S1",
+              "archiveUrl": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true"
+            },
+            {
+              "field": "Sample width and length",
+              "value": "Investigator table: 40.6 cm wide, 94 cm long. Archive CSV: 94 under Sample Width (cm), 40.6 under Sample Length (cm).",
+              "status": "Disputed · Preferred dimensions unset",
+              "tier": "dispute",
+              "source": "NASA Table I · test 1-1 · PDF p. 29",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29",
+              "archive": "NASA PSI-98 · v4 CSV · S1",
+              "archiveUrl": "https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&version=1&studyVersion=4&redirect=true"
+            },
+            {
+              "field": "Time to extinction after shutoff",
+              "value": "No numeric delay in the cited passage",
+              "status": "Missing · Observation says immediate",
+              "tier": "missing",
+              "source": "NASA SIBAL results · PDF p. 16",
+              "url": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Oxygen during the test",
+              "value": "21.7 to 21.5% in NASA’s 2017 table · 21% in the 2021 summary table",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table 1 · I-1 · PDF p. 30",
+              "url": "https://ntrs.nasa.gov/api/citations/20180005168/downloads/20180005168.pdf#page=30",
+              "archive": "NASA Table 2 · I-1 · PDF p. 8",
+              "archiveUrl": "https://ntrs.nasa.gov/api/citations/20210011521/downloads/ICES%202021-266%200503-2021%20final.pdf#page=8"
+            },
+            {
+              "field": "Burn",
+              "value": "420 s burn duration · about 84 cm burn length",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table 1 continued · 1-1 · PDF p. 31",
+              "url": "https://ntrs.nasa.gov/api/citations/20180005168/downloads/20180005168.pdf#page=31",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Pressure and flame size",
+              "value": "100 kPa · 4 cm at steady state · 6.2 cm at maximum · 46 cm duct height",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table 2 · I-1 · PDF p. 8",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011521/downloads/ICES%202021-266%200503-2021%20final.pdf#page=8",
+              "archive": "",
+              "archiveUrl": ""
+            }
+          ]
+        },
+        {
+          "id": "B1",
+          "name": "BASS-II B1",
+          "study": "BASS-II",
+          "sample": "Sample 147",
+          "investigation": "BASS-II",
+          "source": {
+            "label": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+            "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111"
+          },
+          "events": [
+            "Flame spreads halfway across the acrylic film.",
+            "Airflow is switched off.",
+            "Flame extinguishes rapidly."
+          ],
+          "observation": null,
+          "fields": [
+            {
+              "field": "Sample or identifier",
+              "value": "Sample 147",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Reported events",
+              "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly.",
+              "status": "",
+              "tier": "unrated",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Specimen",
+              "value": "2 cm wide · 100 µm thick · PMMA film",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Flow direction",
+              "value": "Opposed to flame spread",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Delay after shutoff",
+              "value": "No exact value. The run note says “flame extinguished very quickly.”",
+              "status": "Missing · Qualitative observation",
+              "tier": "missing",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Oxygen",
+              "value": "Calibrated O₂ 22.2 → 22.2 vol%",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Fan and air displays",
+              "value": "Fan display 62 · Air display 5",
+              "status": "Source checked for this review",
+              "tier": "checked",
+              "source": "NASA Table A.1 · B1 · sample 147 · PDF p. 111",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111",
+              "archive": "",
+              "archiveUrl": ""
+            },
+            {
+              "field": "Pressure",
+              "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run.",
+              "status": "Missing · No pressure for this run",
+              "tier": "missing",
+              "source": "NASA BASS-II report · section 2.2.4 · PDF p. 30",
+              "url": "https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=30",
+              "archive": "",
+              "archiveUrl": ""
+            }
+          ]
+        }
+      ],
+      "candidates": [],
+      "explanation": null,
+      "live": false
+    }
+  }
+}
