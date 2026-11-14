@@ -11,6 +11,8 @@
     dispute: ['dispute', 'Sources disagree'], flag: ['flag', 'NASA printed it, we read it differently'], missing: ['missing', 'Not in the source'], unrated: ['unrated', 'From the cited record, no field-level status']};
   const status = $('cmp-status'), result = $('cmp-result'), pickA = $('pick-a'), pickB = $('pick-b');
   let records = [], current = null, latest = 0, last = {a: '', b: ''};
+  // Opened from a cited answer: the question rides along in the address so Compare can lead back to it.
+  const fromQuestion = (new URLSearchParams(location.search).get('q') || '').trim().slice(0, 300);
 
   const api = path => fetch(path, {headers: {Accept: 'application/json'}}).then(async r => {
     const body = await r.json().catch(() => ({}));
@@ -44,7 +46,7 @@
       return;
     }
     pickA.value = a; pickB.value = b; last = {a, b};
-    history.replaceState(null, '', '?ids=' + encodeURIComponent(a) + ',' + encodeURIComponent(b));
+    history.replaceState(null, '', '?ids=' + encodeURIComponent(a) + ',' + encodeURIComponent(b) + (fromQuestion ? '&q=' + encodeURIComponent(fromQuestion) : ''));
     load(a, b, focus);
   }
   pickA.addEventListener('change', () => choose(pickA.value, pickB.value));
@@ -96,6 +98,7 @@
       `<button type="button" class="cand" data-cand="${esc(k.id)}"><b>${esc(k.name)}</b><span>${esc(k.reason)}</span>${ARROW}</button>`).join('')}</div>` : '';
 
     result.innerHTML = `
+      ${fromQuestion ? `<p class="back-q line-in" style="--d:0"><a class="full" href="answer.html?q=${encodeURIComponent(fromQuestion)}">← Back to your question</a></p>` : ''}
       <p class="mono line-in" style="--d:0">${c.prepared ? 'Prepared comparison' : 'Comparison'} · ${esc(A.investigation)} and ${esc(B.investigation)}</p>
       <h2 id="cmp-title" class="line-in" style="--d:1" tabindex="-1">${esc(A.name)} <em>and</em> ${esc(B.name)}</h2>
       <dl class="verdict">
