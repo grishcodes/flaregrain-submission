@@ -2,9 +2,13 @@
 
 Flaregrain is an evidence dashboard for the NASA Space Apps 2026 challenge "Flame in Freefall". When the dashboard source arrives, a researcher can ask a combustion question or browse NASA microgravity fire studies, compare two runs, and open the exact NASA report page behind each value.
 
-## Current phase: build tool and fixture checks
+## Browse the evidence
 
-This batch holds only the build tool and its tests. **There is no dashboard here yet.** The checks below run against a small synthetic fixture in `tests/fixture/`, and they show that the build tool works, not that the app works. Without `app/shell.html`, `build.py --check` builds that fixture, and `build.py` on its own stops with "no app/shell.html yet".
+[Open the evidence browser source](evidence/browser/index.html). To use the page, clone or download this repository and open `flaregrain/evidence/browser/index.html` in your browser. Filter the three published examples by reported measurement, missing value, or disputed value. Each entry links to the original NASA sources.
+
+## Build tool and fixture checks
+
+The build tool and tests use a small synthetic fixture in `tests/fixture/`. Until the dashboard package adds `app/shell.html`, use `build.py --check` to build the fixture and verify the tool.
 
 ## Checks
 
