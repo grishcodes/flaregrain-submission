@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidence browser · Flaregrain</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="browse.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="product">Flaregrain</p>
+      <h1>Browse the evidence</h1>
+      <p>Read the observation, its limits, and the NASA pages behind it.</p>
+    </header>
+
+    <label class="filter" hidden>
+      Show
+      <select id="filter">
+        <option value="all">All entries</option>
+        <option value="measurement">Reported measurements</option>
+        <option value="missing">Missing numeric values</option>
+        <option value="disputed">Disputed values</option>
+      </select>
+    </label>
+    <p id="count" role="status"></p>
+
+    <article data-category="measurement">
+      <p class="category">Reported measurement</p>
+      <h2>BASS-II oxygen margin</h2>
+      <p>A ¼-inch PMMA rod showed steady flame spread at <strong>13.6% oxygen</strong> in microgravity. NASA reports a <strong>16% oxygen</strong> blowoff limit in normal gravity for the same rod.</p>
+      <p class="limit">The comparison applies to this material, geometry, and flow. The slide gives no minimum oxygen level for microgravity flame spread.</p>
+      <a href="https://ntrs.nasa.gov/api/citations/20160000593/downloads/20160000593.pdf#page=18">NASA BASS-II presentation, slide 18</a>
+    </article>
+
+    <article data-category="missing">
+      <p class="category">Missing numeric value</p>
+      <h2>Extinction after airflow shutoff</h2>
+      <p>The BASS-II B1 and Saffire I-1 reports describe prompt extinction after shutoff. Both descriptions are qualitative. Saffire’s <strong>420 seconds</strong> is the run duration up to shutoff.</p>
+      <ul class="sources">
+        <li><a href="https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111">NASA BASS-II Table A.1, B1, PDF page 111</a></li>
+        <li><a href="https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16">NASA Saffire I-1 results, PDF page 16</a></li>
+      </ul>
+    </article>
+
+    <article data-category="disputed">
+      <p class="category">Disputed value</p>
+      <h2>Saffire I-1 sample thickness</h2>
+      <dl>
+        <div><dt>Investigator table</dt><dd>0.37 mm</dd></div>
+        <div><dt>Archive CSV</dt><dd>0.37 under a centimetre heading</dd></div>
+      </dl>
+      <p class="limit">A literal reading of the CSV heading gives 3.7 mm. The source records leave the preferred thickness unresolved.</p>
+      <ul class="sources">
+        <li><a href="https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29">NASA Saffire Table I, test 1-1, PDF page 29</a></li>
+        <li><a href="https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&amp;version=1&amp;studyVersion=4&amp;redirect=true">NASA PSI-98 Saffire-I table, row S1</a></li>
+      </ul>
+    </article>
+  </main>
+</body>
+</html>
