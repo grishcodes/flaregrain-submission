@@ -5,14 +5,19 @@ import {pathToFileURL} from 'node:url';
 const data = JSON.parse(await readFile(new URL('../data/compare-data.json', import.meta.url), 'utf8'));
 const starter = data.starters[0];
 const orderedPair = data.pairs[starter.ids.join(',')];
+// The Ask matcher below answers from the two records of the prepared airflow pair only (Codex's lane, unchanged).
 const records = new Map(orderedPair.records.map(record => [record.id, record]));
+// Everything else reads the 13 hand-checked NASA records; 11 are runs with prepared comparisons, and SAME's two Kapton
+// material baselines are records only.
+const checked = new Map(data.checked.map(record => [record.id, record]));
+const comparable = new Set(data.records.map(record => record.id));
 
 const files = new Set([
   'index.html', 'answer.html', 'browse.html', 'compare.html', 'evidence.html', 'habitat.html',
   'insights.html', 'system.html', 'app.js', 'compare.js', 'drawer.js', 'pages.js', 'styles.css',
 ]);
 const types = {'html': 'text/html', 'js': 'text/javascript', 'css': 'text/css'};
-const notIncluded = 'This view needs data outside the two-record submission.';
+const notIncluded = 'This view needs the full NASA PSI dataset, which the team shows in the full-data demo.';
 const cutoffQuestion = 'How long did the flame take to go out after airflow was cut?';
 const scopeLimit = 'The cited passages give no elapsed time from airflow shutoff to extinction in seconds.';
 const saffireDuration = ' In Saffire, 420 seconds is the time up to shutoff.';
@@ -48,14 +53,14 @@ function answer(query) {
 }
 
 function summary() {
-  const countFields = tier => [...records.values()].flatMap(record =>
+  const countFields = tier => [...checked.values()].flatMap(record =>
     record.fields.filter(field => field.tier === tier).map(field => ({record: record.name, field: field.field})));
   const describe = fields => ({
     values: fields.length, records: new Set(fields.map(field => field.record)).size,
-    checkedRecords: records.size, example: fields[0] || null,
+    checkedRecords: checked.size, example: fields[0] || null,
   });
   return {
-    library: {investigations: new Set(data.records.map(record => record.study)).size, runs: records.size},
+    library: {investigations: new Set([...checked.values()].map(record => record.study)).size, runs: comparable.size},
     moon: {runs: '—', investigations: []},
     gaps: describe(countFields('missing')), disputes: describe(countFields('dispute')),
   };
@@ -64,18 +69,18 @@ function summary() {
 function catalog(search) {
   const query = (search.get('q') || '').trim().toLowerCase();
   const study = search.get('study');
-  const rows = [...records.values()].filter(record =>
-    (!study || record.study === study) && [record.name, record.study, ...record.events].join(' ').toLowerCase().includes(query));
+  const rows = [...checked.values()].filter(record =>
+    (!study || record.study === study) && [record.name, record.study, record.observation, ...(record.events || [])].join(' ').toLowerCase().includes(query));
   return {
-    total: rows.length, page: 0, pageSize: records.size,
-    records: rows.map(record => ({...record, observation: record.events.at(-1), origin: 'checked', comparable: true})),
-    studies: [...records.values()].map(record => ({name: record.study})),
+    total: rows.length, page: 0, pageSize: checked.size,
+    records: rows.map(record => ({...record, observation: (record.events || []).at(-1) ?? record.observation, origin: 'checked', comparable: comparable.has(record.id)})),
+    studies: [...new Set([...checked.values()].map(record => record.study))].map(name => ({name})),
   };
 }
 
 function evidence(ids) {
   return ids.map(id => {
-    const record = records.get(id);
+    const record = checked.get(id);
     const citedFields = record.fields.filter(field => field.tier === 'dispute')
       .flatMap(field => [{label: field.source, url: field.url}, {label: field.archive, url: field.archiveUrl}]);
     const sources = [...new Map([record.source, ...citedFields].filter(source => source.url)
@@ -103,7 +108,7 @@ function api(res, url) {
   const pair = ids.length === 2 ? data.pairs[ids.join(',')] : null;
   switch (url.pathname) {
     // commit: the Git commit Vercel deployed (null when run anywhere else), so anyone can see which revision is live.
-    case '/api/health': return send(res, 200, {ok: true, records: records.size, commit: process.env.VERCEL_GIT_COMMIT_SHA || null});
+    case '/api/health': return send(res, 200, {ok: true, records: checked.size, commit: process.env.VERCEL_GIT_COMMIT_SHA || null});
     case '/api/questions': return send(res, 200, {questions: [cutoffQuestion]});
     case '/api/records': return send(res, 200, {records: data.records});
     case '/api/starters': return send(res, 200, {starters: data.starters});
@@ -114,18 +119,18 @@ function api(res, url) {
       return query ? send(res, 200, answer(query)) : send(res, 400, {error: 'Type a question first.'});
     }
     case '/api/record': {
-      const record = records.get(search.get('id'));
+      const record = checked.get(search.get('id'));
       return record ? send(res, 200, record) : send(res, 404, {error: 'Unknown record.'});
     }
     case '/api/evidence':
-      return ids.length <= 2 && new Set(ids).size === ids.length && ids.every(id => records.has(id))
+      return ids.length <= 2 && new Set(ids).size === ids.length && ids.every(id => checked.has(id))
         ? send(res, 200, {records: evidence(ids)}) : send(res, 400, {error: 'Choose one or two published records.'});
     case '/api/compare':
-      if (!pair) return send(res, 400, {error: 'Choose the two different published records.'});
+      if (!pair) return send(res, 400, {error: 'Choose two different runs from the 11 comparable records.'});
       return send(res, 200, {...pair, conditions: pair.conditions.map(run => run.map(condition =>
         condition.readings ? {...condition, value: condition.readings.map(reading => reading.value).join(' / ')} : condition))});
     case '/api/export': {
-      if (!pair) return send(res, 400, {error: 'Choose the two different published records.'});
+      if (!pair) return send(res, 400, {error: 'Choose two different runs from the 11 comparable records.'});
       const format = search.get('format') === 'json' ? 'json' : 'csv';
       return send(res, 200, exportRows(pair, format), format === 'json' ? 'application/json' : 'text/csv',
         {'Content-Disposition': 'attachment; filename="flaregrain-compare.' + format + '"'});
