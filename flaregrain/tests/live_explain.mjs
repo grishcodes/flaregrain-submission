@@ -101,6 +101,20 @@ for (const key of Object.keys(PUBLIC)) {
     /^application\/json/.test(forwarded.type) && forwarded.body === JSON.stringify({ids}));
 }
 
+// A cached proxy answer keeps its "cached" mark and the time the model wrote it; anything else about it is unchanged.
+reset();
+stub.explain = ids => [200, answer(ids, {cached: true, generatedAt: '2026-11-15T12:41:07.512Z'})];
+r = await post({ids: ['B1', 'S1']});
+expect('cached: a reused answer is accepted and keeps cached and generatedAt', r.status === 200 && r.body.cached === true &&
+  r.body.generatedAt === '2026-11-15T12:41:07.512Z' && r.body.factsHash === PUBLIC['B1,S1'] && r.body.passed.length === 2, JSON.stringify(r.body));
+reset();
+stub.explain = ids => [200, answer(ids, {cached: true, generatedAt: 'yesterday'})];
+r = await post({ids: ['B1', 'S1']});
+expect('cached: an unreadable time is dropped, the answer stays', r.status === 200 && !('cached' in r.body) && !('generatedAt' in r.body), JSON.stringify(r.body));
+reset();
+r = await post({ids: ['B1', 'S1']});
+expect('not cached: no cached mark is added', r.status === 200 && !('cached' in r.body) && !('generatedAt' in r.body));
+
 reset();
 r = await post({ids: ['B1', 'S25']});
 expect('non-starter pair: saved comparison, nothing forwarded', savedReply(r, 503, 'pair', UNAVAILABLE) && seen.length === 0, JSON.stringify(r.body));
