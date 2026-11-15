@@ -6,7 +6,7 @@ Flaregrain is an evidence dashboard for the NASA Space Apps 2026 challenge "Flam
 
 From the repository root with Node.js 22 or later, run `node flaregrain/redesign/server.mjs` and open [the local app](http://127.0.0.1:8790/). Choose the suggested airflow question to open its cited answer and full records. Use **Compare** or the link in the answer to review the prepared pair. The app needs no account.
 
-This build uses the two reviewed runs in `data/compare-data.json` and answers the airflow cutoff question from their cited reports. Browse and Evidence show those same records. Habitat, Atlas, System design and wider evidence summaries require the wider dataset and display the submission scope. NASA figures and page crops remain in the linked reports.
+This build carries the 13 hand-checked NASA records in `data/compare-data.json`: 11 runs, with a prepared comparison for each of the 110 ordered pairs, and SAME's two Kapton material baselines. The comparisons come from the dashboard's rule-based Compare; where two NASA sources disagree on a value, the comparison marks it disputed and keeps both. Ask answers the airflow cutoff question from the BASS-II B1 and Saffire I-1 reports. Browse and Evidence show all 13 records. Habitat, Atlas, System design and wider evidence summaries require the wider dataset and display the submission scope. NASA figures and page crops remain in the linked reports.
 
 Nora Forghani designed and implemented the landing, flame, Ask, Compare and shared drawer. The app retains the original asset URLs for [Three.js r128](https://github.com/mrdoob/three.js/blob/r128/LICENSE), [Hanken Grotesk](https://github.com/google/fonts/blob/main/ofl/hankengrotesk/OFL.txt) and [JetBrains Mono](https://github.com/google/fonts/blob/main/ofl/jetbrainsmono/OFL.txt).
 
@@ -16,7 +16,7 @@ Nora Forghani designed and implemented the landing, flame, Ask, Compare and shar
 
 ## Run Compare
 
-From the repository root, run `python3 -I flaregrain/build.py` and open `flaregrain/dist/index.html`. Choose **Airflow cutoff** to compare BASS-II B1 with Saffire I-1. The two source records and their citations are included in the build. The page opens without an account or backend service.
+From the repository root, run `python3 -I flaregrain/build.py` and open `flaregrain/dist/index.html`. Choose **Airflow cutoff** to compare BASS-II B1 with Saffire I-1, or pick any two of the 11 runs. The records and their citations are included in the build. The page opens without an account or backend service.
 
 The [airflow shutoff evidence](evidence/airflow-shutoff-source-trace.md) and [Saffire thickness note](evidence/saffire-disputed-thickness.md) explain the scientific limits and link to the original NASA sources. Nora Forghani authored the Compare page and record drawer. This package adapts them for a static build from the two checked records.
 

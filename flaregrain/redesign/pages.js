@@ -24,8 +24,8 @@
     status.innerHTML = `${esc(message)} <button type="button" class="retry">Retry</button>`;
     status.querySelector('.retry').addEventListener('click', again);
   };
-  // This submission carries two checked records. Views that need the full dataset say so plainly, instead of an error with Retry.
-  const SCOPE = `<p><b>Part of the full-data demo.</b> This view reads Flaregrain’s full NASA PSI dataset (24 investigations, 2,009 table rows), which the team shows live. This public site carries two hand-checked NASA records, BASS-II B1 and Saffire I-1, with links to the original reports.</p>
+  // This submission carries the 13 hand-checked records. Views that need the full dataset say so plainly, instead of an error with Retry.
+  const SCOPE = `<p><b>Part of the full-data demo.</b> This view reads Flaregrain’s full NASA PSI dataset (24 investigations, 2,009 table rows), which the team shows live. This public site carries 13 hand-checked NASA records (11 comparable runs), with links to the original reports.</p>
     <p class="scope-links"><a class="btn btn-line" href="compare.html?ids=B1,S1">Compare B1 and Saffire I-1</a> <a class="btn btn-line" href="evidence.html">Open the evidence</a></p>`;
   const scope = (el, hide = []) => {
     hide.forEach(x => { if (x) { x.hidden = true; x.textContent = ''; } });
