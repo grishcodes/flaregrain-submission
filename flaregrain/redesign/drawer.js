@@ -53,8 +53,17 @@
 
   /* Shared on every page: once content scrolls under the fixed nav, a solid bar sits behind it and the nav becomes one row.
      On the home page that happens after the flame stage, so the hero keeps its stacked nav. */
+  // The stacked nav's lower edge is measured only while it is stacked: the one-row nav is shorter, and measuring it made
+  // the home nav flip between the two layouts on every scroll event while the hero's bottom crossed that band.
   const hero = document.querySelector('.hero');
-  const edge = () => document.documentElement.classList.toggle('scrolled', hero ? hero.getBoundingClientRect().bottom < document.querySelector('.nav').getBoundingClientRect().bottom + 24 : scrollY > 24);
+  const nav = document.querySelector('.nav');
+  let navEdge = 0;
+  const edge = () => {
+    const root = document.documentElement;
+    if (!hero) return root.classList.toggle('scrolled', scrollY > 24);
+    if (!root.classList.contains('scrolled')) navEdge = nav.getBoundingClientRect().bottom;
+    root.classList.toggle('scrolled', hero.getBoundingClientRect().bottom < navEdge + 24);
+  };
   addEventListener('scroll', edge, {passive: true});
   addEventListener('resize', edge);
   edge();

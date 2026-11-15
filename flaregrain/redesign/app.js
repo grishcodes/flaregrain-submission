@@ -293,7 +293,7 @@
       draw(time, morph, rx, ry, x, s) {
         uniforms.uTime.value = time; uniforms.uMorph.value = morph;
         glowU.uTime.value = time; glowU.uMorph.value = morph;
-        group.rotation.set(rx, ry, 0); group.position.x = x; group.position.y = (innerWidth < 760 && !isAnswerPage) ? .55 : 0; group.scale.setScalar(s);
+        group.rotation.set(rx, ry, 0); group.position.x = x; group.position.y = (innerWidth < 760 && !isAnswerPage) ? .66 : 0; group.scale.setScalar(s);
         renderer.render(scene, camera);
       }
     };
@@ -308,10 +308,10 @@
     const r = hero.getBoundingClientRect();
     const p = clamp(-r.top / (r.height - innerHeight), 0, 1);
     const after = clamp((innerHeight - r.bottom) / (innerHeight * .7), 0, 1);
-    let morph = smooth(.18, .82, p);
+    let morph = smooth(.1, .65, p); // the hero is 1.5 screens tall: the flame finishes its change with room to read (B)
     if (reduced) morph = p < .5 ? 0 : 1;
     if (bar) bar.style.setProperty('--p', p.toFixed(3));
-    document.documentElement.classList.toggle('past-hero', r.bottom < innerHeight * .6);
+    document.documentElement.classList.toggle('past-hero', r.bottom < innerHeight * .92); // hero text fades before it reaches the nav
     return { morph, fade: 1 - after * .9 };
   }
   function applyChrome(morph, fade) {
@@ -323,7 +323,7 @@
   }
 
   const offX = () => isAnswerPage ? (innerWidth < 760 ? 0 : 2.5) : 0;
-  const scale = () => (isAnswerPage ? .55 : 1) * (innerWidth < 760 ? .82 : 1);
+  const scale = () => (isAnswerPage ? .55 : 1) * (innerWidth < 760 ? .76 : 1); // phone: room for the larger hero text
   if (reduced) {
     const still = () => { const s = readScroll(); applyChrome(s.morph, s.fade); if (flame) flame.draw(2.3, s.morph, 0, 0, offX(), scale()); };
     addEventListener('scroll', still, { passive: true }); addEventListener('resize', still); still();
