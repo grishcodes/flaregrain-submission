@@ -653,7 +653,7 @@
         },
         {
           "field": "Specimen",
-          "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+          "value": "SIBAL fabric · dimensions disputed",
           "status": "Source checked for this review",
           "tier": "checked",
           "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -833,7 +833,7 @@
         },
         {
           "field": "Conditions",
-          "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+          "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
           "status": "",
           "tier": "unrated",
           "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -1148,7 +1148,7 @@
         },
         {
           "field": "Conditions",
-          "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+          "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
           "status": "",
           "tier": "unrated",
           "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -3411,7 +3411,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -4197,7 +4197,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -5403,7 +5403,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -6609,7 +6609,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -7485,7 +7485,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -8271,7 +8271,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -9477,7 +9477,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -10683,7 +10683,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -11559,7 +11559,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -12345,7 +12345,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -13551,7 +13551,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -14356,7 +14356,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -14812,7 +14812,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -15269,7 +15269,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -15732,7 +15732,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -15897,7 +15897,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -16185,7 +16185,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -16664,7 +16664,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -16799,7 +16799,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -17146,7 +17146,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -17592,7 +17592,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -18071,7 +18071,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -18206,7 +18206,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -19883,7 +19883,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -20358,7 +20358,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -21164,7 +21164,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -22427,7 +22427,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -22786,7 +22786,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -23184,7 +23184,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -23582,7 +23582,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -23995,7 +23995,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -24064,7 +24064,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -24434,7 +24434,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -24839,7 +24839,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -25260,7 +25260,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -25325,7 +25325,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -25684,7 +25684,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -26072,7 +26072,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -26493,7 +26493,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -26558,7 +26558,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -28275,7 +28275,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -29185,7 +29185,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -29576,7 +29576,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -30869,7 +30869,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -31198,7 +31198,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -31626,7 +31626,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -32054,7 +32054,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -32503,7 +32503,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -32632,7 +32632,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -32978,7 +32978,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -33419,7 +33419,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -33574,7 +33574,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -33850,7 +33850,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -34294,7 +34294,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -34712,7 +34712,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -35163,7 +35163,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -35288,7 +35288,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -36796,7 +36796,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -37624,7 +37624,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -38362,7 +38362,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -39158,7 +39158,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -40909,7 +40909,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -41845,7 +41845,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -42691,7 +42691,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -43550,7 +43550,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -43870,7 +43870,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -44289,7 +44289,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -44708,7 +44708,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -45157,7 +45157,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -45286,7 +45286,7 @@
             },
             {
               "field": "Conditions",
-              "value": "40.6 cm wide · SIBAL cotton-fiberglass fabric",
+              "value": "SIBAL cotton-fiberglass fabric",
               "status": "",
               "tier": "unrated",
               "source": "NASA SIBAL results · PDF p. 16",
@@ -45632,7 +45632,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -46073,7 +46073,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -46228,7 +46228,7 @@
             },
             {
               "field": "Specimen",
-              "value": "SIBAL fabric · 40.6 cm wide · approximately 10 cm long",
+              "value": "SIBAL fabric · dimensions disputed",
               "status": "Source checked for this review",
               "tier": "checked",
               "source": "NASA Table I · test 1-2 · PDF p. 29",
@@ -46504,7 +46504,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -46955,7 +46955,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -47080,7 +47080,7 @@
             },
             {
               "field": "Conditions",
-              "value": "PMMA flat sample · 1 mm thick · 1.2 cm wide · two-sided · opposed flow",
+              "value": "PMMA flat sample · 1 mm thick · two-sided · opposed flow · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA BASS-II Table 5.1 · M7 · PDF p. 65",
@@ -47400,7 +47400,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
@@ -47818,7 +47818,7 @@
             },
             {
               "field": "Conditions",
-              "value": "SIBAL cotton-fiberglass fabric · 2.2 cm wide · 10 cm/s concurrent flow · 21% O₂",
+              "value": "SIBAL cotton-fiberglass fabric · 10 cm/s concurrent flow · 21% O₂ · width disputed",
               "status": "",
               "tier": "unrated",
               "source": "NASA paper · Appendix · GMT96-T7 · PDF p. 9",
