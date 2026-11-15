@@ -24,6 +24,14 @@
     status.innerHTML = `${esc(message)} <button type="button" class="retry">Retry</button>`;
     status.querySelector('.retry').addEventListener('click', again);
   };
+  // This submission carries two checked records. Views that need the full dataset say so plainly, instead of an error with Retry.
+  const SCOPE = `<p><b>Part of the full-data demo.</b> This view reads Flaregrain’s full NASA PSI dataset (24 investigations, 2,009 table rows), which the team shows live. This public site carries two hand-checked NASA records, BASS-II B1 and Saffire I-1, with links to the original reports.</p>
+    <p class="scope-links"><a class="btn btn-line" href="compare.html?ids=B1,S1">Compare B1 and Saffire I-1</a> <a class="btn btn-line" href="evidence.html">Open the evidence</a></p>`;
+  const scope = (el, hide = []) => {
+    hide.forEach(x => { if (x) { x.hidden = true; x.textContent = ''; } });
+    el.className = 'scope-note';
+    el.innerHTML = SCOPE;
+  };
 
   // Tabs with arrow-key movement (role=tablist).
   function tabs(list, onSelect) {
@@ -188,7 +196,11 @@
         }
         draw(d);
         status.textContent = `${d.nearCount} rows near ${d.chosen.o2}% oxygen and ${d.chosen.psi} psi.`;
-      } catch (err) { if (mine === ticket) retry(status, err.status ? err.message : 'Habitat data is unavailable right now.', load); }
+      } catch (err) {
+        if (mine !== ticket) return;
+        if (err.status === 404) return scope(document.querySelector('.hab-layout'), [presets, $('hab-form'), status]);
+        retry(status, err.status ? err.message : 'Habitat data is unavailable right now.', load);
+      }
     }
     const later = () => { outs(); clearTimeout(timer); timer = setTimeout(load, 120); };
     o2.addEventListener('input', later); psi.addEventListener('input', later); g.addEventListener('change', load);
@@ -243,12 +255,15 @@
       if (!served) return offline(panel);
       status.textContent = 'Loading…';
       try { data = await api('/api/insights'); status.textContent = ''; }
-      catch (err) { return retry(status, 'This section is unavailable right now.', () => location.reload()); }
+      catch (err) {
+        if (err.status === 404) return scope(panel, [document.querySelector('.tabs-bar'), status]);
+        return retry(status, 'This section is unavailable right now.', () => location.reload());
+      }
       const start = document.querySelector(`[data-pane="${location.hash.slice(1)}"]`) || $('tab-needs');
       sel(start);
     })();
   }
 
   /* ---------- System design ---------- */
-  if (page === 'system') embed($('system-embed'));
+  if (page === 'system') scope($('system-embed'));
 })();
