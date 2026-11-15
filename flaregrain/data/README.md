@@ -8,6 +8,17 @@ The 13 hand-checked NASA records and the prepared comparisons that the Ask, Comp
 - **Comparisons:** cover the 110 ordered pairs among the 11 runs.
 - **Explanations:** 39 pairs carry a saved explanation. Its facts fingerprint matches these records exactly, and every sentence was kept by the sentence checker. It's labelled as Flaregrain's reading, not NASA evidence.
 
+## `moon-mars-air.json`
+
+The Moon & Mars air page's snapshot. For seven habitat atmospheres (ISS cabin, Moon base or rover, two BRE atmospheres, spacesuit, Earth at sea level and an assumed Mars habitat), it gives how many NASA PSI table rows were tested nearby, from which investigations, in which gravity, and what is untested, plus which of the 13 checked records sit nearest.
+
+- **Source:** the full-data demo's PSI catalog (2,009 rows, 24 investigations) and its habitat rules at commit `c219442`. The catalog's SHA-256 is recorded in the file.
+- **Near:** a row with both oxygen and a usable pressure within 3 points of oxygen and 1.5 psi, the demo's own rule. Rows with oxygen but no usable pressure are counted apart.
+- **Left out:** PSI-10 (ACME/Flame Design), whose PSI record has a blank licence field.
+- **Holds:** counts, ranges and record ids only, no table rows. It never interpolates.
+- **Rebuild:** `python3 -I flaregrain/intake/build_moon_mars_air.py --catalog dashboard_catalog.json`. `tests/run.py` recounts the checked records from `compare-data.json` and, with `FLAREGRAIN_CATALOG` set to the demo's catalog, recounts the whole snapshot.
+- **Copy:** the page reads the identical `redesign/moon-mars-air.json`, because the preview package ships `redesign/` whole and only `compare-data.json` from this folder. The tests check that both copies match.
+
 ## `report-passages.json`
 
 Passages from the 9 NASA reports Flaregrain cites, cut into pieces of about 600 characters. The full-data demo searches these passages to answer from the reports, in its "From NASA reports" section. This public site doesn't use the file yet; it's published so the retrieval layer's input can be inspected.

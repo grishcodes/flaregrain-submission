@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flaregrain · What the data says</title>
-<meta name="description" content="Fire-safety needs, equipment implications, trends and NASA data issues from the PSI combustion archive.">
+<title>Flaregrain · Findings</title>
+<meta name="description" content="Four findings from NASA’s combustion reports and PSI tables, each with its NASA sources and the checked records behind it.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.png" type="image/png" sizes="180x180">
@@ -22,26 +22,90 @@
 <div class="chrome">
   <a class="brand" href="index.html"><b>(FLAREGRAIN)</b><span class="mono">Sparkline Foundry</span></a>
   <nav aria-label="Destinations"><ul class="nav">
-    <li><a href="index.html" aria-current="page">Ask &amp; browse <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+    <li><a href="index.html">Ask &amp; browse <svg aria-hidden="true"><use href="#out"/></svg></a></li>
     <li><a href="compare.html">Compare <svg aria-hidden="true"><use href="#out"/></svg></a></li>
     <li><a href="evidence.html">Evidence <svg aria-hidden="true"><use href="#out"/></svg></a></li>
-    <li><a href="habitat.html">Habitat <svg aria-hidden="true"><use href="#out"/></svg></a></li>
+    <li><a href="habitat.html">Moon &amp; Mars air <svg aria-hidden="true"><use href="#out"/></svg></a></li>
     <li><a href="system.html">System design <svg aria-hidden="true"><use href="#out"/></svg></a></li>
   </ul></nav>
 </div>
 <main class="sub" id="main" tabindex="-1">
   <header class="sub-head">
-    <h1><span class="mono">(What the data says)</span>What the data says</h1>
-    <p>In the full-data demo, Flaregrain reads what NASA’s combustion research says for fire safety across all 24 investigations. NASA evidence, our readings and our models are labelled apart.</p>
+    <h1>Findings</h1>
+    <p>Four findings from NASA’s reports and PSI tables, each with its NASA sources. Values stay as NASA printed them; Flaregrain’s readings are labelled as ours.</p>
   </header>
-  <div class="tabs-bar" role="tablist" aria-label="Insight views">
-    <button role="tab" id="tab-needs" aria-controls="panel-in" aria-selected="true" data-pane="needs">Fire-safety needs</button>
-    <button role="tab" id="tab-equipment" aria-controls="panel-in" aria-selected="false" tabindex="-1" data-pane="equipment">Equipment</button>
-    <button role="tab" id="tab-trends" aria-controls="panel-in" aria-selected="false" tabindex="-1" data-pane="trends">Trends</button>
-    <button role="tab" id="tab-issues" aria-controls="panel-in" aria-selected="false" tabindex="-1" data-pane="issues">Data issues</button>
+  <ul class="key" aria-label="What the markers mean">
+    <li><span class="mk t1" aria-hidden="true"></span>NASA source, checked</li>
+    <li><span class="mk t3" aria-hidden="true"></span>Flaregrain reading, not NASA’s words</li>
+  </ul>
+  <div class="in-grid" id="findings" style="margin-top:22px">
+
+    <article class="in-card" id="airflow-shutoff">
+      <p class="mono">Finding 1 · BASS-II B1 and Saffire I-1</p>
+      <h2>Comparing two airflow shutoff observations</h2>
+      <p>Start with a question: <b>How long did the flame take to go out after airflow stopped?</b> Both observations describe prompt extinction in their respective tests. The cited passages give no elapsed time from shutoff to extinction in seconds.</p>
+      <ul class="in-ev">
+        <li><span class="mk t1" aria-hidden="true"></span><b>BASS-II B1, sample 147.</b> The flame went out quickly after airflow was stopped. The table gives a qualitative observation. <a href="https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111" target="_blank" rel="noopener">NASA BASS-II summary, Table A.1, PDF p. 111 ↗</a></li>
+        <li><span class="mk t1" aria-hidden="true"></span><b>Saffire I-1, wide SIBAL fabric in concurrent flow.</b> The investigators describe the flame going out immediately when airflow stopped at the end of the run. The 420 seconds is the test duration up to shutoff. <a href="https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=16" target="_blank" rel="noopener">NASA Saffire results, PDF pp. 14–16 ↗</a></li>
+      </ul>
+      <p class="limit"><span class="mono">Limits</span>BASS-II B1 used PMMA film with opposed flow. Saffire I-1 used cotton–fiberglass fabric with concurrent flow. Keep the conditions beside each observation when comparing them.</p>
+      <p class="in-impl"><span class="mk t3" aria-hidden="true"></span><span class="mono">Flaregrain reading</span> This example illustrates Flaregrain’s comparison design: put the observations and their source links side by side, and show where an exact value is unavailable. The original wording and figures remain in the linked reports.</p>
+      <p class="scope-links"><a class="btn btn-line" href="compare.html?ids=B1,S1">Compare B1 and Saffire I-1</a> <a class="btn btn-line" href="evidence.html?ids=B1,S1">Both sources side by side</a></p>
+    </article>
+
+    <article class="in-card" id="bass-ii-rod">
+      <p class="mono">Finding 2 · BASS-II · NASA source checked</p>
+      <h2>BASS-II: an acrylic rod kept burning at lower oxygen in microgravity</h2>
+      <p><span class="mk t1" aria-hidden="true"></span><span class="mono">What NASA reports</span> In the Burning and Suppression of Solids – II (BASS-II) experiment on the International Space Station, NASA researchers burned 24 PMMA (acrylic) rods in concurrent, stagnation-point flow and measured the conditions at which the flames blew off or quenched. For a ¼-inch PMMA rod, NASA reports:</p>
+      <table class="near">
+        <caption class="vh">BASS-II ¼-inch PMMA rod: oxygen values NASA reports</caption>
+        <thead><tr><th scope="col">Quantity</th><th scope="col">Value</th><th scope="col">Condition</th></tr></thead>
+        <tbody>
+          <tr><td>Steady flame spreading observed in microgravity (BASS-II)</td><td>13.6% oxygen</td><td>¼-inch PMMA rod, concurrent (stagnation-point) flow</td></tr>
+          <tr><td>Blowoff limit in normal gravity (1 g)</td><td>16% oxygen</td><td>the same ¼-inch rod</td></tr>
+          <tr><td>Oxygen margin of safety</td><td>−2.4 percentage points of oxygen</td><td>the difference between the two values above</td></tr>
+        </tbody>
+      </table>
+      <p>NASA’s conclusion on the same slide is that normal-gravity flammability limits for this material should be “de-rated by at least that much”. The slide also notes that the minimum of the flammability boundary lies at low flow speeds, on the order of diffusive flows.</p>
+      <div class="limit"><span class="mono">Limits</span><ul class="in-ev">
+        <li>One material, one geometry and one flow: a ¼-inch PMMA rod in concurrent, stagnation-point flow. It is not a general rule for other materials, thicknesses or opposed flow.</li>
+        <li>The slide reports steady spreading at 13.6% oxygen. It does not say that 13.6% is the lowest oxygen level at which the rod can burn in microgravity.</li>
+        <li>The slide does not state the ambient pressure or describe how the 1 g blowoff limit was measured.</li>
+        <li>Later BASS-II publications were not checked against these figures.</li>
+      </ul></div>
+      <p class="in-impl"><span class="mk t3" aria-hidden="true"></span><span class="mono">Flaregrain reading</span> This is NASA’s finding, shown with its source. Our only reading is the plain-language summary in the title: in microgravity this material kept burning at an oxygen level 2.4 percentage points below its normal-gravity blowoff limit. The oxygen concentrations are reported as printed. The margin is expressed in percentage points.</p>
+      <ul class="in-ev">
+        <li><a href="https://ntrs.nasa.gov/citations/20160000593" target="_blank" rel="noopener">NASA NTRS 20160000593, slide 18 of 21 ↗</a><span class="small">P. V. Ferkul, S. Bhattacharjee, C. Fernandez-Pello, F. Miller, S. L. Olson, F. Takahashi and J. S. T’ien, <i>Combustion of Solids in Microgravity: Results from the BASS-II Experiment</i>, American Society for Gravitational and Space Research conference, Pasadena, CA, October 23–26, 2014. Slide “Spacecraft Materials Microgravity Research on Flammability” (Sandra Olson, NASA Glenn Research Center). NTRS lists the record with public distribution and the copyright determination “public use permitted”.</span></li>
+      </ul>
+      <p>The rod is not one of this site’s 13 checked records. Prepared with AI assistance (Claude Code) and checked against the decoded text of slide 18.</p>
+    </article>
+
+    <article class="in-card" id="flex-pressure">
+      <p class="mono">Finding 3 · FLEX test 114</p>
+      <h2>Reading an unverified pressure in FLEX</h2>
+      <p><span class="mk t1" aria-hidden="true"></span><span class="mono">What NASA reports</span> NASA’s Flame Extinguishment Experiment lists <b>0 mmHg</b> for ambient pressure in test <b>114</b>, run <b>C11M201</b>. The PSI-69 experimental table and NASA’s technical report both print zero. Those entries establish what was reported. The actual chamber pressure and the reason for the zero remain unverified.</p>
+      <p class="in-impl"><span class="mk t3" aria-hidden="true"></span><span class="mono">Flaregrain reading</span> Keep the printed <b>0 mmHg</b> visible as <b>reported, unverified</b>. Leave the numeric pressure unset and omit this run from pressure charts and threshold filters. For example, a search for runs below 8 psi would otherwise treat this entry as a confirmed low-pressure measurement. The measurements from nearby runs apply to those runs only.</p>
+      <ul class="in-ev">
+        <li><a href="https://psi.nasa.gov/geode-py/ws/studies/PSI-69/download?file=6792be99b7b6ff8e65037e3a&amp;version=1&amp;studyVersion=5&amp;redirect=true" target="_blank" rel="noopener">NASA PSI, FLEX (PSI-69), experimental table, test 114 ↗</a><span class="small">Dataset DOI 10.60555/mbq8-0451</span></li>
+        <li><a href="https://ntrs.nasa.gov/api/citations/20150023456/downloads/20150023456.pdf" target="_blank" rel="noopener">NASA/TP—2015-216046, Table IX, printed page 22, FLEX–114 ↗</a></li>
+      </ul>
+      <p>Evidence review by <a href="https://github.com/Osmankhurram" target="_blank" rel="noopener">Osman</a>. Test 114 is not one of this site’s 13 checked records.</p>
+    </article>
+
+    <article class="in-card" id="saffire-thickness">
+      <p class="mono">Finding 4 · Saffire I-1 and BASS-II B1</p>
+      <h2>Reading a disputed measurement in Saffire I-1</h2>
+      <p>Flaregrain marks a field as disputed when two sources report values that cannot be reconciled from the evidence available. For the Saffire I-1 sample thickness, start with the number and the unit in each original source.</p>
+      <ul class="in-ev">
+        <li><span class="mk t1" aria-hidden="true"></span>Run <code>1-1</code> lists the cotton–fiberglass sample thickness as <b>0.37 mm</b>. <a href="https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf#page=29" target="_blank" rel="noopener">NASA investigator presentation, Table I, PDF page 29 ↗</a></li>
+        <li><span class="mk t1" aria-hidden="true"></span>Row <code>S1</code> lists <b>0.37</b> under the heading <b>Sample Thickness (cm)</b>. <a href="https://psi.nasa.gov/geode-py/ws/studies/PSI-98/download?file=6792c46eb7b6ff8e65037f3e&amp;version=1&amp;studyVersion=4&amp;redirect=true" target="_blank" rel="noopener">NASA PSI-98, Saffire-I experimental table, row S1 ↗</a></li>
+      </ul>
+      <p class="in-impl"><span class="mk t3" aria-hidden="true"></span><span class="mono">Flaregrain reading</span> Check the unit even when the printed numbers match. A literal reading of the CSV header would make that entry 3.7 mm. That calculation illustrates the discrepancy. The available records do not resolve which thickness to use, so keep the two entries visible and leave the comparison’s preferred thickness unset.</p>
+      <p class="limit"><span class="mono">Missing</span><span>A missing value is a separate case. In the <a href="https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf#page=111" target="_blank" rel="noopener">BASS-II summary, Table A.1, PDF page 111 ↗</a>, the B1 row describes rapid extinction after airflow stopped and gives no elapsed time for that interval. Show the observed outcome and leave the numeric delay unavailable.</span></p>
+      <p class="scope-links"><a class="btn btn-line" href="evidence.html?ids=S1">Saffire I-1 evidence</a> <a class="btn btn-line" href="compare.html?ids=B1,S1">Compare B1 and Saffire I-1</a></p>
+    </article>
+
   </div>
-  <p class="cmp-status mono" id="in-status" role="status" aria-live="polite"></p>
-  <section id="panel-in" role="tabpanel" aria-labelledby="tab-needs"></section>
 </main>
 <script src="drawer.js"></script>
 <script src="pages.js"></script>

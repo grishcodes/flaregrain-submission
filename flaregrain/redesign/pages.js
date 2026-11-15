@@ -1,4 +1,4 @@
-/* Secondary destinations: Browse, Evidence, Habitat, What the data says, System design. Data comes from the prototype API. */
+/* Secondary destinations: Browse, Evidence, Moon & Mars air, System design. Data comes from the prototype API. Findings is static. */
 (function () {
   const D = window.FlaregrainDrawer;
   const esc = D.esc, mk = D.mk;
@@ -152,115 +152,89 @@
     })();
   }
 
-  /* ---------- Habitat ---------- */
+  /* ---------- Moon & Mars air: a snapshot of the full-data demo's habitat answers, plus the nearest checked records ---------- */
   if (page === 'habitat') {
-    const o2 = $('hab-o2'), psi = $('hab-psi'), g = $('hab-g'), status = $('hab-status'), chart = $('hab-chart'), read = $('hab-read'), presets = $('hab-presets');
-    let timer = 0, ticket = 0, presetList = [];
-    const outs = () => { $('hab-o2-out').textContent = Number(o2.value).toFixed(1) + '%'; $('hab-psi-out').textContent = Number(psi.value).toFixed(1) + ' psi'; };
-    function draw(d) {
-      const W = 640, H = 400, L = 52, R = 14, T = 14, B = 70, maxO2 = 50, maxPsi = 30;
-      const X = v => L + Math.min(v, maxO2) / maxO2 * (W - L - R), Y = v => T + (1 - Math.min(v, maxPsi) / maxPsi) * (H - T - B), strip = H - 26;
-      const dots = d.points.map(([x, y]) => `<circle class="hp${Math.abs(x - d.chosen.o2) <= 3 && Math.abs(y - d.chosen.psi) <= 1.5 ? ' near' : ''}" cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="2.3"/>`).join('');
-      const ox = d.oxygenOnly.map(x => `<rect class="hs" x="${(X(x) - .8).toFixed(1)}" y="${strip}" width="1.6" height="9"/>`).join('');
-      const ticksX = [10, 20, 30, 40, 50].map(v => `<text x="${X(v)}" y="${strip - 10}" text-anchor="middle">${v}%</text>`).join('');
-      const ticksY = [0, 10, 20, 30].map(v => `<text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${v}</text><line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" class="grid"/>`).join('');
-      chart.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`NASA PSI rows by oxygen and pressure. ${d.points.length} rows with a pressure, ${d.oxygenOnly.length} with oxygen only. ${d.nearCount} near your choice.`)}">
-        ${ticksY}<rect class="moon" x="${X(30)}" y="${Y(10.2)}" width="${X(50) - X(30)}" height="${Y(0) - Y(10.2)}"/>
-        <text class="moon-l" x="${X(30) + 6}" y="${Y(10.2) - 6}">Moon base: ≥30% O₂, ≤10.2 psi</text>
-        ${dots}${ox}${ticksX}
-        <circle class="you" cx="${X(d.chosen.o2)}" cy="${Y(d.chosen.psi)}" r="10"/>
-        <text x="${(L + W - R) / 2}" y="${H - 2}" text-anchor="middle">Oxygen</text><text x="14" y="${(T + H - B) / 2}" transform="rotate(-90 14 ${(T + H - B) / 2})" text-anchor="middle">Pressure (psi)</text>
-        <text x="${L}" y="${strip + 22}" class="small">Oxygen-only rows (no pressure in the PSI table)</text></svg>
-        <figcaption class="mono">Each dot is a NASA PSI table row · bright: within 3 points of oxygen and 1.5 psi of your choice · ring: your choice</figcaption>`;
-      const flags = d.flags.map(f => `<li class="flag-${esc(f.kind)}">${esc(f.text)}</li>`).join('');
-      read.innerHTML = `
-        <p class="hab-big"><b>${plural(d.nearCount, 'row', 'rows')}</b> tested near ${d.chosen.o2}% oxygen and ${d.chosen.psi} psi${d.nearStudies.length ? `, from ${esc(d.nearStudies.join(', '))}` : ''}.</p>
-        <p class="mono">Oxygen partial pressure ${d.chosen.partialPressure} psi · Earth air 3.09 psi</p>
-        ${flags ? `<ul class="hab-flags" aria-label="Limits at this condition">${flags}</ul>` : ''}
-        <section class="hab-fan"><h2>Fan off at this oxygen?</h2>
-          <p>${mk('t3')}<span class="mono">Flaregrain reading</span> ${esc(d.fanOff.answer)}</p>
-          <ul>${d.fanOff.evidence.map(e => `<li>${mk(e.tier === 'context' ? 'context' : 'checked')} ${esc(e.text)}${e.url ? ` <a class="cite-link" href="${esc(e.url)}" target="_blank" rel="noopener">NASA source ${OUT}</a>` : ''}</li>`).join('')}</ul></section>
-        ${d.near.length ? `<details class="related"><summary class="mono">${plural(d.near.length, 'nearby row', 'nearby rows')}</summary><table class="near"><thead><tr><th scope="col">Investigation</th><th scope="col">Row</th><th scope="col">O₂</th><th scope="col">psi</th><th scope="col">Fuel</th></tr></thead><tbody>${d.near.map(r => `<tr><td>${esc(r.study)}</td><td>${esc(r.label)}</td><td>${r.o2}%</td><td>${r.psi}</td><td>${esc(r.fuel)}</td></tr>`).join('')}</tbody></table></details>` : ''}`;
-    }
-    async function load() {
-      const mine = ++ticket;
-      outs();
-      presets.querySelectorAll('button').forEach(btn => btn.setAttribute('aria-pressed', presetList[btn.dataset.i] && presetList[btn.dataset.i].o2 == o2.value && presetList[btn.dataset.i].psi == psi.value && presetList[btn.dataset.i].gravity === g.value));
-      try {
-        const d = await api(`/api/habitat?o2=${o2.value}&psi=${psi.value}&gravity=${g.value}`);
-        if (mine !== ticket) return;
-        if (!presetList.length) {
-          presetList = d.presets;
-          presets.innerHTML = presetList.map((p, i) => `<button type="button" data-i="${i}" title="${esc(p.note)}">${esc(p.label)}</button>`).join('');
-          load(); return;
-        }
-        draw(d);
-        status.textContent = `${d.nearCount} rows near ${d.chosen.o2}% oxygen and ${d.chosen.psi} psi.`;
-      } catch (err) {
-        if (mine !== ticket) return;
-        if (err.status === 404) return scope(document.querySelector('.hab-layout'), [presets, $('hab-form'), status]);
-        retry(status, err.status ? err.message : 'Habitat data is unavailable right now.', load);
-      }
-    }
-    const later = () => { outs(); clearTimeout(timer); timer = setTimeout(load, 120); };
-    o2.addEventListener('input', later); psi.addEventListener('input', later); g.addEventListener('change', load);
-    presets.addEventListener('click', e => { const btn = e.target.closest('[data-i]'); if (!btn) return; const p = presetList[btn.dataset.i]; o2.value = p.o2; psi.value = p.psi; g.value = p.gravity; load(); });
-    o2.value = 30; psi.value = 10.2; g.value = 'moon';
-    if (!served) offline(read); else load();
-  }
+    const status = $('hab-status'), chart = $('hab-chart'), read = $('hab-read'), presets = $('hab-presets'), method = $('hab-method');
+    const SHORT = {iss: 'ISS', moon: 'Moon', 'bre-265': 'BRE 26.5%', bre: 'BRE 34%', suit: 'Suit', earth: 'Earth', mars: 'Mars'};
+    const range = (r, unit) => r[0] === r[1] ? `${r[0]}${unit}` : `${r[0]}–${r[1]}${unit}`;
+    const names = list => list.map(i => i.name);
+    const joined = list => list.length < 3 ? list.join(' and ') : list.slice(0, -1).join(', ') + ' and ' + list.at(-1);
+    let snap = null;
 
-  /* ---------- What the data says ---------- */
-  if (page === 'insights') {
-    const panel = $('panel-in'), status = $('in-status');
-    let data = null;
-    const trendSvg = (fit, model) => {
-      const W = 420, H = 230, L = 40, R = 10, T = 10, B = 34;
-      const xs = [...fit.points.map(p => p[0]), ...fit.curve.map(c => c[0])], ys = [...fit.points.map(p => p[1]), ...fit.curve.map(c => c[3])];
-      const x0 = Math.min(...xs), x1 = Math.max(...xs), y1 = Math.ceil(Math.max(...ys));
-      const X = v => L + (v - x0) / (x1 - x0) * (W - L - R), Y = v => T + (1 - v / y1) * (H - T - B);
-      const band = fit.curve.map(c => `${X(c[0]).toFixed(1)},${Y(c[3]).toFixed(1)}`).join(' ') + ' ' + fit.curve.slice().reverse().map(c => `${X(c[0]).toFixed(1)},${Y(c[2]).toFixed(1)}`).join(' ');
-      return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`${model.title}, ${fit.fuel}: ${fit.n} PSI rows and the Flaregrain fit`)}">
-        <polygon class="band" points="${band}"/><polyline class="fit" points="${fit.curve.map(c => `${X(c[0]).toFixed(1)},${Y(c[1]).toFixed(1)}`).join(' ')}"/>
-        ${fit.points.map(p => `<circle class="${p[2] ? 'faint' : 'pt'}" cx="${X(p[0]).toFixed(1)}" cy="${Y(p[1]).toFixed(1)}" r="2.6"/>`).join('')}
-        <text x="${L}" y="${H - 6}">${Math.round(x0 * 100)}% O₂</text><text x="${W - R}" y="${H - 6}" text-anchor="end">${Math.round(x1 * 100)}% O₂</text>
-        <text x="${L - 6}" y="${T + 8}" text-anchor="end">${y1}</text><text x="${L - 6}" y="${H - B}" text-anchor="end">0</text></svg>`;
+    function draw(p) {
+      // Oxygen 15–45% by total pressure 0–16 psi. The spacesuit preset (100% O₂) sits off the chart at the right edge.
+      const W = 640, H = 400, L = 52, R = 18, T = 18, B = 48, lo = 15, hi = 45, top = 16;
+      const X = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R), Y = v => T + (1 - Math.min(v, top) / top) * (H - T - B);
+      const groups = new Map();
+      snap.presets.forEach(q => { const k = q.o2 + ',' + q.psi; groups.set(k, [...(groups.get(k) || []), q]); });
+      const boxes = [...groups.values()].map(g => {
+        const q = g[0], on = g.includes(p), off = q.o2 > hi;
+        const box = off ? '' : `<rect x="${X(q.o2 - 3).toFixed(1)}" y="${Y(q.psi + 1.5).toFixed(1)}" width="${(X(q.o2 + 3) - X(q.o2 - 3)).toFixed(1)}" height="${(Y(q.psi - 1.5) - Y(q.psi + 1.5)).toFixed(1)}" style="fill:none;stroke:var(${on ? '--ink-2' : '--line-2'});stroke-dasharray:3 3"/>`;
+        const cx = off ? W - R - 4 : X(q.o2), cy = Y(q.psi);
+        const label = `${g.map(x => SHORT[x.id]).join(' · ')}${off ? ' (100% O₂) →' : ''} · ${plural(q.near.rows, 'row', 'rows')}`;
+        // Label beside each point: left of BRE 26.5% and the off-chart suit, below BRE 34%, above-right otherwise.
+        const [dx, dy, anchor] = off ? [-12, -12, 'end'] : q.o2 === 26.5 ? [-12, 4, 'end'] : q.o2 === 34 ? [12, 20, 'start'] : [12, -12, 'start'];
+        return `${box}<circle class="${on ? 'you' : 'hp'}" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${on ? 9 : 4}"/>
+          <text x="${(cx + dx).toFixed(1)}" y="${(cy + dy).toFixed(1)}" text-anchor="${anchor}"${on ? ' style="fill:var(--ink)"' : ''}>${esc(label)}</text>`;
+      }).join('');
+      const placed = snap.checkedRecords.filter(c => c.o2 !== null && c.psi !== null);
+      const dots = placed.map(c => `<circle class="hp${p.checked.near.includes(c.id) ? ' near' : ''}" cx="${X(c.o2).toFixed(1)}" cy="${Y(c.psi).toFixed(1)}" r="2.6"><title>${esc((snap.records[c.id]?.name || c.id) + ` · ${c.o2}% O₂ · ${c.psi} psi`)}</title></circle>`).join('');
+      const ticksX = [15, 20, 25, 30, 35, 40, 45].map(v => `<text x="${X(v)}" y="${H - B + 18}" text-anchor="middle">${v}%</text>`).join('');
+      const ticksY = [0, 4, 8, 12, 16].map(v => `<line class="grid" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${v}</text>`).join('');
+      chart.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`Seven habitat presets by oxygen and pressure, each with its near box and its count of PSI table rows. ${p.label}: ${plural(p.near.rows, 'row', 'rows')} near it. ${placed.length} checked records in this site give both oxygen and pressure; ${p.checked.near.length} of them are near.`)}">
+        ${ticksY}<rect class="moon" x="${X(30)}" y="${Y(10.2)}" width="${X(hi) - X(30)}" height="${Y(0) - Y(10.2)}"/>
+        <text class="moon-l" x="${X(30) + 6}" y="${Y(0) - 8}">Moon base: ≥30% O₂, ≤10.2 psi</text>
+        ${boxes}${dots}${ticksX}
+        <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">Oxygen</text><text x="14" y="${(T + H - B) / 2}" transform="rotate(-90 14 ${(T + H - B) / 2})" text-anchor="middle">Total pressure (psi)</text></svg>
+        <figcaption class="mono">Ring: your preset · dashed box: within 3 points of oxygen and 1.5 psi, the demo’s “near” · small dots: checked records here that give oxygen and pressure (bright when near)</figcaption>`;
+    }
+
+    const recordLine = (id, extra) => {
+      const r = snap.records[id] || {name: id};
+      return `<li>${mk('checked')}<b>${esc(r.name)}</b>${extra ? ` <span class="small">${esc(extra)}</span>` : ''}
+        <span class="small">${r.comparable ? `<a class="cite-link" href="compare.html?a=${encodeURIComponent(id)}">Compare ${ARROW}</a> · ` : ''}<a class="cite-link" href="evidence.html?ids=${encodeURIComponent(id)}">Evidence ${ARROW}</a></span>${r.source?.url ? `<span class="small"><a href="${esc(r.source.url)}" target="_blank" rel="noopener">${esc(r.source.label)} ↗</a></span>` : ''}</li>`;
     };
-    const panes = {
-      needs: d => d.needs.map(n => `<article class="in-card"><h2>${esc(n.label)}</h2>
-        <p>${mk('context')}<span class="mono">NASA</span> ${esc(n.nasa)}</p>
-        ${n.gap ? `<p class="limit"><span class="mono">Gap</span>${esc(n.gap)}</p>` : ''}
-        <details class="related"><summary class="mono">${plural(n.investigations.length, 'investigation', 'investigations')}</summary><ul class="inv">${n.investigations.map(v => `<li><b>${esc(v.name)}</b> <span class="mono">${esc(v.psi)}</span>${v.lines.filter(l => l[1]).map(l => `<span>${esc(l[0])}: ${esc(l[1])}</span>`).join('')}</li>`).join('')}</ul></details></article>`).join(''),
-      equipment: d => d.equipment.map(c => `<article class="in-card"><p class="mono">${esc(c.area)}</p><h2>${esc(c.title)}</h2>
-        <ul class="in-ev">${c.evidence.map(e => `<li>${mk(e.tier === 'checked' ? 'checked' : e.tier === 'psi' ? 'psi' : e.tier === 'reading' ? 't3' : 'context')}${esc(e.text)}${e.source ? ` <a class="cite-link" href="${esc(e.source.url)}" target="_blank" rel="noopener">${esc(e.source.label)} ${OUT}</a>` : ''}</li>`).join('')}</ul>
-        <p class="in-impl">${mk('t3')}<span class="mono">Flaregrain reading · implication</span> ${esc(c.implication)}</p>
-        <p class="limit"><span class="mono">Not yet tested</span>${esc(c.untested)}</p>
-        <p class="mono in-rel">${c.related.map(r => esc(r.name)).join(' · ')}</p></article>`).join(''),
-      trends: d => d.trends.map(m => `<article class="in-card wide"><p class="mono">${mk('t3')}Flaregrain model · not NASA evidence · ${esc(m.psi)}</p><h2>${esc(m.title)}</h2>
-        <p>${esc(m.method)}</p>
-        ${m.fits.length ? `<div class="trend-grid">${m.fits.map(f => `<figure>${trendSvg(f, m)}<figcaption class="mono">${esc(f.fuel)} · ${f.n} PSI rows · r² ${f.r2}${f.effect != null ? ` · ${f.effect}% per 0.01 O₂` : ''}</figcaption></figure>`).join('')}</div>`
-          : `<p class="mono">${m.stats.n} rows · ${m.stats.ignited} ignited · ${m.stats.moonRows} Moon-base rows · cross-validated accuracy ${(m.stats.accuracy * 100).toFixed(0)}% (base rate ${(m.stats.baseRate * 100).toFixed(0)}%)</p>`}
-        <p class="limit"><span class="mono">Label</span>${esc(m.label)}</p></article>`).join(''),
-      issues: d => `<p class="in-total"><b>${plural(d.issues.flagged, 'flagged table value', 'flagged table values')}</b> and ${plural(d.issues.recordIssues, 'record issue', 'record issues')} across ${plural(d.issues.investigations.length, 'investigation', 'investigations')}. NASA’s printed value always stays visible; our reading sits beside it.</p>` +
-        d.issues.investigations.map(i => `<article class="in-card"><h2>${esc(i.name)} <a class="cite-link" href="${esc(i.page)}" target="_blank" rel="noopener">${esc(i.psi)} on NASA PSI ${OUT}</a></h2>
-        ${i.record.length ? `<ul class="in-ev">${i.record.map(t => `<li>${mk('context')}${esc(t)}</li>`).join('')}</ul>` : ''}
-        ${i.groups.length ? `<ul class="in-ev">${i.groups.map(gr => `<li>${mk('flag')}<b>${esc(gr.kind)}</b> · <span class="mono">${esc(gr.column)}</span> · ${gr.count}<span class="small">${gr.examples.map(esc).join(' ')}</span></li>`).join('')}</ul>` : ''}</article>`).join(''),
-    };
-    const show = pane => {
-      panel.setAttribute('aria-labelledby', 'tab-' + pane);
-      panel.innerHTML = `<div class="in-grid">${panes[pane](data)}</div>`;
-      history.replaceState(null, '', '#' + pane);
-    };
-    const sel = tabs(document.querySelector('.tabs-bar'), tab => data && show(tab.dataset.pane));
+    const point = id => snap.checkedRecords.find(c => c.id === id);
+
+    function show(p, announce) {
+      presets.querySelectorAll('button').forEach(btn => btn.setAttribute('aria-pressed', btn.dataset.id === p.id));
+      draw(p);
+      const n = p.near, ox = p.oxygenOnly, c = p.checked;
+      const table = n.investigations.length ? `<ul class="in-ev" aria-label="PSI table rows near ${esc(p.label)}, by investigation">${n.investigations.map(i =>
+        `<li>${mk('psi')}<b>${esc(i.name)}</b> <span class="mono">${esc(i.psi)}</span> · ${plural(i.rows, 'row', 'rows')} · ${range(i.o2, '%')} O₂ · ${range(i.pressurePsi, ' psi')}</li>`).join('')}</ul>` : '';
+      const extra = [
+        n.hotIgnition.known ? `Of the ${n.hotIgnition.known} with a hot-ignition outcome, ${n.hotIgnition.ignited} ignited.` : '',
+        ox.rows ? `Another ${plural(ox.rows, 'row matches', 'rows match')} the oxygen but ${ox.rows === 1 ? 'gives' : 'give'} no usable pressure (${ox.investigations.map(i => `${i.name} ${i.rows}`).join(', ')})${ox.unverifiedPressure ? `; ${ox.unverifiedPressure} of them ${ox.unverifiedPressure === 1 ? 'prints a pressure' : 'print pressures'} NASA has not verified` : ''}. They are counted apart, never placed.` : '',
+      ].filter(Boolean).join(' ');
+      const nearest = c.nearest.map(x => recordLine(x.id, `${x.o2Points} points of oxygen and ${x.psiApart} psi away`)).join('');
+      read.innerHTML = `
+        <p class="mono">${esc(p.label)} · ${p.o2}% O₂ at ${p.psi} psi · ${esc(p.gravityLabel)}</p>
+        <p class="hab-big">${n.rows ? `<b>${plural(n.rows, 'NASA PSI table row', 'NASA PSI table rows')}</b> tested near this atmosphere, from ${esc(joined(names(n.investigations)))}.` : '<b>No NASA PSI table row</b> was tested near this atmosphere.'}</p>
+        <p class="limit"><span class="mono">Preset</span>${esc(p.note)}</p>
+        <p class="mono">Oxygen partial pressure ${p.partialPressurePsi} psi · ${p.earthAirShare}% of Earth air’s 3.09 psi</p>
+        ${table}${extra ? `<p class="limit"><span class="mono">Also</span>${esc(extra)}</p>` : ''}
+        <p class="limit"><span class="mono">Gravity</span>${n.rows ? `All ${plural(n.rows, 'row', 'rows')} counted here ${n.rows === 1 ? 'is' : 'are'} ${esc(n.gravity.join(' and '))} tests. ` : ''}${esc(p.gravityNote)}</p>
+        <section class="hab-fan" aria-labelledby="hab-untested"><h2 id="hab-untested">Untested here</h2>
+          <ul class="hab-flags">${p.flags.map(f => `<li class="flag-${esc(f.kind)}">${esc(f.text)}</li>`).join('')}${p.untested.map(t => `<li>${esc(t)}</li>`).join('')}</ul></section>
+        <section class="hab-fan" aria-labelledby="hab-checked"><h2 id="hab-checked">Checked records in this site</h2>
+          ${c.near.length ? `<p>${plural(c.near.length, 'checked record was', 'checked records were')} tested near this atmosphere:</p><ul class="in-ev">${c.near.map(id => recordLine(id, `${point(id).o2}% O₂ · ${point(id).psi} psi`)).join('')}</ul>`
+            : `<p>None of the 13 checked records was tested near this atmosphere. The nearest, by the demo’s own distance:</p><ul class="in-ev">${nearest}</ul>`}
+          ${c.oxygenOnly.length ? `<p>${plural(c.oxygenOnly.length, 'more matches', 'more match')} the oxygen, but the source gives no pressure, so ${c.oxygenOnly.length === 1 ? 'it is' : 'they are'} not placed:</p><ul class="in-ev">${c.oxygenOnly.map(id => recordLine(id, `${point(id).o2}% O₂ · pressure not given`)).join('')}</ul>` : ''}
+        </section>`;
+      status.textContent = `${p.label}: ${plural(n.rows, 'row', 'rows')} near ${p.o2}% oxygen and ${p.psi} psi.`;
+      if (announce) history.replaceState(null, '', '#' + p.id);
+    }
+
     (async () => {
-      if (!served) return offline(panel);
-      status.textContent = 'Loading…';
-      try { data = await api('/api/insights'); status.textContent = ''; }
-      catch (err) {
-        if (err.status === 404) return scope(panel, [document.querySelector('.tabs-bar'), status]);
-        return retry(status, 'This section is unavailable right now.', () => location.reload());
-      }
-      const start = document.querySelector(`[data-pane="${location.hash.slice(1)}"]`) || $('tab-needs');
-      sel(start);
+      if (!served) return offline(read);
+      status.textContent = 'Loading the snapshot…';
+      try { snap = await api('/api/habitat'); }
+      catch (err) { return retry(status, err.status ? err.message : 'The snapshot is unavailable right now.', () => location.reload()); }
+      presets.innerHTML = snap.presets.map(p => `<button type="button" data-id="${esc(p.id)}" aria-pressed="false">${esc(p.label)}</button>`).join('');
+      presets.addEventListener('click', e => { const btn = e.target.closest('[data-id]'); if (btn) show(snap.presets.find(p => p.id === btn.dataset.id), true); });
+      const src = snap.source, ex = snap.method.excluded.map(x => `${x.psi}: ${x.reason}`).join(' ');
+      method.innerHTML = `<b>How this snapshot was made.</b> ${esc(`The full-data demo’s habitat view answers these questions live from ${src.rows.toLocaleString('en-CA')} NASA PSI table rows in ${src.investigations} investigations. This page shows its answers for seven presets, taken at commit ${src.commit} with the demo’s own rules. ${snap.method.near} ${snap.method.oxygenOnly} ${ex} ${snap.method.checked} Interpolation: ${snap.method.interpolation}`)}`;
+      show(snap.presets.find(p => p.id === location.hash.slice(1)) || snap.presets.find(p => p.id === 'moon'), false);
     })();
   }
 
