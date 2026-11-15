@@ -1825,7 +1825,105 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and oxygen levels.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported flame spreading halfway across the acrylic film while BASS-II B10 reported steady spread at several airflow settings.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported airflow switched off after flame spread while BASS-II B10 reported fan settings lowered in steps until extinction.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported oxygen at 22.2 vol% while BASS-II B10 reported oxygen at 20.8 vol%.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Both records report missing pressure information as unresolved.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              },
+              {
+                "id": "F14",
+                "record": "BASS-II B10",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "B1,B11": {
@@ -2205,7 +2303,105 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and oxygen levels, with BASS-II B1 citing 2 cm wide · 100 µm thick · PMMA film and BASS-II B11 citing PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reports flame spreading halfway across the film before airflow shutdown, while BASS-II B11 reports steady spread at multiple airflow settings before extinction.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 indicates airflow direction opposes flame spread, while BASS-II B11 states flow direction is opposed.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "BASS-II B1",
+                "field": "Flow direction",
+                "value": "Opposed to flame spread"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B11",
+                "field": "Flow direction",
+                "value": "Opposed"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 shows fan display 62 and air display 5, while BASS-II B11 shows fan displays 2.5 (59), 1.3, 0.7, 0.5, 0.35 and air display 5, 3, 1, <1.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B1",
+                "field": "Fan and air displays",
+                "value": "Fan display 62 · Air display 5"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B11",
+                "field": "Fan and air displays",
+                "value": "Fan display 2.5 (59), 1.3, 0.7, 0.5, 0.35 · Air display 5, 3, 1, <1"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reports oxygen at calibrated 22.2 → 22.2 vol%, while BASS-II B11 reports calibrated O₂ 21.0 → 20.7 vol%.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "B1,S1": {
@@ -3071,7 +3267,82 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B1 reports flame spreading halfway across the acrylic film while Saffire II-5 reports a 145-second burn duration.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F14",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reports airflow direction opposed to flame spread while Saffire II-5 reports a concurrent flow of 20 cm/s.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "BASS-II B1",
+                "field": "Flow direction",
+                "value": "Opposed to flame spread"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reports oxygen levels at 22.2 vol% while Saffire II-5 reports starting oxygen at 22.1%.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "Saffire II-5",
+                "field": "Starting oxygen",
+                "value": "22.1% · ISS reading for Saffire II"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reports pressure as missing while Saffire II-5 reports pressure at 100 kPa.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              },
+              {
+                "id": "F15",
+                "record": "Saffire II-5",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 4 cm at steady state · 4 cm at maximum · 46 cm duct height"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "B1,S12": {
@@ -3887,7 +4158,123 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and airflow behavior.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              },
+              {
+                "id": "F11",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              },
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F3",
+                "record": "BASS-II B1",
+                "field": "Flow direction",
+                "value": "Opposed to flame spread"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B1",
+                "field": "Fan and air displays",
+                "value": "Fan display 62 · Air display 5"
+              },
+              {
+                "id": "F12",
+                "record": "Saffire II-6",
+                "field": "Flow direction",
+                "value": "Concurrent"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported flame spreads halfway across the acrylic film while Saffire II-6 reported a burn length of 29 cm.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F15",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported airflow switched off after flame spread while Saffire II-6 reported concurrent flow direction.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F12",
+                "record": "Saffire II-6",
+                "field": "Flow direction",
+                "value": "Concurrent"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported calibrated oxygen at 22.2 vol% while Saffire II-6 reported oxygen at about 22.1%.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F13",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reported pressure at 100 kPa while BASS-II B1 has unresolved pressure data.",
+            "cites": [
+              {
+                "id": "F16",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F7",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "B1,M7": {
@@ -4677,7 +5064,65 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B1 reported oxygen concentration as 22.2 vol% while FLEX test 2 reported methanol combustion conditions with O₂ mole fraction 0.21.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F8",
+                "record": "FLEX test 2",
+                "field": "Conditions",
+                "value": "Methanol · 762 mmHg · O₂ mole fraction 0.21"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported flame extinction after airflow shutdown while FLEX test 2 recorded extinction after a 5 s burn.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F10",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 has disputed burning rate values while BASS-II B1 has no exact delay after shutoff.",
+            "cites": [
+              {
+                "id": "F12",
+                "record": "FLEX test 2",
+                "field": "Burning rate unit",
+                "value": "Report: 0.6 mm²/s (printed .6) · archive header: Burning rate; mm. Unit mapping unresolved. The archive gives the same 0.6, and its header row also shortens O₂, N₂ and CO₂ to O, N and CO, which points to a formatting loss."
+              },
+              {
+                "id": "F4",
+                "record": "BASS-II B1",
+                "field": "Delay after shutoff",
+                "value": "No exact value. The run note says “flame extinguished very quickly.”"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "B1,S31": {
@@ -5102,7 +5547,65 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B1 reports calibrated oxygen at 22.2 vol%, while Saffire III-1 reports oxygen levels of 21.2 to 21.0% in the 2017 table and 21% in the 2021 summary table.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F13",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 does not report pressure in the table, while Saffire III-1 reports flame size and pressure at 100 kPa.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              },
+              {
+                "id": "F14",
+                "record": "Saffire III-1",
+                "field": "Flame size and pressure",
+                "value": "5 cm at steady state · 8.2 cm at maximum · 100 kPa · 46 cm duct height"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reports flame extinguishing quickly with no exact delay, while Saffire III-1 reports a 300 s burn duration and 84 cm burn length.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B1",
+                "field": "Delay after shutoff",
+                "value": "No exact value. The run note says “flame extinguished very quickly.”"
+              },
+              {
+                "id": "F12",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "B1,BASS-T7": {
@@ -5901,7 +6404,106 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report PMMA film specimens with opposed airflow and flame extinction events.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              },
+              {
+                "id": "F5",
+                "record": "BASS-II B10",
+                "field": "Flow direction",
+                "value": "Opposed"
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B1",
+                "field": "Flow direction",
+                "value": "Opposed to flame spread"
+              },
+              {
+                "id": "F1",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reported a fan display sequence of 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 while BASS-II B1 reported a fan display of 62.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B10",
+                "field": "Fan and air displays",
+                "value": "Fan display 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 · Air display 5, 4, 3, 2, 1"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B1",
+                "field": "Fan and air displays",
+                "value": "Fan display 62 · Air display 5"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reported a calibrated oxygen concentration of 21.0 → 20.8 vol% while BASS-II B1 reported 22.2 → 22.2 vol%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reported flame extinction at fan setting 0.35 while BASS-II B1 reported flame extinguishing rapidly after airflow switch-off.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "B10,B11": {
@@ -6281,7 +6883,111 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report steady spread at several airflow settings with flame extinction at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "Both records report opposed flow direction and fan control settings at extinction of 0.35 potentiometer units.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B10",
+                "field": "Flow direction",
+                "value": "Opposed"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B11",
+                "field": "Flow direction",
+                "value": "Opposed"
+              },
+              {
+                "id": "F2",
+                "record": "BASS-II B10",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B11",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reports a 1 cm wide specimen while BASS-II B11 reports a 2 cm wide specimen.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reports fan displays 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 while BASS-II B11 reports fan displays 2.5 (59), 1.3, 0.7, 0.5, 0.35.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B10",
+                "field": "Fan and air displays",
+                "value": "Fan display 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 · Air display 5, 4, 3, 2, 1"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B11",
+                "field": "Fan and air displays",
+                "value": "Fan display 2.5 (59), 1.3, 0.7, 0.5, 0.35 · Air display 5, 3, 1, <1"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reports air displays 5, 4, 3, 2, 1 while BASS-II B11 reports air displays 5, 3, 1, <1.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B10",
+                "field": "Fan and air displays",
+                "value": "Fan display 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 · Air display 5, 4, 3, 2, 1"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B11",
+                "field": "Fan and air displays",
+                "value": "Fan display 2.5 (59), 1.3, 0.7, 0.5, 0.35 · Air display 5, 3, 1, <1"
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "B10,S1": {
@@ -7145,7 +7851,48 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B10 reported PMMA film 1 cm wide and 0.2 mm thick with calibrated oxygen 21.0 → 20.8 vol%, while Saffire II-5 reported SIBAL fabric 5 cm wide with 20 cm/s concurrent flow.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reported fan control setting at extinction as 0.35 potentiometer setting, while Saffire II-5 reported burn duration 145 s and burn length 29 cm.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "BASS-II B10",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F14",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "B10,S12": {
@@ -7961,7 +8708,31 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B10 reported PMMA film 1 cm wide and 0.2 mm thick with calibrated oxygen 21.0 → 20.8 vol%, while Saffire II-6 reported SIBAL fabric 5 cm wide and 29 cm long.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              }
+            ]
+          }
+        ],
+        "removed": 4
+      },
       "live": false
     },
     "B10,M7": {
@@ -8751,7 +9522,31 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report extinction timing: BASS-II B10 has flame extinguishes at fan setting 0.35 while FLEX test 2 has extinction after 5 s burn.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F10",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              }
+            ]
+          }
+        ],
+        "removed": 4
+      },
       "live": false
     },
     "B10,S31": {
@@ -9176,7 +9971,88 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B10 reported PMMA film 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%, while Saffire III-1 reported SIBAL cotton-fiberglass fabric 40.6 cm wide · 94 cm long · concurrent flow.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F8",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B10 reported steady spread at several airflow settings with flame extinguishing at fan setting 0.35, while Saffire III-1 reported a 300 s burn duration and about 84 cm burn length.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F12",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reported oxygen levels 21.2 to 21.0% in the 2017 table and 21% in the 2021 summary table, while BASS-II B10 reported specimen and oxygen details as PMMA film 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%.",
+            "cites": [
+              {
+                "id": "F13",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F4",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reported flame spread rate 2.3 mm/s, while BASS-II B10 reported no compatible measurement for calibrated local airspeed at extinction.",
+            "cites": [
+              {
+                "id": "F9",
+                "record": "Saffire III-1",
+                "field": "Recorded observation",
+                "value": "2.3 mm/s flame spread"
+              },
+              {
+                "id": "F3",
+                "record": "BASS-II B10",
+                "field": "Calibrated local airspeed at extinction",
+                "value": "No compatible measurement in the evidence used here"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire III-1",
+                "field": "Flame spread rate",
+                "value": "2.3 mm/s with 25 cm/s in two NASA reports and 30 cm/s in the archive"
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "B10,BASS-T7": {
@@ -9975,7 +10851,123 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report PMMA film specimens with 2 cm width and opposed airflow direction.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B1",
+                "field": "Flow direction",
+                "value": "Opposed to flame spread"
+              },
+              {
+                "id": "F5",
+                "record": "BASS-II B11",
+                "field": "Flow direction",
+                "value": "Opposed"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reported a 0.2 mm thick specimen with calibrated oxygen levels from 21.0 to 20.7 vol%, while BASS-II B1 reported a 100 µm thick specimen with calibrated oxygen at 22.2 vol%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reported fan display values decreasing to 0.35 at extinction, while BASS-II B1 reported fan display 62 and air display 5.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B11",
+                "field": "Fan and air displays",
+                "value": "Fan display 2.5 (59), 1.3, 0.7, 0.5, 0.35 · Air display 5, 3, 1, <1"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B1",
+                "field": "Fan and air displays",
+                "value": "Fan display 62 · Air display 5"
+              },
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reported flame extinguishing at fan setting 0.35, while BASS-II B1 reported flame spreading halfway before extinguishing rapidly.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          },
+          {
+            "text": "Both records have unresolved pressure information, as neither reports a specific value in Table A.1.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "BASS-II B11",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              },
+              {
+                "id": "F14",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "B11,B10": {
@@ -10355,7 +11347,99 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report PMMA film specimens with 0.2 mm thickness and calibrated oxygen levels from 21.0 to 20.7 vol% for BASS-II B11 and 21.0 to 20.8 vol% for BASS-II B10.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Both records report steady spread at several airflow settings with fan settings lowered in steps and flame extinguishing at 0.35.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reports a specimen width of 2 cm while BASS-II B10 reports 1 cm.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reports fan displays 2.5 (59), 1.3, 0.7, 0.5, 0.35 while BASS-II B10 reports 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B11",
+                "field": "Fan and air displays",
+                "value": "Fan display 2.5 (59), 1.3, 0.7, 0.5, 0.35 · Air display 5, 3, 1, <1"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B10",
+                "field": "Fan and air displays",
+                "value": "Fan display 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 · Air display 5, 4, 3, 2, 1"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reports calibrated oxygen levels dropping to 20.7 vol% while BASS-II B10 reports dropping to 20.8 vol%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "B11,S1": {
@@ -11219,7 +12303,54 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "BASS-II B11 reported PMMA film 2 cm wide and 0.2 mm thick with calibrated oxygen 21.0 → 20.7 vol%, while Saffire II-5 reported SIBAL fabric 5 cm wide with 20 cm/s concurrent flow.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reported flame extinction at fan setting 0.35, while Saffire II-5 reported a 145 s burn duration.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "BASS-II B11",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F14",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "B11,S12": {
@@ -12035,7 +13166,94 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and oxygen levels, with BASS-II B11 citing PMMA film 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol% and Saffire II-6 citing SIBAL fabric 5 cm wide · 29 cm long.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F11",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reports steady flame spread at multiple airflow settings with extinction at fan setting 0.35, while Saffire II-6 reports concurrent airflow direction and a 115 s burn duration.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F2",
+                "record": "BASS-II B11",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F15",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F12",
+                "record": "Saffire II-6",
+                "field": "Flow direction",
+                "value": "Concurrent"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 states pressure is not reported in the table, while Saffire II-6 reports 100 kPa pressure at steady state.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "BASS-II B11",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              },
+              {
+                "id": "F16",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reports flow direction as opposed, while Saffire II-6 reports concurrent airflow direction.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "BASS-II B11",
+                "field": "Flow direction",
+                "value": "Opposed"
+              },
+              {
+                "id": "F12",
+                "record": "Saffire II-6",
+                "field": "Flow direction",
+                "value": "Concurrent"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "B11,M7": {
@@ -12825,7 +14043,31 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report extinction timing: BASS-II B11 reports flame extinguishes at fan setting 0.35 while FLEX test 2 reports extinction after 5 s burn.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F10",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              }
+            ]
+          }
+        ],
+        "removed": 4
+      },
       "live": false
     },
     "B11,S31": {
@@ -13250,7 +14492,77 @@
           "reason": "Both use PMMA with opposed airflow."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and oxygen levels, with BASS-II B11 citing PMMA film 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol% and Saffire III-1 citing SIBAL cotton-fiberglass fabric 40.6 cm wide · 94 cm long · concurrent flow.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F8",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              },
+              {
+                "id": "F16",
+                "record": "Saffire III-1",
+                "field": "Sample thickness",
+                "value": "Report table: 0.37 mm. Archive CSV: .33 cm."
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reported steady flame spread at fan settings down to 0.35, while Saffire III-1 reported a flame spread rate of 2.3 mm/s.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F9",
+                "record": "Saffire III-1",
+                "field": "Recorded observation",
+                "value": "2.3 mm/s flame spread"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire III-1",
+                "field": "Flame spread rate",
+                "value": "2.3 mm/s with 25 cm/s in two NASA reports and 30 cm/s in the archive"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B11 reported fan control setting at extinction as 0.35 · potentiometer setting, while Saffire III-1 reported burn duration of 300 s and burn length of about 84 cm.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "BASS-II B11",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F12",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "B11,BASS-T7": {
@@ -18732,7 +20044,105 @@
           "reason": "Both use SIBAL. Check the different airflow conditions."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and airflow details.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports a 5 cm wide SIBAL fabric with 20 cm/s concurrent flow while BASS-II B1 reports a 2 cm wide PMMA film with 100 µm thickness.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports a 29 cm burn length while BASS-II B1 reports flame spreading halfway across the acrylic film.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports a 145 s burn duration while BASS-II B1 reports flame extinguishing rapidly after airflow is switched off.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports starting oxygen at 22.1% while BASS-II B1 reports calibrated oxygen at 22.2 vol%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-5",
+                "field": "Starting oxygen",
+                "value": "22.1% · ISS reading for Saffire II"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "S25,B10": {
@@ -19140,7 +20550,48 @@
           "reason": "Both use SIBAL. Check the different airflow conditions."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire II-5 reports sample length as 29 cm in NASA’s 2017 table and 30 cm in the 2021 summary table, while BASS-II B10 reports specimen and oxygen with PMMA film dimensions.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire II-5",
+                "field": "Sample length",
+                "value": "29 cm in NASA’s 2017 table · 30 cm in the 2021 summary table"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports burn duration as 145 s and burn length as 29 cm, while BASS-II B10 reports flame extinction at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "S25,B11": {
@@ -19548,7 +20999,48 @@
           "reason": "Both use SIBAL. Check the different airflow conditions."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire II-5 reported SIBAL fabric 5 cm wide with 20 cm/s concurrent flow while BASS-II B11 reported PMMA film 2 cm wide with 0.2 mm thick and calibrated O₂ 21.0 → 20.7 vol%.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reported 145 s burn duration and 29 cm burn length while BASS-II B11 reported flame extinguishing at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F9",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          }
+        ],
+        "removed": 4
+      },
       "live": false
     },
     "S25,S1": {
@@ -20841,7 +22333,65 @@
           "reason": "Both use SIBAL. Check the different airflow conditions."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report 100 kPa pressure and 46 cm duct height, while Saffire II-5 reports 4 cm flame size at steady state and Saffire II-6 reports 5 cm flame size at steady state.",
+            "cites": [
+              {
+                "id": "F8",
+                "record": "Saffire II-5",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 4 cm at steady state · 4 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F17",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              }
+            ]
+          },
+          {
+            "text": "Both records report 29 cm burn length, while Saffire II-5 reports 145 s burn duration and Saffire II-6 reports 115 s burn duration.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F16",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports 22.1% starting oxygen, while Saffire II-6 reports oxygen levels of about 22.1% in NASA’s 2017 table and 21% in the 2021 summary table.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-5",
+                "field": "Starting oxygen",
+                "value": "22.1% · ISS reading for Saffire II"
+              },
+              {
+                "id": "F14",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "S25,M7": {
@@ -22104,7 +23654,99 @@
           "reason": "Both use SIBAL. Check the different airflow conditions."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report SIBAL fabric materials with concurrent airflow, but Saffire II-5 specifies 5 cm wide and 20 cm/s flow while Saffire III-1 specifies 40.6 cm wide.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              },
+              {
+                "id": "F9",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports sample length as 29 cm in NASA’s 2017 table but 30 cm in the 2021 summary table, while Saffire III-1 reports 94 cm length.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire II-5",
+                "field": "Sample length",
+                "value": "29 cm in NASA’s 2017 table · 30 cm in the 2021 summary table"
+              },
+              {
+                "id": "F9",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports starting oxygen at 22.1% while Saffire III-1 reports oxygen levels between 21.0% and 21.2%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-5",
+                "field": "Starting oxygen",
+                "value": "22.1% · ISS reading for Saffire II"
+              },
+              {
+                "id": "F14",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports flame spread rate at 2.1 mm/s while Saffire III-1 reports 2.3 mm/s.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "Saffire II-5",
+                "field": "Flame spread rate",
+                "value": "2.1 mm/s at 20 cm/s concurrent flow"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire III-1",
+                "field": "Recorded observation",
+                "value": "2.3 mm/s flame spread"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-5 reports a 145 s burn duration and 29 cm burn length, while Saffire III-1 reports a 300 s burn duration and about 84 cm burn length.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F13",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "S25,BASS-T7": {
@@ -27094,7 +28736,60 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and sample thickness, but Saffire II-6 has a disputed thickness value while BASS-II B1 specifies 100 µm thick.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              },
+              {
+                "id": "F7",
+                "record": "Saffire II-6",
+                "field": "Sample thickness",
+                "value": "Investigator table: 0.37 mm. Archive CSV: “037 mm”."
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              }
+            ]
+          },
+          {
+            "text": "Both records report pressure and flame size, with Saffire II-6 indicating 100 kPa at steady state and 5 cm burn length while BASS-II B1 does not report pressure in Table A.1.",
+            "cites": [
+              {
+                "id": "F9",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F16",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              },
+              {
+                "id": "F8",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "S26,B10": {
@@ -27512,7 +29207,117 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and oxygen levels, with Saffire II-6 citing a 5 cm wide and 29 cm long SIBAL fabric specimen, while BASS-II B10 specifies a 1 cm wide PMMA film with 0.2 mm thickness and calibrated oxygen at 21.0 → 20.8 vol%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F6",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports airflow speed as disputed between the report and archive, while BASS-II B10 describes steady flame spread at multiple airflow settings with fan settings lowered in steps until extinction at 0.35.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-6",
+                "field": "Airflow speed",
+                "value": "Investigator table: 25 cm/s. Archive CSV: 20 cm/s."
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 states oxygen levels as approximately 22.1% in NASA’s 2017 table and 21% in the 2021 summary table, while BASS-II B10 specifies calibrated oxygen at 21.0 → 20.8 vol% for its PMMA film specimen.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports pressure at steady state as 100 kPa with flame size 5 cm, while BASS-II B10 does not list pressure in its table but references 1 atm for a 100-µm PMMA sheet example.",
+            "cites": [
+              {
+                "id": "F9",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F16",
+                "record": "BASS-II B10",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 records a 115 s burn duration and 29 cm burn length, while BASS-II B10 reports flame extinction at a fan control setting of 0.35 with no calibrated airspeed measurement at extinction.",
+            "cites": [
+              {
+                "id": "F8",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F12",
+                "record": "BASS-II B10",
+                "field": "Calibrated local airspeed at extinction",
+                "value": "No compatible measurement in the evidence used here"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "S26,B11": {
@@ -27930,7 +29735,111 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report specimen dimensions and oxygen levels, with Saffire II-6 citing a 5 cm wide fabric specimen and BASS-II B11 citing a 2 cm wide PMMA film with calibrated oxygen from 21.0 to 20.7 vol%.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              },
+              {
+                "id": "F6",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports airflow speed as disputed between the report and archive, while BASS-II B11 reports steady flame spread at multiple airflow settings with fan settings lowered in steps.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-6",
+                "field": "Airflow speed",
+                "value": "Investigator table: 25 cm/s. Archive CSV: 20 cm/s."
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports oxygen levels as approximately 22.1% in NASA’s 2017 table and 21% in the 2021 summary table, while BASS-II B11 reports a calibrated oxygen range of 21.0 to 20.7 vol%.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B11",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 2 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.7 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports a steady state pressure of 100 kPa with flame size at 5 cm, while BASS-II B11 reports pressure not in the table with a reference to 1 atm for a different test.",
+            "cites": [
+              {
+                "id": "F9",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F16",
+                "record": "BASS-II B11",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports a 115-second burn duration and 29 cm burn length, while BASS-II B11 reports flame extinction at a fan setting of 0.35 potentiometer.",
+            "cites": [
+              {
+                "id": "F8",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B11",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          }
+        ],
+        "removed": 0
+      },
       "live": false
     },
     "S26,S1": {
@@ -28828,7 +30737,99 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire II-6 reports a flame spread rate of 2.6 mm/s while Saffire II-5 reports 2.1 mm/s.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "Saffire II-6",
+                "field": "Flame spread rate",
+                "value": "2.6 mm/s with the airflow value under review"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire II-5",
+                "field": "Flame spread rate",
+                "value": "2.1 mm/s at 20 cm/s concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports a burn duration of 115 s while Saffire II-5 reports 145 s.",
+            "cites": [
+              {
+                "id": "F8",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              },
+              {
+                "id": "F16",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              }
+            ]
+          },
+          {
+            "text": "Both records report a pressure of 100 kPa and a duct height of 46 cm.",
+            "cites": [
+              {
+                "id": "F9",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F17",
+                "record": "Saffire II-5",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 4 cm at steady state · 4 cm at maximum · 46 cm duct height"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports a sample thickness that is disputed while Saffire II-5 reports a sample thickness that is disputed.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-6",
+                "field": "Sample thickness",
+                "value": "Investigator table: 0.37 mm. Archive CSV: “037 mm”."
+              },
+              {
+                "id": "F14",
+                "record": "Saffire II-5",
+                "field": "Sample thickness",
+                "value": "Investigator table: 0.37 mm. Archive CSV: “037 mm”."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reports an airflow speed that is disputed while Saffire II-5 reports a concurrent airflow of 20 cm/s.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "Saffire II-6",
+                "field": "Airflow speed",
+                "value": "Investigator table: 25 cm/s. Archive CSV: 20 cm/s."
+              },
+              {
+                "id": "F12",
+                "record": "Saffire II-5",
+                "field": "Specimen and airflow",
+                "value": "SIBAL fabric · 5 cm wide · 20 cm/s concurrent flow"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "S26,S12": {
@@ -30088,7 +32089,48 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire II-6 reports oxygen levels as approximately 22.1% in NASA’s 2017 table and 21% in the 2021 summary table while FLEX test 2 specifies O₂ mole fraction 0.21.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F10",
+                "record": "FLEX test 2",
+                "field": "Conditions",
+                "value": "Methanol · 762 mmHg · O₂ mole fraction 0.21"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 states pressure at 100 kPa with flame size measurements at steady state and maximum, while FLEX test 2 reports methanol conditions at 762 mmHg and O₂ mole fraction 0.21.",
+            "cites": [
+              {
+                "id": "F9",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              },
+              {
+                "id": "F10",
+                "record": "FLEX test 2",
+                "field": "Conditions",
+                "value": "Methanol · 762 mmHg · O₂ mole fraction 0.21"
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "S26,S31": {
@@ -30536,7 +32578,111 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report SIBAL fabric samples with specific dimensions and airflow conditions.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              },
+              {
+                "id": "F18",
+                "record": "Saffire III-1",
+                "field": "Sample thickness",
+                "value": "Report table: 0.37 mm. Archive CSV: .33 cm."
+              },
+              {
+                "id": "F1",
+                "record": "Saffire II-6",
+                "field": "Flame spread rate",
+                "value": "2.6 mm/s with the airflow value under review"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reported a specimen width of 5 cm and length of 29 cm, while Saffire III-1 reported a width of 40.6 cm and length of 94 cm.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "Saffire II-6",
+                "field": "Specimen",
+                "value": "SIBAL fabric · 5 cm wide · 29 cm long"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              }
+            ]
+          },
+          {
+            "text": "Both records report disputed sample thickness values, with the report and archive disagreeing on the exact measurement.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire II-6",
+                "field": "Sample thickness",
+                "value": "Investigator table: 0.37 mm. Archive CSV: “037 mm”."
+              },
+              {
+                "id": "F18",
+                "record": "Saffire III-1",
+                "field": "Sample thickness",
+                "value": "Report table: 0.37 mm. Archive CSV: .33 cm."
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reported oxygen levels of about 22.1% in NASA’s 2017 table and 21% in the 2021 summary table, while Saffire III-1 reported oxygen levels of 21.2 to 21.0% in the 2017 table and 21% in the 2021 summary table.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F15",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "Saffire II-6 reported flame spread rate of 2.6 mm/s with airflow value under review, while Saffire III-1 reported flame spread rate of 2.3 mm/s.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "Saffire II-6",
+                "field": "Flame spread rate",
+                "value": "2.6 mm/s with the airflow value under review"
+              },
+              {
+                "id": "F12",
+                "record": "Saffire III-1",
+                "field": "Flame spread rate",
+                "value": "2.3 mm/s with 25 cm/s in two NASA reports and 30 cm/s in the archive"
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "S26,BASS-T7": {
@@ -35768,7 +37914,88 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "FLEX test 2 reported droplet diameter 0.94 mm at visible flame extinction while BASS-II B1 reported flame extinguishing rapidly.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "FLEX test 2",
+                "field": "Recorded observation",
+                "value": "Extinction · 0.94 mm droplet diameter"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F4",
+                "record": "FLEX test 2",
+                "field": "Droplet diameter",
+                "value": "1.86 mm initially · 0.94 mm at visible flame extinction"
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 recorded extinction after a 5 s burn while BASS-II B1 reported flame spreading halfway across the acrylic film.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 reported droplet diameter 1.86 mm initially while BASS-II B1 reported specimen thickness 100 µm.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "FLEX test 2",
+                "field": "Droplet diameter",
+                "value": "1.86 mm initially · 0.94 mm at visible flame extinction"
+              },
+              {
+                "id": "F7",
+                "record": "BASS-II B1",
+                "field": "Specimen",
+                "value": "2 cm wide · 100 µm thick · PMMA film"
+              }
+            ]
+          },
+          {
+            "text": "BASS-II B1 reported airflow switched off after flame spread while FLEX test 2 reported burning rate unit values disputed.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              },
+              {
+                "id": "F5",
+                "record": "FLEX test 2",
+                "field": "Burning rate unit",
+                "value": "Report: 0.6 mm²/s (printed .6) · archive header: Burning rate; mm. Unit mapping unresolved. The archive gives the same 0.6, and its header row also shortens O₂, N₂ and CO₂ to O, N and CO, which points to a formatting loss."
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "FLEX-002,B10": {
@@ -36130,7 +38357,71 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "FLEX test 2 reports a droplet diameter of 0.94 mm at visible flame extinction while BASS-II B10 reports flame extinction at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "FLEX test 2",
+                "field": "Recorded observation",
+                "value": "Extinction · 0.94 mm droplet diameter"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F4",
+                "record": "FLEX test 2",
+                "field": "Droplet diameter",
+                "value": "1.86 mm initially · 0.94 mm at visible flame extinction"
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 reports extinction after a 5 s burn while BASS-II B10 reports steady spread at several airflow settings.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 has a disputed burning rate unit while BASS-II B10 reports no compatible measurement for calibrated local airspeed at extinction.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "FLEX test 2",
+                "field": "Burning rate unit",
+                "value": "Report: 0.6 mm²/s (printed .6) · archive header: Burning rate; mm. Unit mapping unresolved. The archive gives the same 0.6, and its header row also shortens O₂, N₂ and CO₂ to O, N and CO, which points to a formatting loss."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B10",
+                "field": "Calibrated local airspeed at extinction",
+                "value": "No compatible measurement in the evidence used here"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "FLEX-002,B11": {
@@ -36492,7 +38783,71 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "FLEX test 2 reports a droplet diameter of 0.94 mm at visible flame extinction while BASS-II B11 reports flame extinction at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "FLEX test 2",
+                "field": "Recorded observation",
+                "value": "Extinction · 0.94 mm droplet diameter"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F4",
+                "record": "FLEX test 2",
+                "field": "Droplet diameter",
+                "value": "1.86 mm initially · 0.94 mm at visible flame extinction"
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 reports extinction after a 5 s burn while BASS-II B11 reports steady spread at several airflow settings.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              },
+              {
+                "id": "F6",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 has a disputed burning rate unit while BASS-II B11 has no compatible measurement for calibrated local airspeed at extinction.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "FLEX test 2",
+                "field": "Burning rate unit",
+                "value": "Report: 0.6 mm²/s (printed .6) · archive header: Burning rate; mm. Unit mapping unresolved. The archive gives the same 0.6, and its header row also shortens O₂, N₂ and CO₂ to O, N and CO, which points to a formatting loss."
+              },
+              {
+                "id": "F8",
+                "record": "BASS-II B11",
+                "field": "Calibrated local airspeed at extinction",
+                "value": "No compatible measurement in the evidence used here"
+              }
+            ]
+          }
+        ],
+        "removed": 2
+      },
       "live": false
     },
     "FLEX-002,S1": {
@@ -37308,7 +39663,37 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire II-5 reports sample length as 29 cm in NASA’s 2017 table and 30 cm in the 2021 summary table, while FLEX test 2 reports droplet diameter 0.94 mm at visible flame extinction.",
+            "cites": [
+              {
+                "id": "F11",
+                "record": "Saffire II-5",
+                "field": "Sample length",
+                "value": "29 cm in NASA’s 2017 table · 30 cm in the 2021 summary table"
+              },
+              {
+                "id": "F2",
+                "record": "FLEX test 2",
+                "field": "Recorded observation",
+                "value": "Extinction · 0.94 mm droplet diameter"
+              },
+              {
+                "id": "F4",
+                "record": "FLEX test 2",
+                "field": "Droplet diameter",
+                "value": "1.86 mm initially · 0.94 mm at visible flame extinction"
+              }
+            ]
+          }
+        ],
+        "removed": 6
+      },
       "live": false
     },
     "FLEX-002,S12": {
@@ -38881,7 +41266,48 @@
           "reason": "Both report extinction in different test setups."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "FLEX test 2 recorded extinction after a 5 s burn while Saffire III-1 recorded a 300 s burn duration.",
+            "cites": [
+              {
+                "id": "F3",
+                "record": "FLEX test 2",
+                "field": "Recorded outcome",
+                "value": "Extinction after a 5 s burn"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              }
+            ]
+          },
+          {
+            "text": "FLEX test 2 reported droplet diameter 1.86 mm initially while Saffire III-1 reported sample thickness as disputed.",
+            "cites": [
+              {
+                "id": "F4",
+                "record": "FLEX test 2",
+                "field": "Droplet diameter",
+                "value": "1.86 mm initially · 0.94 mm at visible flame extinction"
+              },
+              {
+                "id": "F14",
+                "record": "Saffire III-1",
+                "field": "Sample thickness",
+                "value": "Report table: 0.37 mm. Archive CSV: .33 cm."
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "FLEX-002,BASS-T7": {
@@ -39701,7 +42127,88 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire III-1 reports airflow speed as disputed, while BASS-II B1 reports airflow events including flame spread and extinguishing.",
+            "cites": [
+              {
+                "id": "F8",
+                "record": "Saffire III-1",
+                "field": "Airflow speed",
+                "value": "Two NASA reports: 25 cm/s. Archive CSV: 30 cm/s."
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reports oxygen levels as 21.2 to 21.0% in 2017 and 21% in 2021, while BASS-II B1 reports calibrated oxygen at 22.2 vol%.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F14",
+                "record": "BASS-II B1",
+                "field": "Oxygen",
+                "value": "Calibrated O₂ 22.2 → 22.2 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reports flame size at 5 cm steady state and 8.2 cm maximum with 100 kPa pressure, while BASS-II B1 reports pressure as missing or unresolved.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire III-1",
+                "field": "Flame size and pressure",
+                "value": "5 cm at steady state · 8.2 cm at maximum · 100 kPa · 46 cm duct height"
+              },
+              {
+                "id": "F16",
+                "record": "BASS-II B1",
+                "field": "Pressure",
+                "value": "Not in Table A.1. The same chapter gives 1 atm for an example test of a 100-µm PMMA sheet and names no run."
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reports a 300-second burn duration and 84 cm burn length, while BASS-II B1 reports flame extinguishing rapidly with no exact delay.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B1",
+                "field": "Delay after shutoff",
+                "value": "No exact value. The run note says “flame extinguished very quickly.”"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B1",
+                "field": "Reported events",
+                "value": "Flame spreads halfway across the acrylic film. Airflow is switched off. Flame extinguishes rapidly."
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "S31,B10": {
@@ -40126,7 +42633,123 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report material and sample details and airflow conditions.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              },
+              {
+                "id": "F14",
+                "record": "BASS-II B10",
+                "field": "Flow direction",
+                "value": "Opposed"
+              },
+              {
+                "id": "F15",
+                "record": "BASS-II B10",
+                "field": "Fan and air displays",
+                "value": "Fan display 1.7 (52), 1.25, 0.9, 0.6, 0.4, 0.35 · Air display 5, 4, 3, 2, 1"
+              },
+              {
+                "id": "F9",
+                "record": "Saffire III-1",
+                "field": "Sample thickness",
+                "value": "Report table: 0.37 mm. Archive CSV: .33 cm."
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reported SIBAL cotton-fiberglass fabric with 40.6 cm width and 94 cm length, while BASS-II B10 reported PMMA film with 1 cm width and 0.2 mm thickness.",
+            "cites": [
+              {
+                "id": "F1",
+                "record": "Saffire III-1",
+                "field": "Conditions",
+                "value": "SIBAL cotton-fiberglass fabric · 40.6 cm wide · 94 cm long · concurrent flow"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reported oxygen levels of 21.2 to 21.0% in 2017 and 21% in 2021, while BASS-II B10 reported calibrated oxygen levels of 21.0 to 20.8 vol%.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F13",
+                "record": "BASS-II B10",
+                "field": "Specimen and oxygen",
+                "value": "PMMA film · 1 cm wide · 0.2 mm thick · calibrated O₂ 21.0 → 20.8 vol%"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reported flame spread rate of 2.3 mm/s, while BASS-II B10 reported steady flame spread at multiple airflow settings before extinction at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "Saffire III-1",
+                "field": "Recorded observation",
+                "value": "2.3 mm/s flame spread"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B10",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F3",
+                "record": "Saffire III-1",
+                "field": "Flame spread rate",
+                "value": "2.3 mm/s with 25 cm/s in two NASA reports and 30 cm/s in the archive"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reported a 300-second burn duration and 84 cm burn length, while BASS-II B10 reported fan control settings at extinction of 0.35 potentiometer units.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B10",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              }
+            ]
+          }
+        ],
+        "removed": 1
+      },
       "live": false
     },
     "S31,B11": {
@@ -40551,7 +43174,60 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire II-6 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Saffire III-1 reports a flame spread rate of 2.3 mm/s, while BASS-II B11 reports flame extinction at fan setting 0.35.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "Saffire III-1",
+                "field": "Recorded observation",
+                "value": "2.3 mm/s flame spread"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              },
+              {
+                "id": "F11",
+                "record": "BASS-II B11",
+                "field": "Fan control setting at extinction",
+                "value": "0.35 · potentiometer setting"
+              },
+              {
+                "id": "F3",
+                "record": "Saffire III-1",
+                "field": "Flame spread rate",
+                "value": "2.3 mm/s with 25 cm/s in two NASA reports and 30 cm/s in the archive"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reports a burn duration of 300 s and burn length of about 84 cm, while BASS-II B11 reports steady spread at several airflow settings.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              },
+              {
+                "id": "F10",
+                "record": "BASS-II B11",
+                "field": "Reported events",
+                "value": "Steady spread at several airflow settings. Fan setting is lowered in steps. Flame extinguishes at fan setting 0.35."
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "S31,S1": {
@@ -41475,7 +44151,31 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire III-1 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report burn duration and length, with Saffire III-1 having a burn duration of 300 s and burn length of about 84 cm, while Saffire II-5 has a burn duration of 145 s and burn length of 29 cm.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              },
+              {
+                "id": "F16",
+                "record": "Saffire II-5",
+                "field": "Burn",
+                "value": "145 s burn duration · 29 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 5
+      },
       "live": false
     },
     "S31,S12": {
@@ -42351,7 +45051,88 @@
           "reason": "Both use SIBAL with concurrent airflow. Saffire III-1 airflow is disputed."
         }
       ],
-      "explanation": null,
+      "explanation": {
+        "kind": "saved",
+        "model": "qwen3:4b (Ollama 0.40.16, digest 359d7dd4bcda)",
+        "generated": "2026-11-14",
+        "sentences": [
+          {
+            "text": "Both records report oxygen levels as 21% in the 2021 summary table, while Saffire III-1 reports 21.2 to 21.0% in the 2017 table and Saffire II-6 reports about 22.1% in the 2017 table.",
+            "cites": [
+              {
+                "id": "F6",
+                "record": "Saffire III-1",
+                "field": "Oxygen",
+                "value": "21.2 to 21.0% in the 2017 table · 21% in the 2021 summary table"
+              },
+              {
+                "id": "F15",
+                "record": "Saffire II-6",
+                "field": "Oxygen",
+                "value": "About 22.1% (printed ~ 22.1) in NASA’s 2017 table · 21% in the 2021 summary table"
+              }
+            ]
+          },
+          {
+            "text": "Both records report pressure at 100 kPa, with flame size at steady state at 5 cm for both records.",
+            "cites": [
+              {
+                "id": "F7",
+                "record": "Saffire III-1",
+                "field": "Flame size and pressure",
+                "value": "5 cm at steady state · 8.2 cm at maximum · 100 kPa · 46 cm duct height"
+              },
+              {
+                "id": "F18",
+                "record": "Saffire II-6",
+                "field": "Pressure and flame size",
+                "value": "100 kPa · 5 cm at steady state · 5 cm at maximum · 46 cm duct height"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reports a flame spread rate of 2.3 mm/s, while Saffire II-6 reports a flame spread rate of 2.6 mm/s.",
+            "cites": [
+              {
+                "id": "F2",
+                "record": "Saffire III-1",
+                "field": "Recorded observation",
+                "value": "2.3 mm/s flame spread"
+              },
+              {
+                "id": "F10",
+                "record": "Saffire II-6",
+                "field": "Flame spread rate",
+                "value": "2.6 mm/s with the airflow value under review"
+              },
+              {
+                "id": "F3",
+                "record": "Saffire III-1",
+                "field": "Flame spread rate",
+                "value": "2.3 mm/s with 25 cm/s in two NASA reports and 30 cm/s in the archive"
+              }
+            ]
+          },
+          {
+            "text": "Saffire III-1 reports a burn duration of 300 s and burn length of about 84 cm, while Saffire II-6 reports a burn duration of 115 s and burn length of 29 cm.",
+            "cites": [
+              {
+                "id": "F5",
+                "record": "Saffire III-1",
+                "field": "Burn",
+                "value": "300 s burn duration · about 84 cm burn length"
+              },
+              {
+                "id": "F17",
+                "record": "Saffire II-6",
+                "field": "Burn",
+                "value": "115 s burn duration · 29 cm burn length"
+              }
+            ]
+          }
+        ],
+        "removed": 3
+      },
       "live": false
     },
     "S31,M7": {
