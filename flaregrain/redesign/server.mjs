@@ -18,14 +18,15 @@ const scopeLimit = 'The cited passages give no elapsed time from airflow shutoff
 const saffireDuration = ' In Saffire, 420 seconds is the time up to shutoff.';
 
 function answer(query) {
-  const mentionsCutoff = /\b(?:airflow|flow|fan)\b.{0,36}\b(?:cut|off|stopped|stop|shut)\b|\b(?:cutoff|shutoff)\b/i.test(query);
+  const mentionsCutoff = /\b(?:airflow|flow|fan)\b.{0,36}\b(?:cut|off|stop(?:s|ped)?|shut)\b|\b(?:cutoff|shutoff)\b/i.test(query);
   const mentionsExtinction = /\b(?:extinction|extinguish\w*|(?:go|went) out|how (?:long|quickly)|time|seconds?)\b/i.test(query);
+  const asksWhatHappened = /^what (?:happened|happens) (?:when|after|once)\b/i.test(query);
   const selected = [
     [/\b(?:B1|BASS(?:-II)?)\b/i, 'B1'],
     [/\b(?:Saffire|S1)\b/i, 'S1'],
   ].filter(([pattern]) => pattern.test(query)).map(([, id]) => records.get(id));
   const pair = selected.length ? selected : [...records.values()];
-  const findings = mentionsCutoff && mentionsExtinction ? pair.map(record => ({
+  const findings = mentionsCutoff && (mentionsExtinction || asksWhatHappened) ? pair.map(record => ({
     text: record.id === 'B1'
       ? 'The BASS-II B1 flame went out quickly after airflow was stopped.'
       : 'The Saffire I-1 flame went out immediately when airflow stopped at the end of the run.',
