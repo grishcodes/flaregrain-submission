@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Flaregrain · System design</title>
-<meta name="description" content="How Flaregrain is built: five layers from NASA’s sources to the page, with the team’s measured numbers.">
+<meta name="description" content="How Flaregrain is built: the data flow from NASA’s sources to the page, the live model path, and five layers with the team’s measured numbers.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.png" type="image/png" sizes="180x180">
@@ -32,19 +32,134 @@
 <main class="sub" id="main" tabindex="-1">
   <header class="sub-head">
     <h1><span class="mono">(System design)</span>How Flaregrain is built</h1>
-    <p>Five layers, from NASA’s sources to the page. Every number below comes from the team’s build and evaluation files. The full system runs in the live demo; this site carries its 13 hand-checked records.</p>
+    <p>From NASA’s sources to the page in five layers, plus the path a live model reading takes. Every number below comes from the team’s build and evaluation files. The full system runs in the live demo; this site carries its 13 hand-checked records.</p>
   </header>
+
+  <div class="ev-cols">
+    <div>
+      <p class="mono embed-note">Data flow · measured counts at each step</p>
+      <svg id="sys-flow" viewBox="0 0 380 699" width="100%" style="display:block;width:100%;max-width:440px;height:auto" role="img" aria-labelledby="sys-flow-title sys-flow-desc">
+        <title id="sys-flow-title">How data flows through Flaregrain</title>
+        <desc id="sys-flow-desc">NASA’s PSI combustion tables and 9 NASA report PDFs go into intake: 24 investigations, 2,009 table rows and 9 PDFs, each file checksummed. Normalized records: 24,573 values, 575 of them flagged, and 13 hand-checked records with 11 comparable runs and 110 pairs. Retrieval and ranking: 1,595 report passages, 1,321 of them on this site; recall at 5 is 0.850 and hit at 1 is 0.833 over 108 scored wordings. The model, qwen3:4b, writes sentences that cite record fields. The sentence checker keeps 492 sentences and removes 270 across 139 saved explanations; 39 of this site’s 110 pairs carry one. The pages are Ask, Compare, Evidence and Browse, and every value links to its NASA page.</desc>
+        <style>
+          #sys-flow text{font-family:var(--sans);font-size:12.5px;fill:var(--ink-2)}
+          #sys-flow .k{font-family:var(--mono);font-size:10px;letter-spacing:.06em;fill:var(--muted)}
+          #sys-flow .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;fill:var(--ember)}
+          #sys-flow .t{font-size:14px;font-weight:500;fill:var(--ink)}
+          #sys-flow .v{font-weight:500;fill:var(--ink)}
+          #sys-flow .box{fill:var(--card);stroke:var(--line-2)}
+          #sys-flow .model{fill:none;stroke:var(--t3);stroke-opacity:.55;stroke-dasharray:4 4}
+          #sys-flow .wire{fill:none;stroke:var(--muted);stroke-opacity:.7;stroke-width:1.2}
+          #sys-flow .head{fill:var(--muted);fill-opacity:.7}
+          #sys-flow .d1{fill:var(--t1)} #sys-flow .d2{fill:var(--t2)} #sys-flow .d3{fill:var(--t3)} #sys-flow .df{fill:var(--flag)}
+        </style>
+        <defs>
+          <marker id="sys-flow-arrow" viewBox="0 0 8 8" refX="7.5" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path class="head" d="M0 0 8 4 0 8z"/></marker>
+        </defs>
+
+        <rect class="box" x="0.5" y="0.5" width="183" height="71" rx="10"/>
+        <text class="k" x="16" y="24">NASA PSI</text>
+        <text class="t" x="16" y="45">Combustion tables</text>
+        <text x="16" y="62">Records and table rows</text>
+        <rect class="box" x="196.5" y="0.5" width="183" height="71" rx="10"/>
+        <text class="k" x="212" y="24">NASA NTRS</text>
+        <text class="t" x="212" y="45">9 report PDFs</text>
+        <text x="212" y="62">Cited page by page</text>
+        <path class="wire" d="M92 72V84H190M288 72V84H190"/>
+        <path class="wire" d="M190 84V98" marker-end="url(#sys-flow-arrow)"/>
+
+        <rect class="box" x="0.5" y="100.5" width="379" height="77" rx="10"/>
+        <text class="n" x="16" y="124">01</text><text class="t" x="42" y="124">Intake</text>
+        <text x="16" y="146"><tspan class="v">24</tspan> investigations · <tspan class="v">2,009</tspan> table rows · <tspan class="v">9</tspan> PDFs</text>
+        <text x="16" y="164">A checksum for every file read</text>
+        <path class="wire" d="M190 178V204" marker-end="url(#sys-flow-arrow)"/>
+
+        <rect class="box" x="0.5" y="206.5" width="379" height="95" rx="10"/>
+        <text class="n" x="16" y="230">02</text><text class="t" x="42" y="230">Normalized records</text>
+        <rect class="d2" x="16" y="245" width="7" height="7" rx="2"/>
+        <text x="29" y="252"><tspan class="v">24,573</tspan> values, each with its unit and table row</text>
+        <rect class="df" x="16" y="263" width="7" height="7" rx="2"/>
+        <text x="29" y="270"><tspan class="v">575</tspan> flagged, with the reading the team takes</text>
+        <rect class="d1" x="16" y="281" width="7" height="7" rx="2"/>
+        <text x="29" y="288"><tspan class="v">13</tspan> checked records · <tspan class="v">11</tspan> comparable · <tspan class="v">110</tspan> pairs</text>
+        <path class="wire" d="M190 302V328" marker-end="url(#sys-flow-arrow)"/>
+
+        <rect class="box" x="0.5" y="330.5" width="379" height="77" rx="10"/>
+        <text class="n" x="16" y="354">03</text><text class="t" x="42" y="354">Retrieval and ranking</text>
+        <text x="16" y="376"><tspan class="v">1,595</tspan> report passages · <tspan class="v">1,321</tspan> on this site</text>
+        <text x="16" y="394">recall@5 <tspan class="v">0.850</tspan> · hit@1 <tspan class="v">0.833</tspan> · <tspan class="v">108</tspan> wordings scored</text>
+        <path class="wire" d="M190 408V432" marker-end="url(#sys-flow-arrow)"/>
+
+        <rect class="model" x="28.5" y="434.5" width="323" height="55" rx="10"/>
+        <rect class="d3" x="44" y="451" width="7" height="7" rx="2"/>
+        <text class="k" x="57" y="458">FLAREGRAIN READING · QWEN3:4B</text>
+        <text x="44" y="478">Writes sentences that cite record fields</text>
+        <path class="wire" d="M190 490V514" marker-end="url(#sys-flow-arrow)"/>
+
+        <rect class="box" x="0.5" y="516.5" width="379" height="77" rx="10"/>
+        <text class="n" x="16" y="540">04</text><text class="t" x="42" y="540">Sentence checker</text>
+        <text x="16" y="562"><tspan class="v">139</tspan> explanations · <tspan class="v">492</tspan> sentences kept, <tspan class="v">270</tspan> removed</text>
+        <text x="16" y="580"><tspan class="v">39</tspan> of this site’s <tspan class="v">110</tspan> pairs carry one</text>
+        <path class="wire" d="M190 594V618" marker-end="url(#sys-flow-arrow)"/>
+
+        <rect class="box" x="0.5" y="620.5" width="379" height="77" rx="10"/>
+        <text class="n" x="16" y="644">05</text><text class="t" x="42" y="644">Pages</text>
+        <text x="16" y="666">Ask · Compare · Evidence · Browse</text>
+        <text x="16" y="684">Every value links to its NASA page</text>
+      </svg>
+      <p class="arch-note">Colours: <span class="tier t2">PSI table row</span> <span class="tier flag">flagged</span> <span class="tier t1">checked NASA record</span> <span class="tier t3">Flaregrain model or reading</span>. Counts are the full demo’s; “this site” marks what this public site carries.</p>
+    </div>
+
+    <section class="ev-col" aria-labelledby="live-title">
+      <span class="mono">Live Explain</span>
+      <div class="arch-body">
+      <h2 id="live-title">How a live reading reaches the page</h2>
+      <p>On Compare, the three starter pairs can ask the team’s model for a fresh explanation. Only checked sentences reach the page, labelled “Flaregrain reading · not NASA evidence”, and only if they are for the pair asked and match this site’s records. Otherwise the saved comparison stays.</p>
+      <p class="arch-code" aria-hidden="true"><code>Compare</code>→<code>Vercel</code>→<code>Funnel</code>→<code>Mac mini proxy</code>→<code>qwen3:4b</code>→<code>checker</code>→<code>fingerprint</code>→<code>Compare</code></p>
+      <dl class="arch-stats">
+        <div><dt>3</dt><dd>starter pairs, in either order: B1/S1, B1/B10, FLEX-002/S31</dd></div>
+        <div><dt>40 s</dt><dd>longest wait in all, then the saved comparison stays</dd></div>
+        <div><dt>6 / hour</dt><dd>fresh answers, shared by every visitor to the site</dd></div>
+      </dl>
+      <div class="strip-run">
+        <span class="mono">Each step</span>
+        <dl>
+          <div><dt>Compare</dt><dd>Sends only the two record IDs of a starter pair.</dd></div>
+          <div><dt>Vercel</dt><dd>Asks the proxy’s health first, for up to 4 s. If it is off or this hour’s answers are used, the saved comparison comes back at once.</dd></div>
+          <div><dt>Funnel</dt><dd>Carries the request to the team’s Mac mini. It is open only at set hours.</dd></div>
+          <div><dt>Proxy</dt><dd>Allows 6 fresh answers an hour, one at a time. It keeps each pair’s checked answer and sends it again at once; a reused answer doesn’t count.</dd></div>
+          <div><dt>qwen3:4b</dt><dd>Writes sentences that cite the pair’s record fields, at temperature 0. A fresh answer takes about 13 to 14 s on the Mac mini and about 4 s more to reach the page.</dd></div>
+          <div><dt>Checker</dt><dd>Keeps a sentence only if it matches the fields it cites. Removed sentences are counted, not shown.</dd></div>
+          <div><dt>Fingerprint</dt><dd>Vercel keeps the answer only if it names the pair asked and its facts fingerprint matches this site’s records. A mismatch, an error or 40 s without an answer leaves the saved comparison with a short status.</dd></div>
+          <div><dt>Compare</dt><dd>Shows the kept sentences as Flaregrain’s reading, and says when a reused answer was written.</dd></div>
+        </dl>
+      </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="layer2">
+  <p class="mono embed-note">The five layers · what goes in, what comes out, how it’s checked</p>
   <ol class="arch" aria-label="The five layers, from sources to interface">
     <li class="arch-layer">
       <span class="arch-n mono">01</span>
       <div class="arch-body">
         <h2>NASA sources and intake</h2>
-        <p>Fetches NASA’s Physical Sciences Informatics (PSI) combustion repository and the investigators’ report PDFs, and keeps a checksum for every file it reads.</p>
+        <p>Fetches NASA’s Physical Sciences Informatics (PSI) combustion repository and the investigators’ report PDFs, and keeps a checksum for every file it reads. Raw NASA tables are linked, not copied.</p>
         <dl class="arch-stats">
           <div><dt>24</dt><dd>PSI combustion investigations</dd></div>
           <div><dt>2,009</dt><dd>experimental-table rows</dd></div>
           <div><dt>9</dt><dd>NASA report PDFs</dd></div>
         </dl>
+        <div class="strip-run">
+          <span class="mono">In, out, checked</span>
+          <dl>
+            <div><dt>Goes in</dt><dd>NASA’s PSI combustion records and experiment tables, and 9 NASA technical reports from NTRS.</dd></div>
+            <div><dt>Comes out</dt><dd>24 investigations, 2,009 table rows and the report text, each file with its checksum.</dd></div>
+            <div><dt>Checked</dt><dd>Every file is checksummed and every record’s licence is read. PSI-10’s licence field is blank; that is recorded as a data issue and disclosed rather than assumed.</dd></div>
+            <div><dt>Measured</dt><dd>By area: extinction 8 investigations (1,055 rows), flammability 7 (290), fundamentals 3 (76), detection 6 (588).</dd></div>
+          </dl>
+        </div>
         <p class="arch-code"><span class="mono">Code</span><code>psi_intake.py</code> <code>psi_observations.py</code></p>
       </div>
     </li>
@@ -58,7 +173,16 @@
           <div><dt>13</dt><dd>hand-checked NASA records, 11 of them comparable runs</dd></div>
           <div><dt>575</dt><dd>table values flagged, each with the reading the team takes</dd></div>
         </dl>
-        <p>An overnight statistical sweep proposed 861 candidate issues for a second reading. A separate cross-check of table rows against the report text found both known Saffire II disputes on its own. Questioned values get a second reading before they are published.</p>
+        <div class="strip-run">
+          <span class="mono">In, out, checked</span>
+          <dl>
+            <div><dt>Goes in</dt><dd>The PSI table rows and the report pages.</dd></div>
+            <div><dt>Comes out</dt><dd>24,573 values, each with its original unit and table row, and 13 hand-checked records with a report page for every value. This site’s 11 comparable runs make 110 Compare pairs.</dd></div>
+            <div><dt>Checked</dt><dd>Flag rules for printed values that read as something else: a percent 100 times too large, spreadsheet auto-fill damage, a missing decimal point, length and width swapped, a header that lost a subscript, a missing or wrong unit, and implausible values. The printed value is kept and the flag says why.</dd></div>
+            <div><dt>Measured</dt><dd>575 flagged values and 13 record-level issues. An overnight sweep proposed 861 candidates for a second reading; a cross-check against the report text found both known Saffire II disputes on its own.</dd></div>
+          </dl>
+        </div>
+        <p>Questioned values get a second reading before they are published. Example: Saffire I-1’s sample thickness reads 0.37 mm in the NASA report but sits under a “cm” column heading in the PSI table, so both are shown.</p>
         <p class="arch-code"><span class="mono">Code</span><code>build_dashboard_catalog.py</code> <code>build_issues_summary.py</code></p>
       </div>
     </li>
@@ -72,7 +196,16 @@
           <div><dt>0.850</dt><dd>recall@5, rules only</dd></div>
           <div><dt>0.833</dt><dd>hit@1, rules only</dd></div>
         </dl>
-        <p>The scores cover the 108 wordings that have an expected answer; the other 12 should get none. With the live model added, an earlier overnight run measured hit@1 0.806 and recall@5 0.839. The model returned a reading for only 22 of the 120 wordings in that run.</p>
+        <div class="strip-run">
+          <span class="mono">In, out, checked</span>
+          <dl>
+            <div><dt>Goes in</dt><dd>A plain-language question, the 24 investigations and the report text.</dd></div>
+            <div><dt>Comes out</dt><dd>Investigations ranked by rules, and report passages to quote with their page. This site publishes 1,321 passages from the five NASA-series documents and links the four papers by page.</dd></div>
+            <div><dt>Checked</dt><dd>120 wordings: 30 questions asked four ways. 108 have an expected answer and are scored; the other 12 should get none.</dd></div>
+            <div><dt>Measured</dt><dd>Rules only: recall@5 0.850 and hit@1 0.833. By wording, hit@1 runs from 0.741 (misspelled) to 0.926 (short).</dd></div>
+          </dl>
+        </div>
+        <p>With the live model added, an earlier overnight run measured hit@1 0.806 and recall@5 0.839. The model returned a reading for only 22 of the 120 wordings in that run, so it isn’t a full model-ranking result; the rules-only scores are the ones the team stands behind. An earlier script counted hidden rows left over from the previous question and inflated scores to 0.861–0.875; the numbers here are the corrected ones.</p>
         <p class="arch-code"><span class="mono">Code</span><code>build_report_passages.py</code> <code>07a-report-search.js</code> <code>02-investigations-and-coverage.js</code> <code>Evaluation checks.mjs</code></p>
       </div>
     </li>
@@ -87,20 +220,39 @@
           <div><dt>0</dt><dd>misses for wrong numbers, wrong records, cause words, missing citations and disputed values</dd></div>
           <div><dt>920 → 240</dt><dd>wrong-unit misses per sentence framing, after two fixes</dd></div>
         </dl>
-        <p>The saved explanations were written by qwen3:4b (Ollama 0.40.16) and kept only where they passed. The stress test is a team run on the Mac Mini; its harness is not yet in this repository. Known gap: invented details that reuse words from the cited fields often pass. In the same test, 19,520 of 23,040 per framing did. That is why model text is always labelled as Flaregrain’s reading and never styled as NASA evidence.</p>
-        <p class="arch-code"><span class="mono">Code</span><code>09-runs-and-compare.js</code> (<code>checkSentence</code>) <code>Model checks.mjs</code></p>
+        <div class="strip-run">
+          <span class="mono">In, out, checked</span>
+          <dl>
+            <div><dt>Goes in</dt><dd>Sentences qwen3:4b writes about a pair of records, each citing the record fields it uses.</dd></div>
+            <div><dt>Comes out</dt><dd>Only the sentences that pass. Removed sentences are counted with their reason. A saved or live answer also carries the facts fingerprint of the records it was written from.</dd></div>
+            <div><dt>Checked</dt><dd>A stress test of 343,758 synthetic sentences over 55 record pairs, each made to pass or fail on purpose.</dd></div>
+            <div><dt>Measured</dt><dd>0 misses for wrong numbers, the other record’s fact, cause words, no citation and disputed values. Wrong-unit misses fell from 920 to 240 per framing.</dd></div>
+          </dl>
+        </div>
+        <p>The saved explanations were written by qwen3:4b (Ollama 0.40.16) and kept only where they passed. The stress test was first run on the team’s Mac mini; its harness, checker_stress.mjs, is in the checks folder. Known gap: invented details that reuse words from the cited fields often pass. In the same test, 19,520 of 23,040 per framing did. That is why model text is always labelled as Flaregrain’s reading and never styled as NASA evidence.</p>
+        <p class="arch-code"><span class="mono">Code</span><code>09-runs-and-compare.js</code> (<code>checkSentence</code>) <code>Model checks.mjs</code> <code>checker_stress.mjs</code></p>
       </div>
     </li>
     <li class="arch-layer">
       <span class="arch-n mono">05</span>
       <div class="arch-body">
         <h2>Interface</h2>
-        <p>Nora’s Ask, Compare, Evidence and Browse. Every answer links to the NASA page it came from. Model text carries the label “Flaregrain reading · not NASA evidence”. The model, qwen3:4b, runs locally on the team’s Mac Mini and is shown live in the demo. This public site shows only saved, checked text.</p>
-        <p class="arch-code"><span class="mono">Code</span><code>flaregrain/redesign/</code> <code>mini-api/</code></p>
+        <p>Nora’s Ask, Compare, Evidence and Browse. Every answer links to the NASA page it came from. Model text carries the label “Flaregrain reading · not NASA evidence”. The model, qwen3:4b, runs locally on the team’s Mac mini behind a small proxy; the proxy runs only there and isn’t in this repository. The model is shown live in the demo. This public site shows saved, checked text, and live readings for the three starter pairs on Compare.</p>
+        <div class="strip-run">
+          <span class="mono">In, out, checked</span>
+          <dl>
+            <div><dt>Goes in</dt><dd>The checked records, the prepared comparisons, the saved explanations and, for the starter pairs, live readings.</dd></div>
+            <div><dt>Comes out</dt><dd>Ask, Compare, Evidence and Browse, with the source page beside every value. Nothing needs a sign-in.</dd></div>
+            <div><dt>Checked</dt><dd>Model text always carries its label. A live reading must match the pair and the facts fingerprint, or the saved comparison stays. The build and data checks run before each release.</dd></div>
+            <div><dt>Measured</dt><dd>This site: 13 checked records, 11 comparable runs, 110 pairs, 39 saved explanations.</dd></div>
+          </dl>
+        </div>
+        <p class="arch-code"><span class="mono">Code</span><code>flaregrain/redesign/</code> <code>server.mjs</code> (<code>/api/explain</code>)</p>
       </div>
     </li>
   </ol>
-  <p class="arch-note small">Sources for these numbers: the PSI intake manifest, the catalog and observations files, the report-passage index, the saved explanations, the rules-only evaluation results, and the Mac Mini’s overnight sweep, cross-check and checker stress-test results. The full engineering notes are in <a href="https://github.com/jpss2004-bot/flaregrain-submission/blob/main/flaregrain/ENGINEERING.md" target="_blank" rel="noopener">ENGINEERING.md</a>.</p>
+  </div>
+  <p class="arch-note small">Sources for these numbers: the PSI intake manifest, the catalog and observations files, the report-passage index, the saved explanations, the rules-only evaluation results, the Mac mini’s overnight sweep, cross-check and checker stress-test results, and the live Explain timings measured on the Mac mini. The full engineering notes are in <a href="https://github.com/jpss2004-bot/flaregrain-submission/blob/main/flaregrain/ENGINEERING.md" target="_blank" rel="noopener">ENGINEERING.md</a>.</p>
 </main>
 <script src="drawer.js"></script>
 <script src="pages.js"></script>
