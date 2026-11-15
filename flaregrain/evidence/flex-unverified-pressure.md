@@ -7,4 +7,4 @@ Keep the printed **0 mmHg** visible as **reported, unverified**. Leave the numer
 Evidence review by [Osman](https://github.com/Osmankhurram).
 
 - [NASA Physical Sciences Informatics, FLEX (PSI-69), experimental table, test 114](https://psi.nasa.gov/geode-py/ws/studies/PSI-69/download?file=6792be99b7b6ff8e65037e3a&version=1&studyVersion=5&redirect=true) · dataset DOI `10.60555/mbq8-0451`
-- [NASA/TP—2015-216046, Table IX, printed page 22, FLEX–114](https://ntrs.nasa.gov/api/citations/20150023456/downloads/20150023456.pdf)
+- [NASA/TP—2015-216046, Table IX, printed page 23 (PDF p. 29), FLEX–114](https://ntrs.nasa.gov/api/citations/20150023456/downloads/20150023456.pdf#page=29)
