@@ -73,7 +73,7 @@ Removed sentences stay listed with the reason.
 - **Stress test:** 343,758 synthetic test sentences over 55 record pairs.
   - There were 0 misses for wrong numbers, the other record's fact, cause words, no citation, and disputed values stated as fact.
   - Wrong-unit misses (counted per sentence framing) fell from 920 to 240 after two fixes.
-  - It's a team run on the Mac Mini; its harness isn't yet in this repository.
+  - It was first run on the team's Mac Mini. The harness is in [`checks/`](checks/README.md) (`checker_stress.mjs`); it needs the built dashboard page.
   - **Known gap:** invented details that reuse words from the cited fields often pass. That's why model text is always labelled as Flaregrain's reading and never styled as NASA evidence.
 - A live answer is accepted only for the exact pair it was asked about, and only if its facts fingerprint matches the records on the page. Otherwise the saved, checked explanation is shown.
 
