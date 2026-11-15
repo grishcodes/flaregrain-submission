@@ -520,5 +520,5 @@ mark{background:rgba(232,135,58,.25);color:var(--ink);border-radius:3px;padding:
 .trend-grid .fit{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-dasharray:5 3}
 .trend-grid .band{fill:rgba(232,230,225,.08)}
 .trend-grid figcaption{color:var(--muted);margin-top:4px}
-@media (max-width:1024px){.sub{padding-top:150px}.hab-layout{grid-template-columns:1fr}.hab-controls{grid-template-columns:1fr 1fr}.in-grid{grid-template-columns:1fr}}
+@media (max-width:1024px){.sub{padding-top:176px}.hab-layout{grid-template-columns:1fr}.hab-controls{grid-template-columns:1fr 1fr}.in-grid{grid-template-columns:1fr}}
 @media (max-width:900px){.sub-head{grid-template-columns:1fr}.ev-cols{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.trend-grid{grid-template-columns:1fr}}
