@@ -88,7 +88,7 @@
             : `<p class="no-source mono">${mk('missing')}No cited NASA source answers this directly</p>`}
         ${lead && a.limitation ? `<p class="limit"><span class="mono">Limitation</span>${esc(a.limitation)}</p>` : ''}
       </div>
-      ${a.compare ? `<div class="next line-in" style="--d:4"><a class="btn btn-ink" href="compare.html?ids=${encodeURIComponent(a.compare[0])},${encodeURIComponent(a.compare[1])}">Compare ${esc(names[0])} and ${esc(names[1])} ${ICON.arrow}</a></div>` : ''}
+      ${a.compare ? `<div class="next line-in" style="--d:4"><a class="btn btn-ink" href="compare.html?ids=${encodeURIComponent(a.compare[0])},${encodeURIComponent(a.compare[1])}&q=${encodeURIComponent(a.query)}">Compare ${esc(names[0])} and ${esc(names[1])} ${ICON.arrow}</a></div>` : ''}
 
       <section class="how line-in" style="--d:5" aria-labelledby="how-h">
         <span class="mono" id="how-h">${a.ranks.length || passagesWithExcerpt.length ? '(How we know)' : '(Closest evidence)'}</span>

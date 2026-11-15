@@ -393,6 +393,7 @@ mark{background:rgba(232,135,58,.25);color:var(--ink);border-radius:3px;padding:
 .cards-note{margin-top:14px;color:var(--muted);font-size:13px}
 
 #cmp-title:focus{outline:none}
+.back-q{margin-bottom:18px}
 #cmp-title:focus-visible{outline:1.5px solid var(--ember);outline-offset:6px;border-radius:6px}
 
 /* Ask: source excerpts, earlier questions, empty-box hint */
