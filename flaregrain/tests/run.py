@@ -118,5 +118,19 @@ if (ROOT / "app" / "shell.html").is_file():
 status = subprocess.run([sys.executable, "-I", str(ROOT / "build.py"), "--check"], capture_output=True, text=True)
 expect("build.py --check runs from the command line", status.returncode == 0)
 
+# Live Explain in redesign/server.mjs, against a stand-in model proxy on this computer (tests/live_explain.mjs).
+node = shutil.which("node") or next((p for p in ("/opt/homebrew/bin/node", "/usr/local/bin/node") if Path(p).is_file()), None)
+if node is None:
+    expect("live Explain checks run (needs Node.js 22 or later)", False)
+else:
+    try:
+        live = subprocess.run([node, str(ROOT / "tests" / "live_explain.mjs")], capture_output=True, text=True, timeout=120)
+        lines = [line for line in live.stdout.splitlines() if line.startswith(("passed ", "FAILED "))]
+        for line in lines:
+            expect(line.split(" ", 1)[1], line.startswith("passed "))
+        expect("live Explain checks complete", live.returncode == 0 and bool(lines))
+    except subprocess.TimeoutExpired:
+        expect("live Explain checks complete", False)
+
 print(f"{len(failures)} failed" if failures else "all build checks passed")
 sys.exit(1 if failures else 0)

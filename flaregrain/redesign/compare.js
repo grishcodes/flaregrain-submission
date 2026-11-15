@@ -164,16 +164,21 @@
     if (open) return openRecord(open.dataset.open, open.dataset.field, open);
     if (e.target.closest('#live')) {
       const s = $('live-status'); s.textContent = 'Asking the live model…';
+      const asked = current;
       try {
-        const r = await fetch('/api/explain', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ids: current.ids})});
-        const body = await r.json();
+        const r = await fetch('/api/explain', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ids: asked.ids})});
+        const body = await r.json().catch(() => ({}));
+        if (current !== asked || !s.isConnected) return; // the pair changed while the model answered: this reply is for another panel
         if (!r.ok) throw new Error(body.error);
+        if (String(body.ids) !== String(asked.ids)) throw new Error('The live answer was for another pair. The saved explanation stays.');
         s.textContent = `${body.passed.length} sentences passed the checker, ${body.removed.length} removed (${body.seconds}s).`;
         const why = result.querySelector('.why'); if (why) why.open = true;
         const block = result.querySelector('.reading-block');
+        // A pair without a saved explanation gets the same label for the live reading.
+        if (!block.querySelector('.mono')) block.insertAdjacentHTML('afterbegin', '<span class="mono">Flaregrain reading · not NASA evidence</span>');
         const list = block.querySelector('ol') || block.appendChild(document.createElement('ol'));
         list.innerHTML = body.passed.map(p => `<li><p>${esc(p.text)}</p></li>`).join('');
-      } catch (err) { s.textContent = err.message || 'Live model unavailable. The saved explanation stays.'; }
+      } catch (err) { if (current === asked && s.isConnected) s.textContent = err.message || 'Live model unavailable. The saved explanation stays.'; }
     }
   });
 

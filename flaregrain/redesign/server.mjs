@@ -97,6 +97,105 @@ function exportRows(pair, format) {
   return [cols.join(','), ...rows.map(row => cols.map(col => quote(row[col])).join(','))].join('\r\n') + '\r\n';
 }
 
+// Live Explain (#13, #15). Off unless the deployment sets FLAREGRAIN_MINI_EXPLAIN_URL to the public model proxy's base
+// URL (never committed). Only the three starter pairs, in either order. The server first asks the proxy's /health for up
+// to 4 s: if it can't be reached or the hourly cap is used up, the page gets its saved comparison back at once and no
+// live answer is spent. Otherwise it waits up to 25 s for checked sentences, but never past 14 s from the request in all,
+// because the deployment's functions stop at 15 s. It keeps the sentences only if they name the pair
+// asked for and carry the facts fingerprint of the published records below. Anything else (429, 503, another pair or
+// fingerprint, a timeout or a network error) returns what the page already shows for the pair, with a short status.
+// While the variable is unset, every other response is unchanged.
+export const live = {checkMs: 4000, waitMs: 25000, deadlineMs: 14000};
+const livePairs = new Set([['B1', 'S1'], ['B1', 'B10'], ['FLEX-002', 'S31']].flatMap(([a, b]) => [a + ',' + b, b + ',' + a]));
+const unavailable = 'Live model unavailable. The saved comparison stays.';
+const limited = 'Live answers are limited right now. The saved comparison stays.';
+
+function liveBase() {
+  try {
+    const url = new URL((process.env.FLAREGRAIN_MINI_EXPLAIN_URL || '').trim());
+    return /^https?:$/.test(url.protocol) && !url.username && !url.password && !url.search && !url.hash ? url.href.replace(/\/+$/, '') : '';
+  } catch { return ''; }
+}
+
+// The dashboard's facts fingerprint (factsDigest over explanationFacts in its model code): FNV-1a over the record name,
+// field, value and status of every exported field except the sample identifier, in the order of the pair.
+export function factsDigest(ids) {
+  const text = ids.flatMap(id => checked.get(id).fields.filter(field => field.field !== 'Sample or identifier')
+    .map(field => [checked.get(id).name, field.field, String(field.value), field.status || ''].join('|'))).join('\n');
+  let hash = 2166136261 >>> 0;
+  for (let i = 0; i < text.length; i++) { hash ^= text.charCodeAt(i); hash = Math.imul(hash, 16777619) >>> 0; }
+  return hash.toString(16).padStart(8, '0');
+}
+
+// A proxy answer counts only for the pair asked, with these records' fingerprint, and only its checked sentences go out.
+function bound(answer, ids, started) {
+  const sentence = item => item && typeof item.text === 'string' && item.text.trim() && item.text.length <= 600 &&
+    (item.problems === undefined || (Array.isArray(item.problems) && !item.problems.length));
+  if (!answer || !Array.isArray(answer.ids) || answer.ids.length !== 2 || answer.ids[0] !== ids[0] || answer.ids[1] !== ids[1] ||
+    answer.factsHash !== factsDigest(ids) || !Array.isArray(answer.passed) || !answer.passed.length || answer.passed.length > 7 ||
+    !answer.passed.every(sentence) || (answer.removed !== undefined && !Array.isArray(answer.removed))) return null;
+  return {
+    ids, records: ids.map(id => checked.get(id).name), model: typeof answer.model === 'string' ? answer.model.slice(0, 40) : 'qwen3:4b',
+    seconds: Number.isFinite(answer.seconds) ? answer.seconds : +((Date.now() - started) / 1000).toFixed(1),
+    factsHash: answer.factsHash, passed: answer.passed.map(item => ({text: item.text.trim()})),
+    removed: (answer.removed || []).map(() => ({})), // counted on the page; sentences the checker removed are not sent
+  };
+}
+
+function readBody(req, limit = 256) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    let size = 0;
+    req.on('data', chunk => { size += chunk.length; if (size <= limit) chunks.push(chunk); });
+    req.on('end', () => resolve(size <= limit ? Buffer.concat(chunks).toString('utf8') : null));
+    req.on('error', reject);
+  });
+}
+
+async function explain(req, res) {
+  const started = Date.now();
+  const noStore = {'Cache-Control': 'no-store'};
+  if (!/^application\/json\b/i.test(req.headers['content-type'] || '')) return send(res, 415, {error: 'Send application/json.'}, undefined, noStore);
+  const text = await readBody(req);
+  if (text === null) return send(res, 413, {error: 'Request too large.'}, undefined, noStore);
+  let ids = null;
+  try {
+    const body = JSON.parse(text);
+    if (body && typeof body === 'object' && !Array.isArray(body) && Object.keys(body).join() === 'ids') ids = body.ids;
+  } catch {}
+  if (!Array.isArray(ids) || ids.length !== 2 || !ids.every(id => typeof id === 'string' && comparable.has(id)) || ids[0] === ids[1]) {
+    return send(res, 400, {error: 'Choose two different runs from the 11 comparable records.'}, undefined, noStore);
+  }
+  const key = ids.join(',');
+  const saved = (code, status, reason) =>
+    send(res, code, {error: status, status, reason, ids, explanation: data.pairs[key].explanation ?? null}, undefined, noStore);
+  const base = liveBase();
+  if (!base) return saved(503, unavailable, 'off');
+  if (!livePairs.has(key)) return saved(503, unavailable, 'pair');
+  let health = null;
+  try {
+    const reply = await fetch(base + '/health', {headers: {Accept: 'application/json'}, signal: AbortSignal.timeout(live.checkMs)});
+    if (reply.ok) health = await reply.json();
+  } catch {}
+  if (!health || health.ok !== true) return saved(503, unavailable, 'unreachable');
+  if (Number.isFinite(health.usedThisHour) && Number.isFinite(health.capPerHour) && health.usedThisHour >= health.capPerHour) {
+    return saved(429, limited, 'cap');
+  }
+  let answer;
+  try {
+    const reply = await fetch(base + '/explain', {method: 'POST', headers: {'Content-Type': 'application/json', Accept: 'application/json'},
+      body: JSON.stringify({ids}), signal: AbortSignal.timeout(Math.min(live.waitMs, live.deadlineMs - (Date.now() - started)))});
+    if (reply.status === 429 || reply.status === 503) return saved(429, limited, reply.status === 429 ? 'limit' : 'busy');
+    if (!reply.ok) return saved(503, unavailable, 'upstream');
+    const body = await reply.text();
+    try { answer = body.length <= 65536 ? JSON.parse(body) : null; } catch { answer = null; }
+  } catch (error) {
+    return saved(503, unavailable, error?.name === 'TimeoutError' ? 'timeout' : 'network');
+  }
+  const checkedAnswer = bound(answer, ids, started);
+  return checkedAnswer ? send(res, 200, checkedAnswer, undefined, noStore) : saved(503, unavailable, 'mismatch');
+}
+
 function send(res, status, body, type = 'application/json', headers = {}) {
   res.writeHead(status, {'Content-Type': type + '; charset=utf-8', 'X-Content-Type-Options': 'nosniff', ...headers});
   res.end(type === 'application/json' && typeof body !== 'string' ? JSON.stringify(body) : body);
@@ -128,7 +227,8 @@ function api(res, url) {
     case '/api/compare':
       if (!pair) return send(res, 400, {error: 'Choose two different runs from the 11 comparable records.'});
       return send(res, 200, {...pair, conditions: pair.conditions.map(run => run.map(condition =>
-        condition.readings ? {...condition, value: condition.readings.map(reading => reading.value).join(' / ')} : condition))});
+        condition.readings ? {...condition, value: condition.readings.map(reading => reading.value).join(' / ')} : condition)),
+        ...(liveBase() && livePairs.has(ids.join(',')) ? {live: true} : {})});
     case '/api/export': {
       if (!pair) return send(res, 400, {error: 'Choose two different runs from the 11 comparable records.'});
       const format = search.get('format') === 'json' ? 'json' : 'csv';
@@ -144,6 +244,10 @@ function api(res, url) {
 }
 
 export const server = createServer(async (req, res) => {
+  if (req.method === 'POST' && /^\/api\/explain(?:\?|$)/.test(req.url)) return explain(req, res).catch(error => {
+    console.error(error);
+    if (!res.headersSent) send(res, 500, {error: 'Unable to load the submission.'});
+  });
   if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, {error: 'Use GET or HEAD.'});
   try {
     const url = new URL(req.url, 'http://127.0.0.1');
