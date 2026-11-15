@@ -249,13 +249,16 @@ dialog.drawer[open]{animation:drawIn .5s var(--ease)}
   .reveal,.line-in{opacity:1!important;transform:none!important;filter:none!important}
 }
 @media (max-width:1100px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-height:360px}.card .icon{height:180px}}
-@media (max-width:760px){
-  /* Phone: the one-line nav did not fit and ran off-screen over the brand. In the bar it wraps under the brand. */
+/* Up to 900 px the one-line nav does not fit beside the brand (on phones it ran off-screen over the brand, and a longer
+   nav label collides at 768 px). In the bar it wraps under the brand. */
+@media (max-width:900px){
   :root{--bar:104px}
-  .nav{gap:0}.nav a{padding:2px 0}
   :is(.scrolled,.page-sub,.page-compare,.page-answer) .brand{top:14px;flex-direction:row;align-items:baseline;gap:12px}
   :is(.scrolled,.page-sub,.page-compare,.page-answer) .nav{top:44px;left:var(--edge);right:var(--edge);display:flex;flex-wrap:wrap;justify-content:flex-start;gap:4px 18px}
   :is(.scrolled,.page-sub,.page-compare,.page-answer) .nav svg{display:none}
+}
+@media (max-width:760px){
+  .nav{gap:0}.nav a{padding:2px 0}
   :root{--fs-h1:34px}
   .hero-pin{display:flex;flex-direction:column;justify-content:flex-end;gap:18px;padding:0 var(--edge) 56px}
   .hero-copy,.states{position:static;width:auto;transform:none}
