@@ -171,7 +171,9 @@
         if (current !== asked || !s.isConnected) return; // the pair changed while the model answered: this reply is for another panel
         if (!r.ok) throw new Error(body.error);
         if (String(body.ids) !== String(asked.ids)) throw new Error('The live answer was for another pair. The saved explanation stays.');
-        s.textContent = `${body.passed.length} sentences passed the checker, ${body.removed.length} removed (${body.seconds}s).`;
+        const at = body.cached && body.generatedAt ? new Date(body.generatedAt).toLocaleTimeString('en-CA', {timeZone: 'America/Halifax', hour: '2-digit', minute: '2-digit', hour12: false}) : '';
+        s.textContent = `${body.passed.length} sentences passed the checker, ${body.removed.length} removed (${body.seconds}s)` +
+          (at ? `. Written by the live model at ${at} AST and reused for this pair.` : '.');
         const why = result.querySelector('.why'); if (why) why.open = true;
         const block = result.querySelector('.reading-block');
         // A pair without a saved explanation gets the same label for the live reading.

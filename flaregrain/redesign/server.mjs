@@ -140,6 +140,10 @@ function bound(answer, ids, started) {
     seconds: Number.isFinite(answer.seconds) ? answer.seconds : +((Date.now() - started) / 1000).toFixed(1),
     factsHash: answer.factsHash, passed: answer.passed.map(item => ({text: item.text.trim()})),
     removed: (answer.removed || []).map(() => ({})), // counted on the page; sentences the checker removed are not sent
+    // The proxy keeps each pair's answer and sends it again at once (same model, same facts, temperature 0); the page says
+    // when the model wrote it, so a reused answer is never shown as freshly written.
+    ...(answer.cached === true && typeof answer.generatedAt === 'string' && Number.isFinite(Date.parse(answer.generatedAt))
+      ? {cached: true, generatedAt: new Date(Date.parse(answer.generatedAt)).toISOString()} : {}),
   };
 }
 
