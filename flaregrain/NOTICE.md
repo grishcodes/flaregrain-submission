@@ -15,7 +15,7 @@ NASA does not endorse Flaregrain.
 
 ## Code and assets from others
 
-This repository includes no third-party code or font files. The Ask and Compare pages load three things from public CDNs when they open:
+This repository includes no third-party code or font files. Every page loads the two fonts from Google Fonts, and the home and answer pages also load Three.js from cdnjs:
 
 | What | Licence |
 |---|---|
