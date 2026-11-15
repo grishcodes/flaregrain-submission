@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Flaregrain · System design</title>
-<meta name="description" content="How Flaregrain is built: the dashboard’s own architecture views.">
+<meta name="description" content="How Flaregrain is built: five layers from NASA’s sources to the page, with the team’s measured numbers.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +29,75 @@
 <main class="sub" id="main" tabindex="-1">
   <header class="sub-head">
     <h1><span class="mono">(System design)</span>How Flaregrain is built</h1>
-    <p>In the full-data demo: the dashboard’s own architecture views, with C4 levels, the request sequence, data lineage and the checker.</p>
+    <p>Five layers, from NASA’s sources to the page. Every number below comes from the team’s build and evaluation files. The full system runs in the live demo; this site carries its 13 hand-checked records.</p>
   </header>
-  <div class="embed embed-tall" id="system-embed" data-embed-view="system"></div>
+  <ol class="arch" aria-label="The five layers, from sources to interface">
+    <li class="arch-layer">
+      <span class="arch-n mono">01</span>
+      <div class="arch-body">
+        <h2>NASA sources and intake</h2>
+        <p>Fetches NASA’s Physical Sciences Informatics (PSI) combustion repository and the investigators’ report PDFs, and keeps a checksum for every file it reads.</p>
+        <dl class="arch-stats">
+          <div><dt>24</dt><dd>PSI combustion investigations</dd></div>
+          <div><dt>2,009</dt><dd>experimental-table rows</dd></div>
+          <div><dt>9</dt><dd>NASA report PDFs</dd></div>
+        </dl>
+        <p class="arch-code"><span class="mono">Code</span><code>psi_intake.py</code> <code>psi_observations.py</code></p>
+      </div>
+    </li>
+    <li class="arch-layer">
+      <span class="arch-n mono">02</span>
+      <div class="arch-body">
+        <h2>Normalized data</h2>
+        <p>Every printed value becomes one normalized value with its unit and its source cell. Each value carries its provenance: <span class="tier t1">checked NASA record</span> <span class="tier t2">PSI table row</span> <span class="tier t3">Flaregrain model or reading</span> <span class="tier t4">context</span>, plus <span class="tier flag">flagged</span> and <span class="tier dispute">disputed</span> states. Where two NASA sources disagree, both values stay visible.</p>
+        <dl class="arch-stats">
+          <div><dt>24,573</dt><dd>normalized values</dd></div>
+          <div><dt>13</dt><dd>hand-checked NASA records, 11 of them comparable runs</dd></div>
+          <div><dt>575</dt><dd>table values flagged, each with the reading the team takes</dd></div>
+        </dl>
+        <p>An overnight statistical sweep proposed 861 candidate issues for a second reading. A separate cross-check of table rows against the report text found both known Saffire II disputes on its own. Questioned values get a second reading before they are published.</p>
+        <p class="arch-code"><span class="mono">Code</span><code>build_dashboard_catalog.py</code> <code>build_issues_summary.py</code></p>
+      </div>
+    </li>
+    <li class="arch-layer">
+      <span class="arch-n mono">03</span>
+      <div class="arch-body">
+        <h2>Retrieval and ranking</h2>
+        <p>Cuts the report PDFs into passages and ranks investigations for a plain-language question by rules: names, materials, conditions and outcomes. It is measured on a draft set of 30 questions, each asked four ways (plain, technical, short and misspelled).</p>
+        <dl class="arch-stats">
+          <div><dt>1,595</dt><dd>report passages from the 9 PDFs</dd></div>
+          <div><dt>0.850</dt><dd>recall@5, rules only</dd></div>
+          <div><dt>0.833</dt><dd>hit@1, rules only</dd></div>
+        </dl>
+        <p>The scores cover the 108 wordings that have an expected answer; the other 12 should get none. With the live model added, an earlier overnight run measured hit@1 0.806 and recall@5 0.839. The model returned a reading for only 22 of the 120 wordings in that run.</p>
+        <p class="arch-code"><span class="mono">Code</span><code>build_report_passages.py</code> <code>07a-report-search.js</code> <code>02-investigations-and-coverage.js</code> <code>Evaluation checks.mjs</code></p>
+      </div>
+    </li>
+    <li class="arch-layer">
+      <span class="arch-n mono">04</span>
+      <div class="arch-body">
+        <h2>Sentence checker</h2>
+        <p>Every sentence the model writes is kept only if it matches the record fields it cites. Numbers, units, record names and words are checked against those fields. Sentences that state a disputed value as fact, add a cause, or cite nothing are removed.</p>
+        <dl class="arch-stats">
+          <div><dt>139</dt><dd>saved explanations: 492 sentences kept, 270 removed</dd></div>
+          <div><dt>343,758</dt><dd>synthetic test sentences, over 55 record pairs</dd></div>
+          <div><dt>0</dt><dd>misses for wrong numbers, wrong records, cause words, missing citations and disputed values</dd></div>
+          <div><dt>920 → 240</dt><dd>wrong-unit misses per sentence framing, after two fixes</dd></div>
+        </dl>
+        <p>The saved explanations were written by qwen3:4b (Ollama 0.40.16) and kept only where they passed. The stress test is a team run on the Mac Mini; its harness is not yet in this repository. Known gap: invented details that reuse words from the cited fields often pass. In the same test, 19,520 of 23,040 per framing did. That is why model text is always labelled as Flaregrain’s reading and never styled as NASA evidence.</p>
+        <p class="arch-code"><span class="mono">Code</span><code>09-runs-and-compare.js</code> (<code>checkSentence</code>) <code>Model checks.mjs</code></p>
+      </div>
+    </li>
+    <li class="arch-layer">
+      <span class="arch-n mono">05</span>
+      <div class="arch-body">
+        <h2>Interface</h2>
+        <p>Nora’s Ask, Compare, Evidence and Browse. Every answer links to the NASA page it came from. Model text carries the label “Flaregrain reading · not NASA evidence”. The model, qwen3:4b, runs locally on the team’s Mac Mini and is shown live in the demo. This public site shows only saved, checked text.</p>
+        <p class="arch-code"><span class="mono">Code</span><code>flaregrain/redesign/</code> <code>mini-api/</code></p>
+      </div>
+    </li>
+  </ol>
+  <p class="arch-note small">Sources for these numbers: the PSI intake manifest, the catalog and observations files, the report-passage index, the saved explanations, the rules-only evaluation results, and the Mac Mini’s overnight sweep, cross-check and checker stress-test results. The full engineering notes are in <a href="https://github.com/jpss2004-bot/flaregrain-submission/blob/main/flaregrain/ENGINEERING.md" target="_blank" rel="noopener">ENGINEERING.md</a>.</p>
 </main>
 <script src="drawer.js"></script>
 <script src="pages.js"></script>

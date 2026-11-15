@@ -265,5 +265,5 @@
   }
 
   /* ---------- System design ---------- */
-  if (page === 'system') scope($('system-embed'));
+  if (page === 'system' && $('system-embed')) scope($('system-embed'));
 })();
