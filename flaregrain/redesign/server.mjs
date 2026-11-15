@@ -102,7 +102,8 @@ function api(res, url) {
   const ids = (search.get('ids') || '').split(',');
   const pair = ids.length === 2 ? data.pairs[ids.join(',')] : null;
   switch (url.pathname) {
-    case '/api/health': return send(res, 200, {ok: true, records: records.size});
+    // commit: the Git commit Vercel deployed (null when run anywhere else), so anyone can see which revision is live.
+    case '/api/health': return send(res, 200, {ok: true, records: records.size, commit: process.env.VERCEL_GIT_COMMIT_SHA || null});
     case '/api/questions': return send(res, 200, {questions: [cutoffQuestion]});
     case '/api/records': return send(res, 200, {records: data.records});
     case '/api/starters': return send(res, 200, {starters: data.starters});
