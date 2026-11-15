@@ -1,0 +1,216 @@
+{
+ "run": "Built dashboard of event/halifax-2026 (page SHA-256 936aaf41eb13dbc3), November 15, 2026. Same counts as the Mac Mini run of November 14 after its two fixes.",
+ "summary": {
+  "records": 11,
+  "pairs": 55,
+  "sentences": 343758,
+  "good": 35186,
+  "bad": 308572,
+  "bad_that_pass": 59780,
+  "good_removed": 5448,
+  "errors": 0,
+  "seconds": 13.811
+ },
+ "byClass": {
+  "G1 single fact restated": {
+   "expect": "pass",
+   "total": 5760,
+   "wrong": 880
+  },
+  "G1 single fact restated [frame: For X, field is V]": {
+   "expect": "pass",
+   "total": 5760,
+   "wrong": 880
+  },
+  "G1 single fact restated [frame: X — field: V]": {
+   "expect": "pass",
+   "total": 5760,
+   "wrong": 880
+  },
+  "G4 fact marker in parentheses (cleaned)": {
+   "expect": "pass",
+   "total": 5760,
+   "wrong": 880
+  },
+  "G4 fact marker in parentheses (cleaned) [frame: For X, field is V]": {
+   "expect": "pass",
+   "total": 5760,
+   "wrong": 880
+  },
+  "G4 fact marker in parentheses (cleaned) [frame: X — field: V]": {
+   "expect": "pass",
+   "total": 5760,
+   "wrong": 880
+  },
+  "B6 cause word": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B6 cause word [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B6 cause word [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B7 no citation": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B7 no citation [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B7 no citation [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B2 fact given to the other record": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B2 fact given to the other record [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B2 fact given to the other record [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B8 fact ID left in text": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B8 fact ID left in text [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B8 fact ID left in text [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 0
+  },
+  "B10 invented detail": {
+   "expect": "remove",
+   "total": 23040,
+   "wrong": 19520
+  },
+  "B10 invented detail [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 23040,
+   "wrong": 19520
+  },
+  "B10 invented detail [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 23040,
+   "wrong": 19520
+  },
+  "B4 \"both\" for one record's fact": {
+   "expect": "remove",
+   "total": 5712,
+   "wrong": 0
+  },
+  "B9 false absence": {
+   "expect": "remove",
+   "total": 5760,
+   "wrong": 320
+  },
+  "B1 wrong number": {
+   "expect": "remove",
+   "total": 47480,
+   "wrong": 0
+  },
+  "B1 wrong number [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 47480,
+   "wrong": 0
+  },
+  "B1 wrong number [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 47480,
+   "wrong": 0
+  },
+  "B3 wrong unit": {
+   "expect": "remove",
+   "total": 4480,
+   "wrong": 240
+  },
+  "B3 wrong unit [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 4480,
+   "wrong": 240
+  },
+  "B3 wrong unit [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 4480,
+   "wrong": 240
+  },
+  "G2 same field, both records": {
+   "expect": "pass",
+   "total": 172,
+   "wrong": 56
+  },
+  "G2 same field, both records [frame: For X, field is V]": {
+   "expect": "pass",
+   "total": 172,
+   "wrong": 56
+  },
+  "G2 same field, both records [frame: X — field: V]": {
+   "expect": "pass",
+   "total": 172,
+   "wrong": 56
+  },
+  "B12 \"respectively\"": {
+   "expect": "remove",
+   "total": 148,
+   "wrong": 0
+  },
+  "G3 dispute stated": {
+   "expect": "pass",
+   "total": 110,
+   "wrong": 0
+  },
+  "B5 disputed field stated as fact": {
+   "expect": "remove",
+   "total": 110,
+   "wrong": 0
+  },
+  "B5 disputed field stated as fact [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 110,
+   "wrong": 0
+  },
+  "B5 disputed field stated as fact [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 110,
+   "wrong": 0
+  },
+  "B11 unlike quantities set against each other": {
+   "expect": "remove",
+   "total": 834,
+   "wrong": 60
+  },
+  "B11 unlike quantities set against each other [frame: For X, field is V]": {
+   "expect": "remove",
+   "total": 834,
+   "wrong": 60
+  },
+  "B11 unlike quantities set against each other [frame: X — field: V]": {
+   "expect": "remove",
+   "total": 834,
+   "wrong": 60
+  }
+ }
+}
