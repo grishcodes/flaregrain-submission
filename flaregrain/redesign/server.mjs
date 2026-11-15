@@ -100,12 +100,13 @@ function exportRows(pair, format) {
 // Live Explain (#13, #15). Off unless the deployment sets FLAREGRAIN_MINI_EXPLAIN_URL to the public model proxy's base
 // URL (never committed). Only the three starter pairs, in either order. The server first asks the proxy's /health for up
 // to 4 s: if it can't be reached or the hourly cap is used up, the page gets its saved comparison back at once and no
-// live answer is spent. Otherwise it waits up to 25 s for checked sentences, but never past 14 s from the request in all,
-// because the deployment's functions stop at 15 s. It keeps the sentences only if they name the pair
+// live answer is spent. Otherwise it waits for checked sentences, but never past 40 s from the request in all,
+// because the deployment's functions stop at 45 s. A warm answer takes about 13 s on the Mini and about 4 s more through
+// the tunnel and the function start, so a 14 s limit cut off every answer. It keeps the sentences only if they name the pair
 // asked for and carry the facts fingerprint of the published records below. Anything else (429, 503, another pair or
 // fingerprint, a timeout or a network error) returns what the page already shows for the pair, with a short status.
 // While the variable is unset, every other response is unchanged.
-export const live = {checkMs: 4000, waitMs: 25000, deadlineMs: 14000};
+export const live = {checkMs: 4000, waitMs: 40000, deadlineMs: 40000};
 const livePairs = new Set([['B1', 'S1'], ['B1', 'B10'], ['FLEX-002', 'S31']].flatMap(([a, b]) => [a + ',' + b, b + ',' + a]));
 const unavailable = 'Live model unavailable. The saved comparison stays.';
 const limited = 'Live answers are limited right now. The saved comparison stays.';

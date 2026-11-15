@@ -64,8 +64,8 @@ const LIMITED = 'Live answers are limited right now. The saved comparison stays.
 expect('the facts fingerprint matches the public records for all six starter orders',
   Object.entries(PUBLIC).every(([key, hash]) => factsDigest(key.split(',')) === hash),
   Object.keys(PUBLIC).map(key => key + '=' + factsDigest(key.split(','))).join(' '));
-expect('the wait is a 4 s check, then up to 25 s, within 14 s in all (functions stop at 15 s)',
-  live.checkMs === 4000 && live.waitMs === 25000 && live.deadlineMs === 14000);
+expect('the wait is a 4 s check, then the answer, within 40 s in all (functions stop at 45 s)',
+  live.checkMs === 4000 && live.waitMs === 40000 && live.deadlineMs === 40000);
 
 // Unset: no live flag, no call to any proxy, and the saved comparison with a status.
 reset();
@@ -167,7 +167,7 @@ reset();
 live.waitMs = 1500;
 stub.explainDelay = 3000;
 r = await post({ids: ['B1', 'S1']});
-live.waitMs = 25000;
+live.waitMs = 40000;
 expect('an answer past the wait is dropped: unavailable at the limit', savedReply(r, 503, 'timeout', UNAVAILABLE) && r.ms >= 1400 && r.ms < 2800, r.ms + ' ms');
 
 reset();
@@ -175,7 +175,7 @@ live.deadlineMs = 2500;
 stub.healthDelay = 1000;
 stub.explainDelay = 3000;
 r = await post({ids: ['B1', 'S1']});
-live.deadlineMs = 14000;
+live.deadlineMs = 40000;
 expect('a slow health check shortens the wait: the whole request ends at the overall limit',
   savedReply(r, 503, 'timeout', UNAVAILABLE) && r.ms >= 2400 && r.ms < 3300, r.ms + ' ms');
 
