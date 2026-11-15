@@ -11,6 +11,11 @@ const records = new Map(orderedPair.records.map(record => [record.id, record]));
 // material baselines are records only.
 const checked = new Map(data.checked.map(record => [record.id, record]));
 const comparable = new Set(data.records.map(record => record.id));
+// Moon & Mars air: a snapshot of the full-data demo's habitat answers (counts and record ids only; data/moon-mars-air.json,
+// copied beside the pages because the preview ships this folder whole). Names and NASA sources come from the checked records.
+const habitat = JSON.parse(await readFile(new URL('moon-mars-air.json', import.meta.url), 'utf8'));
+const habitatRecords = Object.fromEntries([...checked.values()].map(record =>
+  [record.id, {name: record.name, investigation: record.investigation, source: record.source, comparable: comparable.has(record.id)}]));
 
 const files = new Set([
   'index.html', 'answer.html', 'browse.html', 'compare.html', 'evidence.html', 'habitat.html',
@@ -240,7 +245,7 @@ function api(res, url) {
       return send(res, 200, exportRows(pair, format), format === 'json' ? 'application/json' : 'text/csv',
         {'Content-Disposition': 'attachment; filename="flaregrain-compare.' + format + '"'});
     }
-    case '/api/habitat':
+    case '/api/habitat': return send(res, 200, {...habitat, records: habitatRecords});
     case '/api/insights':
       return send(res, 404, {error: notIncluded});
     default:

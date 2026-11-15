@@ -1,0 +1,948 @@
+{
+ "note": "Moon & Mars air snapshot: for seven habitat atmospheres, how many NASA PSI table rows were tested nearby, from which investigations, and what is untested. Counts, ranges and record ids only; no table rows. Built by intake/build_moon_mars_air.py.",
+ "source": {
+  "commit": "c219442",
+  "what": "the full-data demo's PSI catalog (dashboard_catalog.json) and its habitat rules at that commit",
+  "catalogSha256": "addc89c58d4343dcb8a26f443497e2784113150fddcbec09821ab64c99c83262",
+  "investigations": 24,
+  "rows": 2009
+ },
+ "method": {
+  "near": "A PSI table row is near when it records both oxygen and a usable pressure within 3 points of oxygen and 1.5 psi of the preset.",
+  "oxygenOnly": "Rows within 3 points of oxygen whose table gives no usable pressure are counted apart and never placed by pressure.",
+  "excluded": [
+   {
+    "psi": "PSI-10",
+    "reason": "Its PSI record has a blank licence field, so this site leaves its rows out of every count."
+   }
+  ],
+  "checked": "Checked records use the oxygen and pressure printed in their own fields. Records with no pressure are listed by oxygen only. Nearest ranks records with both values by hypot(Δoxygen / 10, Δpsi / 4), the demo's own distance.",
+  "interpolation": "Never. A preset with no tested row nearby says so; no value is estimated between rows."
+ },
+ "checkedRecords": [
+  {
+   "id": "B1",
+   "o2": 22.2,
+   "psi": null,
+   "read": {
+    "o2": [
+     "Oxygen",
+     "22.2 → 22.2 vol%"
+    ],
+    "pressure": [
+     "Pressure",
+     "Not in Table A.1"
+    ]
+   }
+  },
+  {
+   "id": "B10",
+   "o2": 21.0,
+   "psi": null,
+   "read": {
+    "o2": [
+     "Specimen and oxygen",
+     "21.0 → 20.8 vol%"
+    ],
+    "pressure": [
+     "Pressure",
+     "Not in Table A.1"
+    ]
+   }
+  },
+  {
+   "id": "B11",
+   "o2": 21.0,
+   "psi": null,
+   "read": {
+    "o2": [
+     "Specimen and oxygen",
+     "21.0 → 20.7 vol%"
+    ],
+    "pressure": [
+     "Pressure",
+     "Not in Table A.1"
+    ]
+   }
+  },
+  {
+   "id": "S1",
+   "o2": 21.7,
+   "psi": 14.5,
+   "read": {
+    "o2": [
+     "Starting oxygen",
+     "21.7%"
+    ],
+    "pressure": [
+     "Pressure and flame size",
+     "100 kPa"
+    ]
+   }
+  },
+  {
+   "id": "S25",
+   "o2": 22.1,
+   "psi": 14.5,
+   "read": {
+    "o2": [
+     "Starting oxygen",
+     "22.1%"
+    ],
+    "pressure": [
+     "Pressure and flame size",
+     "100 kPa"
+    ]
+   }
+  },
+  {
+   "id": "S12",
+   "o2": 21.5,
+   "psi": null,
+   "read": {
+    "o2": [
+     "Oxygen",
+     "About 21.5%"
+    ],
+    "pressure": null
+   }
+  },
+  {
+   "id": "S26",
+   "o2": 22.1,
+   "psi": 14.5,
+   "read": {
+    "o2": [
+     "Oxygen",
+     "About 22.1%"
+    ],
+    "pressure": [
+     "Pressure and flame size",
+     "100 kPa"
+    ]
+   }
+  },
+  {
+   "id": "M7",
+   "o2": 18.9,
+   "psi": null,
+   "read": {
+    "o2": [
+     "Oxygen",
+     "18.9 → 18.4 vol%"
+    ],
+    "pressure": null
+   }
+  },
+  {
+   "id": "FLEX-002",
+   "o2": 21.0,
+   "psi": 14.73,
+   "read": {
+    "o2": [
+     "Conditions",
+     "O₂ mole fraction 0.21"
+    ],
+    "pressure": [
+     "Conditions",
+     "762 mmHg"
+    ]
+   }
+  },
+  {
+   "id": "S31",
+   "o2": 21.2,
+   "psi": 14.5,
+   "read": {
+    "o2": [
+     "Oxygen",
+     "21.2 to 21.0%"
+    ],
+    "pressure": [
+     "Flame size and pressure",
+     "100 kPa"
+    ]
+   }
+  },
+  {
+   "id": "BASS-T7",
+   "o2": 21.0,
+   "psi": 14.7,
+   "read": {
+    "o2": [
+     "Oxygen",
+     "21% by volume"
+    ],
+    "pressure": [
+     "Duct and pressure",
+     "1 atm"
+    ]
+   }
+  },
+  {
+   "id": "SAME-KAPTON",
+   "o2": null,
+   "psi": null,
+   "read": {
+    "o2": null,
+    "pressure": null
+   }
+  },
+  {
+   "id": "SAMER-KAPTON",
+   "o2": null,
+   "psi": null,
+   "read": {
+    "o2": null,
+    "pressure": null
+   }
+  }
+ ],
+ "presets": [
+  {
+   "id": "iss",
+   "label": "ISS cabin",
+   "o2": 21,
+   "psi": 14.7,
+   "gravity": "micro",
+   "note": "Station air near sea-level composition.",
+   "gravityLabel": "Microgravity",
+   "partialPressurePsi": 3.09,
+   "earthAirShare": 100,
+   "near": {
+    "rows": 152,
+    "investigations": [
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 90,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       18.0,
+       24.0
+      ],
+      "pressurePsi": [
+       14.57,
+       14.97
+      ]
+     },
+     {
+      "psi": "PSI-159",
+      "name": "ACME CFI-G",
+      "rows": 34,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       18.02,
+       23.41
+      ],
+      "pressurePsi": [
+       14.7,
+       14.7
+      ]
+     },
+     {
+      "psi": "PSI-39",
+      "name": "CFI",
+      "rows": 28,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.0,
+       21.0
+      ],
+      "pressurePsi": [
+       14.7,
+       14.7
+      ]
+     }
+    ],
+    "gravity": [
+     "microgravity"
+    ],
+    "hotIgnition": {
+     "known": 34,
+     "ignited": 22
+    }
+   },
+   "oxygenOnly": {
+    "rows": 80,
+    "unverifiedPressure": 1,
+    "investigations": [
+     {
+      "psi": "PSI-25",
+      "name": "BASS-II",
+      "rows": 70,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       18.0,
+       22.2
+      ]
+     },
+     {
+      "psi": "PSI-99",
+      "name": "SAFFIRE-II",
+      "rows": 7,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.5,
+       22.1
+      ]
+     },
+     {
+      "psi": "PSI-20",
+      "name": "ACME BRE",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.0,
+       21.0
+      ]
+     },
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       20.0,
+       20.0
+      ]
+     },
+     {
+      "psi": "PSI-98",
+      "name": "SAFFIRE-I",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.5,
+       21.5
+      ]
+     }
+    ]
+   },
+   "gravityNote": "All 24 PSI combustion investigations are microgravity flight tests or analyses of them.",
+   "flags": [],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "How many seconds a flame takes to go out after the fan stops. Saffire I-1, tested close to this atmosphere, went out immediately when airflow stopped; the cited passages give no elapsed time in seconds."
+   ],
+   "checked": {
+    "near": [
+     "S1",
+     "S25",
+     "S26",
+     "FLEX-002",
+     "S31",
+     "BASS-T7"
+    ],
+    "oxygenOnly": [
+     "B1",
+     "B10",
+     "B11",
+     "S12",
+     "M7"
+    ],
+    "nearest": [
+     {
+      "id": "BASS-T7",
+      "o2Points": 0.0,
+      "psiApart": 0.0
+     },
+     {
+      "id": "FLEX-002",
+      "o2Points": 0.0,
+      "psiApart": 0.03
+     },
+     {
+      "id": "S31",
+      "o2Points": 0.2,
+      "psiApart": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "moon",
+   "label": "Moon base or rover",
+   "o2": 30,
+   "psi": 10.2,
+   "gravity": "moon",
+   "note": "NASA’s challenge: 30% oxygen or more at 10.2 psi or less, to shorten spacesuit pre-breathing.",
+   "gravityLabel": "Moon, 0.16 g",
+   "partialPressurePsi": 3.06,
+   "earthAirShare": 99,
+   "near": {
+    "rows": 8,
+    "investigations": [
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 8,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       30.0,
+       30.0
+      ],
+      "pressurePsi": [
+       10.33,
+       10.46
+      ]
+     }
+    ],
+    "gravity": [
+     "microgravity"
+    ],
+    "hotIgnition": {
+     "known": 0,
+     "ignited": 0
+    }
+   },
+   "oxygenOnly": {
+    "rows": 0,
+    "unverifiedPressure": 0,
+    "investigations": []
+   },
+   "gravityNote": "PSI holds no Moon, 0.16 g combustion data. NASA notes microgravity and normal-gravity results could bound intermediate gravity: use the microgravity rows here as one bound and normal-gravity results (for example Saffire-II’s 1-g columns) as the other. E-FIELD Flames (PSI-22) mimicked partial gravity with an electric field; LUCI and FM2 are future sources not yet in PSI.",
+   "flags": [
+    {
+     "kind": "boundary",
+     "text": "On the Moon base boundary (30% oxygen, 10.2 psi). Rows on either side of it fall under different NASA conditions; check which side each row is on."
+    },
+    {
+     "kind": "gravity",
+     "text": "Gravity regime differs from the data. PSI rows are microgravity flight tests; none of the rows counted here was tested at this gravity."
+    }
+   ],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "Whether a flame goes out when the fan stops here. The two checked airflow-shutoff tests (BASS-II B1, Saffire I-1) were in station air, 7.8 points of oxygen away and at about 14.5 psi or a pressure the table does not give."
+   ],
+   "checked": {
+    "near": [],
+    "oxygenOnly": [],
+    "nearest": [
+     {
+      "id": "S25",
+      "o2Points": 7.9,
+      "psiApart": 4.3
+     },
+     {
+      "id": "S26",
+      "o2Points": 7.9,
+      "psiApart": 4.3
+     },
+     {
+      "id": "S1",
+      "o2Points": 8.3,
+      "psiApart": 4.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "bre-265",
+   "label": "BRE 26.5% at 10.2 psi",
+   "o2": 26.5,
+   "psi": 10.2,
+   "gravity": "moon",
+   "note": "An exploration atmosphere named in the BRE record (PSI-20 record text, not a table value).",
+   "gravityLabel": "Moon, 0.16 g",
+   "partialPressurePsi": 2.7,
+   "earthAirShare": 88,
+   "near": {
+    "rows": 16,
+    "investigations": [
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 16,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       24.0,
+       25.0
+      ],
+      "pressurePsi": [
+       10.28,
+       10.43
+      ]
+     }
+    ],
+    "gravity": [
+     "microgravity"
+    ],
+    "hotIgnition": {
+     "known": 0,
+     "ignited": 0
+    }
+   },
+   "oxygenOnly": {
+    "rows": 0,
+    "unverifiedPressure": 0,
+    "investigations": []
+   },
+   "gravityNote": "PSI holds no Moon, 0.16 g combustion data. NASA notes microgravity and normal-gravity results could bound intermediate gravity: use the microgravity rows here as one bound and normal-gravity results (for example Saffire-II’s 1-g columns) as the other. E-FIELD Flames (PSI-22) mimicked partial gravity with an electric field; LUCI and FM2 are future sources not yet in PSI.",
+   "flags": [
+    {
+     "kind": "gravity",
+     "text": "Gravity regime differs from the data. PSI rows are microgravity flight tests; none of the rows counted here was tested at this gravity."
+    }
+   ],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "Whether a flame goes out when the fan stops here. The two checked airflow-shutoff tests (BASS-II B1, Saffire I-1) were in station air, 4.3 points of oxygen away and at about 14.5 psi or a pressure the table does not give."
+   ],
+   "checked": {
+    "near": [],
+    "oxygenOnly": [],
+    "nearest": [
+     {
+      "id": "S25",
+      "o2Points": 4.4,
+      "psiApart": 4.3
+     },
+     {
+      "id": "S26",
+      "o2Points": 4.4,
+      "psiApart": 4.3
+     },
+     {
+      "id": "S1",
+      "o2Points": 4.8,
+      "psiApart": 4.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "bre",
+   "label": "BRE 34% at 8.2 psi",
+   "o2": 34,
+   "psi": 8.2,
+   "gravity": "moon",
+   "note": "An exploration atmosphere named in the BRE record (PSI-20 record text, not a table value).",
+   "gravityLabel": "Moon, 0.16 g",
+   "partialPressurePsi": 2.79,
+   "earthAirShare": 90,
+   "near": {
+    "rows": 11,
+    "investigations": [
+     {
+      "psi": "PSI-159",
+      "name": "ACME CFI-G",
+      "rows": 11,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       33.24,
+       36.93
+      ],
+      "pressurePsi": [
+       7.35,
+       7.35
+      ]
+     }
+    ],
+    "gravity": [
+     "microgravity"
+    ],
+    "hotIgnition": {
+     "known": 11,
+     "ignited": 8
+    }
+   },
+   "oxygenOnly": {
+    "rows": 1,
+    "unverifiedPressure": 0,
+    "investigations": [
+     {
+      "psi": "PSI-20",
+      "name": "ACME BRE",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       34.0,
+       34.0
+      ]
+     }
+    ]
+   },
+   "gravityNote": "PSI holds no Moon, 0.16 g combustion data. NASA notes microgravity and normal-gravity results could bound intermediate gravity: use the microgravity rows here as one bound and normal-gravity results (for example Saffire-II’s 1-g columns) as the other. E-FIELD Flames (PSI-22) mimicked partial gravity with an electric field; LUCI and FM2 are future sources not yet in PSI.",
+   "flags": [
+    {
+     "kind": "gravity",
+     "text": "Gravity regime differs from the data. PSI rows are microgravity flight tests; none of the rows counted here was tested at this gravity."
+    }
+   ],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "Whether a flame goes out when the fan stops here. The two checked airflow-shutoff tests (BASS-II B1, Saffire I-1) were in station air, 11.8 points of oxygen away and at about 14.5 psi or a pressure the table does not give."
+   ],
+   "checked": {
+    "near": [],
+    "oxygenOnly": [],
+    "nearest": [
+     {
+      "id": "S25",
+      "o2Points": 11.9,
+      "psiApart": 6.3
+     },
+     {
+      "id": "S26",
+      "o2Points": 11.9,
+      "psiApart": 6.3
+     },
+     {
+      "id": "S1",
+      "o2Points": 12.3,
+      "psiApart": 6.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "suit",
+   "label": "Spacesuit",
+   "o2": 100,
+   "psi": 4.3,
+   "gravity": "micro",
+   "note": "NASA’s challenge: suits hold 100% oxygen at 4.3 psi.",
+   "gravityLabel": "Microgravity",
+   "partialPressurePsi": 4.3,
+   "earthAirShare": 139,
+   "near": {
+    "rows": 0,
+    "investigations": [],
+    "gravity": [],
+    "hotIgnition": {
+     "known": 0,
+     "ignited": 0
+    }
+   },
+   "oxygenOnly": {
+    "rows": 0,
+    "unverifiedPressure": 0,
+    "investigations": []
+   },
+   "gravityNote": "All 24 PSI combustion investigations are microgravity flight tests or analyses of them.",
+   "flags": [
+    {
+     "kind": "outside",
+     "text": "Outside tested conditions. No PSI row lies within 3 points of oxygen and 1.5 psi, and none brackets this oxygen at this pressure. Any number here would be extrapolation."
+    },
+    {
+     "kind": "regime",
+     "text": "Total pressure 4.3 psi is below every PSI row with a pressure (lowest 7.35 psi)."
+    }
+   ],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "Whether a flame goes out when the fan stops here. The two checked airflow-shutoff tests (BASS-II B1, Saffire I-1) were in station air, 77.8 points of oxygen away and at about 14.5 psi or a pressure the table does not give."
+   ],
+   "checked": {
+    "near": [],
+    "oxygenOnly": [],
+    "nearest": [
+     {
+      "id": "S25",
+      "o2Points": 77.9,
+      "psiApart": 10.2
+     },
+     {
+      "id": "S26",
+      "o2Points": 77.9,
+      "psiApart": 10.2
+     },
+     {
+      "id": "S1",
+      "o2Points": 78.3,
+      "psiApart": 10.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "earth",
+   "label": "Earth, sea level",
+   "o2": 21,
+   "psi": 14.7,
+   "gravity": "earth",
+   "note": "The atmosphere Earth flammability tests use.",
+   "gravityLabel": "Earth, 1 g",
+   "partialPressurePsi": 3.09,
+   "earthAirShare": 100,
+   "near": {
+    "rows": 152,
+    "investigations": [
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 90,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       18.0,
+       24.0
+      ],
+      "pressurePsi": [
+       14.57,
+       14.97
+      ]
+     },
+     {
+      "psi": "PSI-159",
+      "name": "ACME CFI-G",
+      "rows": 34,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       18.02,
+       23.41
+      ],
+      "pressurePsi": [
+       14.7,
+       14.7
+      ]
+     },
+     {
+      "psi": "PSI-39",
+      "name": "CFI",
+      "rows": 28,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.0,
+       21.0
+      ],
+      "pressurePsi": [
+       14.7,
+       14.7
+      ]
+     }
+    ],
+    "gravity": [
+     "microgravity"
+    ],
+    "hotIgnition": {
+     "known": 34,
+     "ignited": 22
+    }
+   },
+   "oxygenOnly": {
+    "rows": 80,
+    "unverifiedPressure": 1,
+    "investigations": [
+     {
+      "psi": "PSI-25",
+      "name": "BASS-II",
+      "rows": 70,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       18.0,
+       22.2
+      ]
+     },
+     {
+      "psi": "PSI-99",
+      "name": "SAFFIRE-II",
+      "rows": 7,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.5,
+       22.1
+      ]
+     },
+     {
+      "psi": "PSI-20",
+      "name": "ACME BRE",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.0,
+       21.0
+      ]
+     },
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       20.0,
+       20.0
+      ]
+     },
+     {
+      "psi": "PSI-98",
+      "name": "SAFFIRE-I",
+      "rows": 1,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       21.5,
+       21.5
+      ]
+     }
+    ]
+   },
+   "gravityNote": "PSI holds microgravity data. Some investigations list normal-gravity results beside them (for example Saffire-II’s 1-g burn length and spread rate).",
+   "flags": [
+    {
+     "kind": "gravity",
+     "text": "Gravity regime differs from the data. PSI rows are microgravity flight tests; none of the rows counted here was tested at this gravity."
+    }
+   ],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "How many seconds a flame takes to go out after the fan stops. Saffire I-1, tested close to this atmosphere, went out immediately when airflow stopped; the cited passages give no elapsed time in seconds."
+   ],
+   "checked": {
+    "near": [
+     "S1",
+     "S25",
+     "S26",
+     "FLEX-002",
+     "S31",
+     "BASS-T7"
+    ],
+    "oxygenOnly": [
+     "B1",
+     "B10",
+     "B11",
+     "S12",
+     "M7"
+    ],
+    "nearest": [
+     {
+      "id": "BASS-T7",
+      "o2Points": 0.0,
+      "psiApart": 0.0
+     },
+     {
+      "id": "FLEX-002",
+      "o2Points": 0.0,
+      "psiApart": 0.03
+     },
+     {
+      "id": "S31",
+      "o2Points": 0.2,
+      "psiApart": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "mars",
+   "label": "Mars habitat (assumed)",
+   "o2": 30,
+   "psi": 10.2,
+   "gravity": "mars",
+   "note": "Assumed, no NASA source: NASA’s challenge gives no Mars habitat atmosphere, so this preset reuses the Moon base numbers. Only the gravity differs.",
+   "gravityLabel": "Mars, 0.38 g",
+   "partialPressurePsi": 3.06,
+   "earthAirShare": 99,
+   "near": {
+    "rows": 8,
+    "investigations": [
+     {
+      "psi": "PSI-69",
+      "name": "FLEX",
+      "rows": 8,
+      "gravity": [
+       "microgravity"
+      ],
+      "o2": [
+       30.0,
+       30.0
+      ],
+      "pressurePsi": [
+       10.33,
+       10.46
+      ]
+     }
+    ],
+    "gravity": [
+     "microgravity"
+    ],
+    "hotIgnition": {
+     "known": 0,
+     "ignited": 0
+    }
+   },
+   "oxygenOnly": {
+    "rows": 0,
+    "unverifiedPressure": 0,
+    "investigations": []
+   },
+   "gravityNote": "PSI holds no Mars, 0.38 g combustion data. NASA notes microgravity and normal-gravity results could bound intermediate gravity: use the microgravity rows here as one bound and normal-gravity results (for example Saffire-II’s 1-g columns) as the other. E-FIELD Flames (PSI-22) mimicked partial gravity with an electric field; LUCI and FM2 are future sources not yet in PSI.",
+   "flags": [
+    {
+     "kind": "boundary",
+     "text": "On the Moon base boundary (30% oxygen, 10.2 psi). Rows on either side of it fall under different NASA conditions; check which side each row is on."
+    },
+    {
+     "kind": "gravity",
+     "text": "Gravity regime differs from the data. PSI rows are microgravity flight tests; none of the rows counted here was tested at this gravity."
+    }
+   ],
+   "untested": [
+    "Whether a cabin material ignites or spreads here: no solid-material flammability test in PSI records both oxygen and pressure near this atmosphere.",
+    "Whether a flame goes out when the fan stops here. The two checked airflow-shutoff tests (BASS-II B1, Saffire I-1) were in station air, 7.8 points of oxygen away and at about 14.5 psi or a pressure the table does not give."
+   ],
+   "checked": {
+    "near": [],
+    "oxygenOnly": [],
+    "nearest": [
+     {
+      "id": "S25",
+      "o2Points": 7.9,
+      "psiApart": 4.3
+     },
+     {
+      "id": "S26",
+      "o2Points": 7.9,
+      "psiApart": 4.3
+     },
+     {
+      "id": "S1",
+      "o2Points": 8.3,
+      "psiApart": 4.3
+     }
+    ]
+   }
+  }
+ ]
+}
