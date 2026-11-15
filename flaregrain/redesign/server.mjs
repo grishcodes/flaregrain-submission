@@ -14,9 +14,9 @@ const comparable = new Set(data.records.map(record => record.id));
 
 const files = new Set([
   'index.html', 'answer.html', 'browse.html', 'compare.html', 'evidence.html', 'habitat.html',
-  'insights.html', 'system.html', 'app.js', 'compare.js', 'drawer.js', 'pages.js', 'styles.css',
+  'insights.html', 'system.html', 'app.js', 'compare.js', 'drawer.js', 'pages.js', 'styles.css', 'favicon.svg', 'favicon.png',
 ]);
-const types = {'html': 'text/html', 'js': 'text/javascript', 'css': 'text/css'};
+const types = {'html': 'text/html', 'js': 'text/javascript', 'css': 'text/css', 'svg': 'image/svg+xml', 'png': 'image/png'};
 const notIncluded = 'This view needs the full NASA PSI dataset, which the team shows in the full-data demo.';
 const cutoffQuestion = 'How long did the flame take to go out after airflow was cut?';
 const scopeLimit = 'The cited passages give no elapsed time from airflow shutoff to extinction in seconds.';
